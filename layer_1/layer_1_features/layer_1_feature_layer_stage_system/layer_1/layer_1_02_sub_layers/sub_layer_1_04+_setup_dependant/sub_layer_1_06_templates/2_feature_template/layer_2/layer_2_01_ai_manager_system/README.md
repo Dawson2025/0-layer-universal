@@ -1,7 +1,6 @@
 ---
 resource_id: "2f319a27-10a5-422d-acae-e6ee4338d292"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Feature Manager Agent (Template)

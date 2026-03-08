@@ -1,7 +1,6 @@
 ---
 resource_id: "4205cf87-11a0-4247-9b73-e17bf5258e69"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Context Chain System

@@ -1,7 +1,6 @@
 ---
 resource_id: "27604255-bfce-4364-b464-1077781ad3dd"
-resource_type: "readme
-output"
+resource_type: "readme_output"
 resource_name: "README"
 ---
 # Requirements — Instance Context

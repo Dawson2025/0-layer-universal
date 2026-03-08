@@ -1,7 +1,6 @@
 ---
 resource_id: "49408ef4-3378-46a2-8e63-53bfaf91061f"
-resource_type: "skill
-knowledge"
+resource_type: "skill_knowledge"
 resource_name: "SKILL"
 ---
 ---

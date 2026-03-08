@@ -1,7 +1,6 @@
 ---
 resource_id: "737cb997-e290-4a56-a62e-9c866587c50b"
-resource_type: "readme
-output"
+resource_type: "readme_output"
 resource_name: "README"
 ---
 # Handoff Protocols -- User Stories Index

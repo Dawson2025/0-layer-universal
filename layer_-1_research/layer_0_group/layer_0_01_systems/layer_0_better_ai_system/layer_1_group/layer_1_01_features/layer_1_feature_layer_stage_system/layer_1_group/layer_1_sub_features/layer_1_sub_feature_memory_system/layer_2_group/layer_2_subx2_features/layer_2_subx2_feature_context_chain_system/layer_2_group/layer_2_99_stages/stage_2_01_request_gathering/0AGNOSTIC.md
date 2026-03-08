@@ -1,7 +1,6 @@
 ---
 resource_id: "3b023004-e06f-439c-a147-5046e517dbfb"
-resource_type: "agnostic
-document"
+resource_type: "agnostic_document"
 resource_name: "0AGNOSTIC"
 ---
 # context_chain_system — Stage 01: Request Gathering

@@ -1,7 +1,6 @@
 ---
 resource_id: "eba887dd-9f43-4292-afea-d7f1fa578045"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Layer 1 Features

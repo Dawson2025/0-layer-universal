@@ -1,7 +1,6 @@
 ---
 resource_id: "2732d504-b2d8-4371-87e9-a271c0c9617b"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Platform Version Control System

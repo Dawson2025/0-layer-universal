@@ -1,7 +1,6 @@
 ---
 resource_id: "e018b7b4-6cb4-45c8-b54e-78ada47700ad"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # sub_layer_2.05-2.14_setup - Feature Setup Sublayer

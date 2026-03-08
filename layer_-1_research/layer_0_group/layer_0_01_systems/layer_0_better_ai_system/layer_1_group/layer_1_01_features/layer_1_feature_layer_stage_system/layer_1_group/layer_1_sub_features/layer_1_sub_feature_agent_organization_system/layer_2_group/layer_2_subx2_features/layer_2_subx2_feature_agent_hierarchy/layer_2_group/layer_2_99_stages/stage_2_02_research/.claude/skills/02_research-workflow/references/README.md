@@ -1,7 +1,6 @@
 ---
 resource_id: "882e6687-7815-472b-8685-9608c4c61546"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # 02_research Workflow References

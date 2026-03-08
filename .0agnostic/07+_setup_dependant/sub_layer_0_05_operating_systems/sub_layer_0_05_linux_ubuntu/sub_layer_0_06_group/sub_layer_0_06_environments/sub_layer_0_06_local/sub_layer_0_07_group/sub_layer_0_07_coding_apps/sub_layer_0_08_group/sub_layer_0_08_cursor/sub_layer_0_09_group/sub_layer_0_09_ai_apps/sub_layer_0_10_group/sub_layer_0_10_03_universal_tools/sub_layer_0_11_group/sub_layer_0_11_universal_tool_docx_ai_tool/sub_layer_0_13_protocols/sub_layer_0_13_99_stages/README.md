@@ -1,7 +1,6 @@
 ---
 resource_id: "bb9fef5b-df4c-44b4-b6fe-61748140d48d"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # sub_layer_0_13_99_stages (Protocol Development)

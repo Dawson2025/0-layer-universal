@@ -1,7 +1,6 @@
 ---
 resource_id: "2d0fc612-8c77-46dd-a855-ad9cf905cd2b"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Language-Tracker-App-MCP

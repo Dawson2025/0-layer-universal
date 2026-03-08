@@ -1,7 +1,6 @@
 ---
 resource_id: "cef43b87-83ec-49ae-a756-04db43429235"
-resource_type: "readme
-knowledge"
+resource_type: "readme_knowledge"
 resource_name: "README"
 ---
 # Components

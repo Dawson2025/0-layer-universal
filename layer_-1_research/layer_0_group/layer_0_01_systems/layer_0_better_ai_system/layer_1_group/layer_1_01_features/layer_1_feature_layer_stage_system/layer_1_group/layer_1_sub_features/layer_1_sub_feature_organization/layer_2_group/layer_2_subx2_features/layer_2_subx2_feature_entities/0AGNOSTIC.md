@@ -1,7 +1,6 @@
 ---
 resource_id: "5028ec81-c546-4402-a52f-10b1e75c6274"
-resource_type: "agnostic
-document"
+resource_type: "agnostic_document"
 resource_name: "0AGNOSTIC"
 ---
 # 0AGNOSTIC.md - layer_2_subx2_feature_entities

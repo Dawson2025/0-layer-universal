@@ -1,7 +1,6 @@
 ---
 resource_id: "68fc6589-2d0e-4c10-a1d6-955406b0b858"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Claude Code Configuration Tools

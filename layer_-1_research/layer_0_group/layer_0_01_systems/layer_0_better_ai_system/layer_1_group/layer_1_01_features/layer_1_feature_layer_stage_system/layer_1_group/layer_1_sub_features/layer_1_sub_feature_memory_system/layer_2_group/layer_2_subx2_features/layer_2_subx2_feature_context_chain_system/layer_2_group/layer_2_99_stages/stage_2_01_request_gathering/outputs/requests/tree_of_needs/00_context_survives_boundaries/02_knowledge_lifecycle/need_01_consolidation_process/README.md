@@ -1,7 +1,6 @@
 ---
 resource_id: "f64c6561-151e-4b24-a2ce-295609df65c0"
-resource_type: "readme
-output"
+resource_type: "readme_output"
 resource_name: "README"
 ---
 # Need: Consolidation Process

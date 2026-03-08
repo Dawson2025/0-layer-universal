@@ -1,7 +1,6 @@
 ---
 resource_id: "6f0fc50e-cf7e-48f7-9db0-0e4faa49991b"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Context Avenue Web Registry

@@ -1,7 +1,6 @@
 ---
 resource_id: "b4da4a41-5eb5-4902-9396-b70cf378342b"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Linux (Ubuntu) AI Apps (MCP Setup Runbooks)

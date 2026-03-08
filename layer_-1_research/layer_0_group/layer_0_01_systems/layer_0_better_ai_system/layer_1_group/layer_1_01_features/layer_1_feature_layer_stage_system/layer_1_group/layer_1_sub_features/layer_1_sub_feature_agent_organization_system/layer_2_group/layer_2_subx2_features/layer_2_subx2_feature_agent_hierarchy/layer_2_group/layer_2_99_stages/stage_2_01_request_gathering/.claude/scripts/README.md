@@ -1,7 +1,6 @@
 ---
 resource_id: "4f118536-97fd-4cda-9478-af7ad9b726b6"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # 01_request_gathering Stage Scripts

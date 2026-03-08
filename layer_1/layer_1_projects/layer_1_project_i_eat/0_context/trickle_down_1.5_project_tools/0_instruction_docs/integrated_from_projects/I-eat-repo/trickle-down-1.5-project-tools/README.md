@@ -1,7 +1,6 @@
 ---
 resource_id: "055a51cf-94d7-46ea-9653-02d276575265"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Project Tools & Implementation Systems

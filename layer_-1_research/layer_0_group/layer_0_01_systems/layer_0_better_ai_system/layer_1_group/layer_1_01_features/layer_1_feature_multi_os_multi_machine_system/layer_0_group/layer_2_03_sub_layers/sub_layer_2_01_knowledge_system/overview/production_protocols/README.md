@@ -1,7 +1,6 @@
 ---
 resource_id: "c2c08713-b7e4-4bb7-8c1e-7eac4503822f"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # 0.0_basic_prompts_throughout

@@ -1,7 +1,6 @@
 ---
 resource_id: "1ba5a2be-5d13-4ab5-93d1-b82acd380ec5"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # macOS MCP Notes

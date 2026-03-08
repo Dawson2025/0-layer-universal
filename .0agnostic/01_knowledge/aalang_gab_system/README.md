@@ -1,7 +1,6 @@
 ---
 resource_id: "6dc50370-0c20-45fa-82e3-b8cc876172c1"
-resource_type: "readme
-knowledge"
+resource_type: "readme_knowledge"
 resource_name: "README"
 ---
 # AALang & GAB System - Knowledge Reference

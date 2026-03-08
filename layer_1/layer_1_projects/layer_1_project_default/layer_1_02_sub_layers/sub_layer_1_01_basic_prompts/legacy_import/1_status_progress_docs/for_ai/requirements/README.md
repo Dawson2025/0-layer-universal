@@ -1,7 +1,6 @@
 ---
 resource_id: "6c6ee4df-417f-4d27-a45e-30b99f905ff6"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Requirements Overview

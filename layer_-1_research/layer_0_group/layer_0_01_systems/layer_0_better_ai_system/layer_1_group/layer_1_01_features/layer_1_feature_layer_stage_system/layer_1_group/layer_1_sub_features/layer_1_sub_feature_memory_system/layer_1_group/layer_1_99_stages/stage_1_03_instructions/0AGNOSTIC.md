@@ -1,7 +1,6 @@
 ---
 resource_id: "c815cff8-02c8-47a2-93fb-42a95d040dcf"
-resource_type: "agnostic
-document"
+resource_type: "agnostic_document"
 resource_name: "0AGNOSTIC"
 ---
 # memory_system — Stage 03: instructions

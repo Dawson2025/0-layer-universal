@@ -1,7 +1,6 @@
 ---
 resource_id: "a38a1dce-b171-4ae0-b265-33fddb984343"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Agentic TTS Sub-Feature

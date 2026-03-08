@@ -1,7 +1,6 @@
 ---
 resource_id: "f4159f8c-dc0a-4d3a-a8ca-359fd8eb3147"
-resource_type: "readme
-output"
+resource_type: "readme_output"
 resource_name: "README"
 ---
 # Need: Version Coexistence

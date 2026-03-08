@@ -1,7 +1,6 @@
 ---
 resource_id: "8498ef71-729c-4130-800e-e9a9138bbc2a"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Sub Layer 0.05: OS Setup

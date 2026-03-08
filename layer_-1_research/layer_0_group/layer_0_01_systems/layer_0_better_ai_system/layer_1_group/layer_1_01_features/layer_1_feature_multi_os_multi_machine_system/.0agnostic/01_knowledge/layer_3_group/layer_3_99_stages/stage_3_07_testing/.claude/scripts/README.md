@@ -1,7 +1,6 @@
 ---
 resource_id: "bcd28b68-1553-4002-ae46-227dd6c3de1a"
-resource_type: "readme
-knowledge"
+resource_type: "readme_knowledge"
 resource_name: "README"
 ---
 # 07_testing Stage Scripts

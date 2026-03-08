@@ -1,7 +1,6 @@
 ---
 resource_id: "878c9054-cfcf-40b8-a91a-e4b5ca44c0ed"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # tavily-mcp (claude_code_cli on linux_ubuntu)

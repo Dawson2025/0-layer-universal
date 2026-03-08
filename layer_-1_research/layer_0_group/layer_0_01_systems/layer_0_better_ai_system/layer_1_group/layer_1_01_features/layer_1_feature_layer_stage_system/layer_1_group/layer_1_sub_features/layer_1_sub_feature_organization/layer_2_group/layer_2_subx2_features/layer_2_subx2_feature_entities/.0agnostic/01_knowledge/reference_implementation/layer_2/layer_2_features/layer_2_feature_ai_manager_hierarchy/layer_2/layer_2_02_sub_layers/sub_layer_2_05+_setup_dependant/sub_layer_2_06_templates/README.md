@@ -1,7 +1,6 @@
 ---
 resource_id: "e5f36429-7860-4641-b6cc-2eba5c7bf10c"
-resource_type: "readme
-knowledge"
+resource_type: "readme_knowledge"
 resource_name: "README"
 ---
 # Templates

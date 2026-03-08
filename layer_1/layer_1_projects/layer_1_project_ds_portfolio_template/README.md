@@ -1,7 +1,6 @@
 ---
 resource_id: "ac6ba889-491a-437b-9332-3ef3834cebd8"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # BYUI DS Portfolio Template

@@ -1,7 +1,6 @@
 ---
 resource_id: "c91ccf94-e559-455d-bca9-d962e0e21e80"
-resource_type: "readme
-output"
+resource_type: "readme_output"
 resource_name: "README"
 ---
 # Test Design Index

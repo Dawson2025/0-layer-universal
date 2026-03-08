@@ -1,7 +1,6 @@
 ---
 resource_id: "cc721803-873f-40ff-b6c2-23f6607e95ac"
-resource_type: "readme
-output"
+resource_type: "readme_output"
 resource_name: "README"
 ---
 # Stage 03: .1merge System (AI App Context Porting)

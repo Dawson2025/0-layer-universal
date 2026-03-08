@@ -1,7 +1,6 @@
 ---
 resource_id: "934aaa6d-76ca-4cb3-973e-f9f4563301a3"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # sub_layer_2.05-2.14_setup - Sub-Project Setup Sublayer

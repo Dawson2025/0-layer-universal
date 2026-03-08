@@ -1,7 +1,6 @@
 ---
 resource_id: "34bbc69d-31ec-41ee-adf6-4b4a6e5b095d"
-resource_type: "readme
-output"
+resource_type: "readme_output"
 resource_name: "README"
 ---
 # Avenue Benchmarking -- User Stories Index

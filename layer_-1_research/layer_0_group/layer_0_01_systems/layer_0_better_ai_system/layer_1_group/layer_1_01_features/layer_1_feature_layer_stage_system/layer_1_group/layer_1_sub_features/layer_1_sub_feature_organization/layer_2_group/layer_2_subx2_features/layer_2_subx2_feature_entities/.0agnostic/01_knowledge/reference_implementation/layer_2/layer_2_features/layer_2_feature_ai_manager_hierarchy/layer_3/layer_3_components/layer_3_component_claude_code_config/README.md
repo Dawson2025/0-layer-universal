@@ -1,7 +1,6 @@
 ---
 resource_id: "cc6f8924-208c-4723-b501-c35e5721e2da"
-resource_type: "readme
-knowledge"
+resource_type: "readme_knowledge"
 resource_name: "README"
 ---
 # Claude Code Config Component

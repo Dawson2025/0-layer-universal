@@ -1,7 +1,6 @@
 ---
 resource_id: "4f9ca7d8-58f4-423e-9348-1266183cf38f"
-resource_type: "skill
-document"
+resource_type: "skill_document"
 resource_name: "SKILL"
 ---
 # Entity Creation Skill (Research Context)

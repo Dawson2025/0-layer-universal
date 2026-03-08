@@ -1,7 +1,6 @@
 ---
 resource_id: "c59cc693-0387-45c3-8534-30dfcd9ef287"
-resource_type: "readme
-knowledge"
+resource_type: "readme_knowledge"
 resource_name: "README"
 ---
 # context7-mcp (claude_code_cli on linux_ubuntu)

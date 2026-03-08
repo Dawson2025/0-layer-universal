@@ -1,7 +1,6 @@
 ---
 resource_id: "45dd60a1-7c46-4fea-a3ac-0ebed2cdd198"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Sub-Features

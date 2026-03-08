@@ -1,7 +1,6 @@
 ---
 resource_id: "557d69f4-05ce-485a-ab00-e9cd3dda36f2"
-resource_type: "readme
-output"
+resource_type: "readme_output"
 resource_name: "README"
 ---
 # User Stories — Production Version

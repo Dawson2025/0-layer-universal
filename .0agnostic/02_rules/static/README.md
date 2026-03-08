@@ -1,7 +1,6 @@
 ---
 resource_id: "2e6e9d69-4b78-4abe-906b-e45de107bac9"
-resource_type: "readme
-rule"
+resource_type: "readme_rule"
 resource_name: "README"
 ---
 # Static Rules

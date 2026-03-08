@@ -1,7 +1,6 @@
 ---
 resource_id: "076467ee-21b7-4440-862d-d6b856aa416e"
-resource_type: "readme
-knowledge"
+resource_type: "readme_knowledge"
 resource_name: "README"
 ---
 # Multi-OS Workspace Sync Documentation

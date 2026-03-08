@@ -1,7 +1,6 @@
 ---
 resource_id: "fe023381-1bca-416d-b23a-5ea36edc0d72"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # sub_layer_0_13_agent_setup

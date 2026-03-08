@@ -1,7 +1,6 @@
 ---
 resource_id: "3bb48676-fdba-4bb1-b369-033645303ed6"
-resource_type: "agnostic
-document"
+resource_type: "agnostic_document"
 resource_name: "0AGNOSTIC"
 ---
 # dynamic_memory — Stage 06: development

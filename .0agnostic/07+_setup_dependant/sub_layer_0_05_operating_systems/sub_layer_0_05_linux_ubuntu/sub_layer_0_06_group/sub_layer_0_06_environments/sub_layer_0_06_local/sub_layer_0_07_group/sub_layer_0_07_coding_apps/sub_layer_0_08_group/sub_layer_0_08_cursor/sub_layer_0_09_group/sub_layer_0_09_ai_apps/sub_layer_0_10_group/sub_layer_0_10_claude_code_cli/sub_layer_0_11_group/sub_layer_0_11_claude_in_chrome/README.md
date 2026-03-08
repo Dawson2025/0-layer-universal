@@ -1,7 +1,6 @@
 ---
 resource_id: "177fb315-a398-43c5-9db8-8b950f06de16"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Claude in Chrome MCP Server

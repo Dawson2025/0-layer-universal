@@ -1,7 +1,6 @@
 ---
 resource_id: "a9411884-a1d6-43f8-9ab2-5fa54b0eaaeb"
-resource_type: "agnostic
-document"
+resource_type: "agnostic_document"
 resource_name: "0AGNOSTIC"
 ---
 # 0AGNOSTIC.md - layer_2_subx3_feature_agent_hierarchy

@@ -1,7 +1,6 @@
 ---
 resource_id: "3058cd58-5a6b-4c88-a4a7-53caeabef0a6"
-resource_type: "agnostic
-document"
+resource_type: "agnostic_document"
 resource_name: "0AGNOSTIC"
 ---
 # memory_system — AI Manager System

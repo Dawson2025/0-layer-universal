@@ -1,7 +1,6 @@
 ---
 resource_id: "7035bdbd-ec5b-4b14-8454-962abb72ad99"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # 01_request_gathering Workflow References

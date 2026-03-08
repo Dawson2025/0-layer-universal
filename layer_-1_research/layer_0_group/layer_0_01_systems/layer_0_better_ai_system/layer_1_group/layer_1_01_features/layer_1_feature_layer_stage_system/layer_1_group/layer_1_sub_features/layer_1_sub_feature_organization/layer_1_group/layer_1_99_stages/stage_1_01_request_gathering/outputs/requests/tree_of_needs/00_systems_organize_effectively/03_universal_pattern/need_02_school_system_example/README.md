@@ -1,7 +1,6 @@
 ---
 resource_id: "9ea85da7-54cd-4532-bbe6-a8d147fbc47a"
-resource_type: "readme
-output"
+resource_type: "readme_output"
 resource_name: "README"
 ---
 # Need: School System Example

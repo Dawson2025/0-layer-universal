@@ -1,7 +1,6 @@
 ---
 resource_id: "5ec34983-b75c-4536-ab01-fc1a157d3e0a"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # chrome-devtools-mcp (codex_cli on linux_ubuntu)

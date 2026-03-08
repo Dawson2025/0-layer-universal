@@ -1,7 +1,6 @@
 ---
 resource_id: "97b42a39-8563-40df-baad-4c8b5a9905f5"
-resource_type: "agnostic
-document"
+resource_type: "agnostic_document"
 resource_name: "0AGNOSTIC"
 ---
 # dynamic_memory — Stage 04: planning

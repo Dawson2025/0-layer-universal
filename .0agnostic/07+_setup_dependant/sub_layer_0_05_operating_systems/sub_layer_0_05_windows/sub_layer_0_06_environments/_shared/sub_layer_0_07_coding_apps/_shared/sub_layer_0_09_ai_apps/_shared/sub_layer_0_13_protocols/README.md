@@ -1,7 +1,6 @@
 ---
 resource_id: "faca40ed-b2ca-4440-8c06-24af93a581dd"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Universal Protocols

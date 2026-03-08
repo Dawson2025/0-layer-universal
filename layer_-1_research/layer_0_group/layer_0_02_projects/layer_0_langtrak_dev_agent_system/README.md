@@ -1,7 +1,6 @@
 ---
 resource_id: "2b1e9f06-4c60-4d3b-bee9-eef5aa536ff3"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # LangTrak Dev Agent System

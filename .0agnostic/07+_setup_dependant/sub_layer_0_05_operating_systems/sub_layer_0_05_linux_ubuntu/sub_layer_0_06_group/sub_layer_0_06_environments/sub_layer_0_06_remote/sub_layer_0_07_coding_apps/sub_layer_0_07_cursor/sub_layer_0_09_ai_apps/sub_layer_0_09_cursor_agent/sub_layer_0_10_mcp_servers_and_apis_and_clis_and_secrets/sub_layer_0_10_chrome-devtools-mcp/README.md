@@ -1,7 +1,6 @@
 ---
 resource_id: "730e9723-da64-4bc3-b09b-6ed16500c05e"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # chrome-devtools-mcp (cursor_agent on linux_ubuntu)

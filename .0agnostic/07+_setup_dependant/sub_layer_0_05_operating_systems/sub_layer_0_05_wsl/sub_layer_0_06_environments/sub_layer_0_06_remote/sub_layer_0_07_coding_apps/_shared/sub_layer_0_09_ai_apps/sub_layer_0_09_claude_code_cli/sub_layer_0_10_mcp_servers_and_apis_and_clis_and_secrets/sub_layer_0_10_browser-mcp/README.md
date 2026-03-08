@@ -1,7 +1,6 @@
 ---
 resource_id: "c7887ba9-8167-435f-8fd3-48fd29de3bcf"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # browser-mcp (claude_code_cli on wsl)

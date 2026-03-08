@@ -1,7 +1,6 @@
 ---
 resource_id: "9cacfb9a-0cb7-4546-b5fe-37ec98aa9022"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # sub_layer_0_11_ai_models

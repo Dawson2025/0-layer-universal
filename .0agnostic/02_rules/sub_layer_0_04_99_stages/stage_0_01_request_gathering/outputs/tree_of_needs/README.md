@@ -1,7 +1,6 @@
 ---
 resource_id: "d0503145-c497-4086-9350-a7c8661cbbd1"
-resource_type: "readme
-rule"
+resource_type: "readme_rule"
 resource_name: "README"
 ---
 # Needs Tree: Critical Rules Enforcement System

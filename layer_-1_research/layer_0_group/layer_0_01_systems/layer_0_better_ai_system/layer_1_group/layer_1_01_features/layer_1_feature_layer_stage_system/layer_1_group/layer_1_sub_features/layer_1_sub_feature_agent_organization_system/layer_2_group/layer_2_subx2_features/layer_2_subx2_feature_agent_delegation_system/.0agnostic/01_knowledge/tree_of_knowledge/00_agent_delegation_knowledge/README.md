@@ -1,7 +1,6 @@
 ---
 resource_id: "90ecaedd-5520-4f07-b958-aaab4ea34fa1"
-resource_type: "readme
-knowledge"
+resource_type: "readme_knowledge"
 resource_name: "README"
 ---
 # Tree of Knowledge: Agent Delegation

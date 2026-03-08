@@ -1,7 +1,6 @@
 ---
 resource_id: "a7942ceb-f53d-4e58-acfd-7504c898f1b2"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # MCP Servers, APIs & Secrets Management

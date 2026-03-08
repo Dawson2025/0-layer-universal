@@ -1,7 +1,6 @@
 ---
 resource_id: "0a05375a-4633-44ab-9a45-6899453ff3ed"
-resource_type: "agnostic
-document"
+resource_type: "agnostic_document"
 resource_name: "0AGNOSTIC"
 ---
 # 0AGNOSTIC.md - layer_2_subx2_feature_dynamic_memory

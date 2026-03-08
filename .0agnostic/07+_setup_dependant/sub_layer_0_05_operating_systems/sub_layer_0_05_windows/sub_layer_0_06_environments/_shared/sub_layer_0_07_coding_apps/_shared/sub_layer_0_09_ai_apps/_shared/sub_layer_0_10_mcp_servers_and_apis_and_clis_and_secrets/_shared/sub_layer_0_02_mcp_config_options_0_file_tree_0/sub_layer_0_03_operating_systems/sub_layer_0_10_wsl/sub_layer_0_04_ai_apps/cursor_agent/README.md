@@ -1,7 +1,6 @@
 ---
 resource_id: "7d3f91cb-479b-4c51-b0c6-64b18156a131"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Cursor MCP Setup (WSL)

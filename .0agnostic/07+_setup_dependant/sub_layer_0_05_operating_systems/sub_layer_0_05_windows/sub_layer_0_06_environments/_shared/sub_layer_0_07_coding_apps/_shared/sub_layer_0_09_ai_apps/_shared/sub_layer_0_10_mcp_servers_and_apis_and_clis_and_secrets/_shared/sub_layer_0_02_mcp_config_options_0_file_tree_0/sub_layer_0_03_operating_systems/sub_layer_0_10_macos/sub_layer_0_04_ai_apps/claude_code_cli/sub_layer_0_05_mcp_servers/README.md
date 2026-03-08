@@ -1,7 +1,6 @@
 ---
 resource_id: "91b65031-4333-44d0-a612-0d6eda778e1e"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # MCP Servers (claude_code_cli on macos)

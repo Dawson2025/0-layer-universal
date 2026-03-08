@@ -1,7 +1,6 @@
 ---
 resource_id: "ac1610b3-d604-4df3-81e6-7e9d2d03a5df"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Layer 1 Projects

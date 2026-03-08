@@ -1,7 +1,6 @@
 ---
 resource_id: "843814d6-e170-4951-8c35-aacac4357979"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # I-Eat University Food Delivery Platform Documentation

@@ -1,7 +1,6 @@
 ---
 resource_id: "d8f0a830-47bb-4376-96c8-b0ea761fa6fe"
-resource_type: "readme
-output"
+resource_type: "readme_output"
 resource_name: "README"
 ---
 # Operation Measurement -- User Stories Index

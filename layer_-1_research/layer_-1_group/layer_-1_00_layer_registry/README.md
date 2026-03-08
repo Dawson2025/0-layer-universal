@@ -1,7 +1,6 @@
 ---
 resource_id: "06b7dbe3-4bed-4ca9-8804-ec07b916cbb7"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # layer_-1_00_layer_registry — Research Layer Registry

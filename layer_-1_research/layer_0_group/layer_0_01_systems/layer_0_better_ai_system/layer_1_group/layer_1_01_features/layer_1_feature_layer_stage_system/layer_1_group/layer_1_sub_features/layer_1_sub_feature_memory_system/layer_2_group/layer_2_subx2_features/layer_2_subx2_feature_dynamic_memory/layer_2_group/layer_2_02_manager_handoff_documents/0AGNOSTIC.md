@@ -1,7 +1,6 @@
 ---
 resource_id: "6d31ce8f-45e1-458a-9742-8c946d872357"
-resource_type: "agnostic
-document"
+resource_type: "agnostic_document"
 resource_name: "0AGNOSTIC"
 ---
 # dynamic_memory — Handoff Documents

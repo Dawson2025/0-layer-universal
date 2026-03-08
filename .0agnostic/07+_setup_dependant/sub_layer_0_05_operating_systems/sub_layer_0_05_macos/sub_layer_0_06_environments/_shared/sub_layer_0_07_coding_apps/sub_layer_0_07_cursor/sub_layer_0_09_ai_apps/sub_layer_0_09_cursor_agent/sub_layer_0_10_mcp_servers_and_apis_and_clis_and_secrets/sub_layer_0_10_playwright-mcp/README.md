@@ -1,7 +1,6 @@
 ---
 resource_id: "e79f6130-7560-4317-8c66-b5834c4a13b7"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # playwright-mcp (cursor_agent on macos)

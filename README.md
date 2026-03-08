@@ -1,7 +1,6 @@
 ---
 resource_id: "5ee6b6c5-940f-4f0f-8e1e-c5411f8e032d"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # AI Agent Context System (Layer + Stage Framework)

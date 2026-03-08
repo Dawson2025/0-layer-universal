@@ -1,7 +1,6 @@
 ---
 resource_id: "03c2f4f7-ad6b-47dc-a8cd-058783ba1f86"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # chrome-devtools-mcp (claude_code_cli on macos)

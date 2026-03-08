@@ -1,7 +1,6 @@
 ---
 resource_id: "cdf1e42f-7c9c-4061-80f8-6ba3ae41ede1"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # MCP Servers (cursor_agent on wsl)

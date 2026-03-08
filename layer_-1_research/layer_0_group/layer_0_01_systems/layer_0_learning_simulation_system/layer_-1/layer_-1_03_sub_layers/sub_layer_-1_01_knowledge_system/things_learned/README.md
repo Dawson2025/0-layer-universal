@@ -1,7 +1,6 @@
 ---
 resource_id: "a4bb98d9-b220-4552-a95e-0082fef30b73"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Learning Simulation System - Things Learned

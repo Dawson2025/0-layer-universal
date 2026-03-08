@@ -1,7 +1,6 @@
 ---
 resource_id: "d0cc179f-43d0-499d-820e-230b8e3b2b0f"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Decision Guide for Linux Speech-to-Text

@@ -1,7 +1,6 @@
 ---
 resource_id: "8c218fb2-b2dd-45a1-9f15-54705413bff5"
-resource_type: "readme
-output"
+resource_type: "readme_output"
 resource_name: "README"
 ---
 # Branch: Data-Based Avenues are COMPARED Objectively

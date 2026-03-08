@@ -1,7 +1,6 @@
 ---
 resource_id: "f865c152-7f8f-4421-b6ed-5e5fe8444142"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Avenue 10: Relational Index

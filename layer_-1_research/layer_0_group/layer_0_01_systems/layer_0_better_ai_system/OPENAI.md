@@ -2,8 +2,7 @@
 
 ---
 resource_id: "20d89d9d-e237-4e70-8254-100e464c38d5"
-resource_type: "agnostic
-document"
+resource_type: "agnostic_document"
 resource_name: "0AGNOSTIC"
 ---
 # 0AGNOSTIC.md - layer_0_better_ai_system

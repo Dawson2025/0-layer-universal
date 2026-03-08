@@ -1,7 +1,6 @@
 ---
 resource_id: "c2d49351-8def-40ab-b7cc-cc6e08a170ad"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # I-Eat Component Documentation

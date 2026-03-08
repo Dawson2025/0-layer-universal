@@ -1,7 +1,6 @@
 ---
 resource_id: "9b3d61d3-5d08-4655-ba19-4c98865ada29"
-resource_type: "readme
-output"
+resource_type: "readme_output"
 resource_name: "README"
 ---
 # Coding Apps (03_coding_apps)

@@ -1,7 +1,6 @@
 ---
 resource_id: "8bfc716a-525c-446e-b2e1-581e8d4f0fa9"
-resource_type: "readme
-output"
+resource_type: "readme_output"
 resource_name: "README"
 ---
 # Context Avenue Web (03_context_avenue_web)

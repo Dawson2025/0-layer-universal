@@ -1,7 +1,6 @@
 ---
 resource_id: "7be59c5d-a6f8-409b-acfa-336e6b5c55ca"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Browser MCP (Codex CLI on WSL)

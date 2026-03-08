@@ -1,7 +1,6 @@
 ---
 resource_id: "6a94756c-65cb-4329-ad5d-771df5c592dc"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # 02_research Stage Scripts

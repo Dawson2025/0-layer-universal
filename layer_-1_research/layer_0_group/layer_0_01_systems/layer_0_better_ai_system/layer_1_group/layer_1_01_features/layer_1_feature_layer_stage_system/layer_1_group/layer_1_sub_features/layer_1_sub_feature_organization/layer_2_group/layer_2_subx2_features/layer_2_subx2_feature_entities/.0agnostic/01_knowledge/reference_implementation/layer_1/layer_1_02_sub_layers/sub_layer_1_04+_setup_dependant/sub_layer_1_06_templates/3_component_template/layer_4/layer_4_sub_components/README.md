@@ -1,7 +1,6 @@
 ---
 resource_id: "5f5e0833-74dc-4823-b3c0-50332fec7c95"
-resource_type: "readme
-knowledge"
+resource_type: "readme_knowledge"
 resource_name: "README"
 ---
 # Sub-Components

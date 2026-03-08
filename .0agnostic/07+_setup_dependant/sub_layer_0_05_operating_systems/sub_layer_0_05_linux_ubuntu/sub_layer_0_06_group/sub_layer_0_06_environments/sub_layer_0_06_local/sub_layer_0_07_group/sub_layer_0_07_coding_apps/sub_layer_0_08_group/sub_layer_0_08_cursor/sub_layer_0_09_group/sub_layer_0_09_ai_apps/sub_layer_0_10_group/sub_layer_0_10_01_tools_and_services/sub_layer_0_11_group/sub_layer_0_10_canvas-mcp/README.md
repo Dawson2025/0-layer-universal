@@ -1,7 +1,6 @@
 ---
 resource_id: "94fae135-f482-43de-ba05-e623394c3fba"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Canvas MCP Server for Claude Code CLI

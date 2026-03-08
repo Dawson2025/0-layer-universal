@@ -1,7 +1,6 @@
 ---
 resource_id: "88d6831d-7cc9-4a27-89a4-b2f50509968b"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # 0_context Archive

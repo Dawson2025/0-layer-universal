@@ -1,7 +1,6 @@
 ---
 resource_id: "76fba517-7a01-4977-826b-8de5e636cf9d"
-resource_type: "readme
-knowledge"
+resource_type: "readme_knowledge"
 resource_name: "README"
 ---
 # browser-mcp (codex_cli on linux_ubuntu)

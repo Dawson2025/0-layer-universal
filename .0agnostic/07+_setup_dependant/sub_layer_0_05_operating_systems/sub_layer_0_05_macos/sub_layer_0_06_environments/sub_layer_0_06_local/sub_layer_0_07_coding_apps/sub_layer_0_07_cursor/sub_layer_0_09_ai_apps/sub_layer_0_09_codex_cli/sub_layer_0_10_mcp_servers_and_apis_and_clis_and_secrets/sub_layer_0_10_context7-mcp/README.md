@@ -1,7 +1,6 @@
 ---
 resource_id: "23eab664-ce19-455f-aa23-4b27bf52a670"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # context7-mcp (codex_cli on macos)

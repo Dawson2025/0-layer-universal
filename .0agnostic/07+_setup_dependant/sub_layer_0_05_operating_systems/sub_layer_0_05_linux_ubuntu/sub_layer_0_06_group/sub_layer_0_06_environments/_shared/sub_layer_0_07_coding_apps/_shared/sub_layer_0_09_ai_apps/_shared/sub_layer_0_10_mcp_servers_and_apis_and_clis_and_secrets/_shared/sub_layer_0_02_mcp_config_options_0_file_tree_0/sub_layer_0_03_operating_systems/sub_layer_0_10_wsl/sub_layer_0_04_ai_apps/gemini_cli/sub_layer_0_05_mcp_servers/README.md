@@ -1,7 +1,6 @@
 ---
 resource_id: "fcd13b30-0333-4d9c-b718-06b0a3092739"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # MCP Servers (gemini_cli on wsl)

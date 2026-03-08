@@ -1,7 +1,6 @@
 ---
 resource_id: "76281009-e0b5-46b0-9110-b2ed12915a2c"
-resource_type: "agnostic
-document"
+resource_type: "agnostic_document"
 resource_name: "0AGNOSTIC"
 ---
 # dynamic_memory — Layer Registry

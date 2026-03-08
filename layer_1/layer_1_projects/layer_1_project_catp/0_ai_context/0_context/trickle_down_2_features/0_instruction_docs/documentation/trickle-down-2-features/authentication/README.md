@@ -1,7 +1,6 @@
 ---
 resource_id: "88beb9be-6a5f-46d5-9afe-f50442c89f0b"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Authentication Feature Documentation

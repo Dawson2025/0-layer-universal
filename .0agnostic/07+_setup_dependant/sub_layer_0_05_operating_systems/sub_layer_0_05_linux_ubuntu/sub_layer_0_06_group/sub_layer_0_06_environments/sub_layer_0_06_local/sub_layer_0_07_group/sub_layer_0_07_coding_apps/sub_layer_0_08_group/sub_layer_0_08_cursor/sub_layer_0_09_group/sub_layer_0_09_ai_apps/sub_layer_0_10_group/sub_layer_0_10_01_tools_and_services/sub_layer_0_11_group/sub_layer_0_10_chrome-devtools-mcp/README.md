@@ -1,7 +1,6 @@
 ---
 resource_id: "259e7436-d5dc-4d84-9721-5d1344292375"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Chrome DevTools MCP Server

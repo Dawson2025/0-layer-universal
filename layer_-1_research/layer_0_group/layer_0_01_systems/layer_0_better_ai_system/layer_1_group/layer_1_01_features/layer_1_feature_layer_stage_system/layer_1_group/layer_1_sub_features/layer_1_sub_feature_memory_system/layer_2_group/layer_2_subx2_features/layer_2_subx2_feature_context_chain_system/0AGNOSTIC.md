@@ -1,7 +1,6 @@
 ---
 resource_id: "ea3f4d94-fa39-4b87-b5f2-afd7d238d19e"
-resource_type: "agnostic
-document"
+resource_type: "agnostic_document"
 resource_name: "0AGNOSTIC"
 ---
 # 0AGNOSTIC.md - layer_2_subx2_feature_context_chain_system

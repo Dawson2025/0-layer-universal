@@ -1,7 +1,6 @@
 ---
 resource_id: "d3380c0d-ee3f-4276-aa00-36b932fd2ffe"
-resource_type: "readme
-knowledge"
+resource_type: "readme_knowledge"
 resource_name: "README"
 ---
 # GitHub Integration for AI CLI Tools (Shared)

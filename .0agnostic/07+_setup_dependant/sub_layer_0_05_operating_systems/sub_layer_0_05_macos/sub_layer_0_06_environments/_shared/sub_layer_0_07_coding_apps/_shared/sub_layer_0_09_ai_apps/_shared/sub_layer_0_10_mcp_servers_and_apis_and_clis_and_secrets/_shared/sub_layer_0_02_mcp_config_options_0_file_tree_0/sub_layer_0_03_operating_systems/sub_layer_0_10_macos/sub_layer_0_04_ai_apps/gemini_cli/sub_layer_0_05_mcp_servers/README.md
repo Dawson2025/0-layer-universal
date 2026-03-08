@@ -1,7 +1,6 @@
 ---
 resource_id: "2d2ddb00-391e-4fc0-a31a-d7356aae51b7"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # MCP Servers (gemini_cli on macos)

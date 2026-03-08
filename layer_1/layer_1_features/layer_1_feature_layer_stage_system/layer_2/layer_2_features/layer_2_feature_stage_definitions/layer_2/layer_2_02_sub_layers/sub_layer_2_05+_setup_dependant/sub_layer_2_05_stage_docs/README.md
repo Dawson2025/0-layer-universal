@@ -1,7 +1,6 @@
 ---
 resource_id: "250bd5b4-233e-44e6-a0dc-211e5eda0207"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Stage Documentation

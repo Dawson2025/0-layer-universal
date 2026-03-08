@@ -1,7 +1,6 @@
 ---
 resource_id: "7ee19ea3-d788-4045-ba16-72e010002613"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Learning Feature Documentation

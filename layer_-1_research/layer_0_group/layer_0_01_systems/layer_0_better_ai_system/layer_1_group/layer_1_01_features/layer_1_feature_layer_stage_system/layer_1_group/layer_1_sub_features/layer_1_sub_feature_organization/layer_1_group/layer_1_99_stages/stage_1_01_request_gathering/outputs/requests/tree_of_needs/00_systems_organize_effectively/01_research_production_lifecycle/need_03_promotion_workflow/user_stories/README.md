@@ -1,7 +1,6 @@
 ---
 resource_id: "f6d9ce96-1243-45ae-9fe7-a623951e3a76"
-resource_type: "readme
-output"
+resource_type: "readme_output"
 resource_name: "README"
 ---
 # User Stories — Promotion Workflow

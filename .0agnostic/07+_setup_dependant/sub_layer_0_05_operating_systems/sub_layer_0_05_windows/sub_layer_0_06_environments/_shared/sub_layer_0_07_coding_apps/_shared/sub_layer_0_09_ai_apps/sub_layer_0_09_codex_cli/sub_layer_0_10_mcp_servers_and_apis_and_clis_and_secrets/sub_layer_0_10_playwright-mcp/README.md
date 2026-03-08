@@ -1,7 +1,6 @@
 ---
 resource_id: "1e8e194c-0dcc-4623-872f-cfef26f3a9af"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # playwright-mcp (codex_cli on windows)

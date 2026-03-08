@@ -1,7 +1,6 @@
 ---
 resource_id: "9799aad2-4e43-44aa-937c-79404861bf3d"
-resource_type: "agnostic
-document"
+resource_type: "agnostic_document"
 resource_name: "0AGNOSTIC"
 ---
 # memory_system — Stage 04: Design

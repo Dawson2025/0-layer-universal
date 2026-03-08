@@ -1,7 +1,6 @@
 ---
 resource_id: "00f0e3ee-2b85-44a7-9553-ee44c79cce00"
-resource_type: "readme
-rule"
+resource_type: "readme_rule"
 resource_name: "README"
 ---
 # Universal AI Agent Instructions

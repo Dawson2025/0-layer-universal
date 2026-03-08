@@ -1,7 +1,6 @@
 ---
 resource_id: "19f0b606-69bd-4229-9f1a-3c669f47e48a"
-resource_type: "readme
-output"
+resource_type: "readme_output"
 resource_name: "README"
 ---
 # Avenue Benchmarking -- Requirements Index

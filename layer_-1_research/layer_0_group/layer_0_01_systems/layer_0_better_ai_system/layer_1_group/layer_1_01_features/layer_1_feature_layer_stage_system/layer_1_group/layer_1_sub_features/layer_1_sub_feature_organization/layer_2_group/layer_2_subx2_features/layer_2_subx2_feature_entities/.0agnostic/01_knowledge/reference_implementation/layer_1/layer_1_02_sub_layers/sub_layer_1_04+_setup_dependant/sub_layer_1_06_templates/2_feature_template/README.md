@@ -1,7 +1,6 @@
 ---
 resource_id: "f8befdc2-aeea-4949-9720-a56f9427ff0e"
-resource_type: "readme
-knowledge"
+resource_type: "readme_knowledge"
 resource_name: "README"
 ---
 # Feature Layer Template (2.x, zero-padded)

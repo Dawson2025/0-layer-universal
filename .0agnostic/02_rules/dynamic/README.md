@@ -1,7 +1,6 @@
 ---
 resource_id: "74f051e3-95f3-4cd2-8162-c6b3c3353679"
-resource_type: "readme
-rule"
+resource_type: "readme_rule"
 resource_name: "README"
 ---
 # Dynamic Rules

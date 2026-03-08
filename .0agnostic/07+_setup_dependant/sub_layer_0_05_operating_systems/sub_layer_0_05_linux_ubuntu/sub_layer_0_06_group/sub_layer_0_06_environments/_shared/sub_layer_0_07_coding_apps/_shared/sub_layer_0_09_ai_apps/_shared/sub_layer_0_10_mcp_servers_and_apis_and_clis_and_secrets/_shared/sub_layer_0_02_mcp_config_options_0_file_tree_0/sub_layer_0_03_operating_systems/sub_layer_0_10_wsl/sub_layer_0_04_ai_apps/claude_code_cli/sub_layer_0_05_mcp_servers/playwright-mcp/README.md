@@ -1,7 +1,6 @@
 ---
 resource_id: "abd2cd43-b31f-422d-a00d-9c87b7dc23d6"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Playwright MCP (Claude Code CLI on WSL/WSLg)

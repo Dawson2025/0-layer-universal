@@ -1,7 +1,6 @@
 ---
 resource_id: "b0843957-ca79-4165-b466-9dfd045663de"
-resource_type: "agnostic
-document"
+resource_type: "agnostic_document"
 resource_name: "0AGNOSTIC"
 ---
 # context_chain_system — Stage 09: Fixing

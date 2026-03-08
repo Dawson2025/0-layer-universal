@@ -1,7 +1,6 @@
 ---
 resource_id: "c2c4e9cb-d089-4a19-ad7b-32d9884c9b53"
-resource_type: "readme
-output"
+resource_type: "readme_output"
 resource_name: "README"
 ---
 # Three-Tier Delegation -- User Stories Index

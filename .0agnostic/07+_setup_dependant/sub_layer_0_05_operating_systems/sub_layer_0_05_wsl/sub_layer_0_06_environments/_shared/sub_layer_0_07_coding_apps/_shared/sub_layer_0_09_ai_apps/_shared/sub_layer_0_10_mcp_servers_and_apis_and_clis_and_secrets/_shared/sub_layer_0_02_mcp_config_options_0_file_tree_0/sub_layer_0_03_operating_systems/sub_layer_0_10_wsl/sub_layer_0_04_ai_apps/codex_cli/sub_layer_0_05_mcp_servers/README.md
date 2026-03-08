@@ -1,7 +1,6 @@
 ---
 resource_id: "0d4fdb8d-c637-473c-9548-37ad0e440433"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # MCP Servers (Codex CLI on WSL)

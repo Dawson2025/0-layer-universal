@@ -1,7 +1,6 @@
 ---
 resource_id: "5ed1e737-83fd-4da7-b49b-61c35c10c072"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # MCP Servers (cursor_agent on macos)

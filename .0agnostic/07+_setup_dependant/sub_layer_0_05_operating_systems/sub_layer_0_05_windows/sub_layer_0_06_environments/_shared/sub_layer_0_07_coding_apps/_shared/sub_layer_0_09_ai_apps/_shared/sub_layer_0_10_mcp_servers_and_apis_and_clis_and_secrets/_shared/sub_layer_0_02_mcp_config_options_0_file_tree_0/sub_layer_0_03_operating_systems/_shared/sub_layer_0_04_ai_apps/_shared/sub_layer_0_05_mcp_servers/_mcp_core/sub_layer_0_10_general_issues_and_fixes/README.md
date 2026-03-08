@@ -1,7 +1,6 @@
 ---
 resource_id: "872c1f0e-26c4-4b42-a072-a6022ec41a64"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # General Issues & Fixes (Cross-Server)

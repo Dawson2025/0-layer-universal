@@ -1,7 +1,6 @@
 ---
 resource_id: "c42d8cf4-12a5-4421-878a-93a60ae29392"
-resource_type: "agnostic
-document"
+resource_type: "agnostic_document"
 resource_name: "0AGNOSTIC"
 ---
 # 0AGNOSTIC.md - layer_1_sub_feature_audio

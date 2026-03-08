@@ -1,7 +1,6 @@
 ---
 resource_id: "2469b75a-ace6-405f-be25-93d9c22b11fa"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # 2.00 AI Manager System - Coding Challenges Feature

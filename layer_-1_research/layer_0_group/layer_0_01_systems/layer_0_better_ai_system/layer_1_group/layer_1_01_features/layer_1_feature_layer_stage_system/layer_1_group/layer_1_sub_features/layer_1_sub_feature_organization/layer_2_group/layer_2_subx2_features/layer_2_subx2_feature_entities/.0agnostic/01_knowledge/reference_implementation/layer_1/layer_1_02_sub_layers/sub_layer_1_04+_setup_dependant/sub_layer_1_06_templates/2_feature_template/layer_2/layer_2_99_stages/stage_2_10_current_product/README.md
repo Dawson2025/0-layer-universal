@@ -1,7 +1,6 @@
 ---
 resource_id: "a2c77896-a432-4f0d-aa03-819c5c3e42fc"
-resource_type: "readme
-knowledge"
+resource_type: "readme_knowledge"
 resource_name: "README"
 ---
 # Current Product

@@ -1,7 +1,6 @@
 ---
 resource_id: "5c0dc9f4-16ca-4d94-914c-7c20a477a285"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Meta-Intelligent Universal Orchestration System

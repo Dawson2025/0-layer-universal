@@ -1,7 +1,6 @@
 ---
 resource_id: "c479e09a-c94a-4a89-bb88-b961ee09d6a6"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Component Manager Agent (Template)

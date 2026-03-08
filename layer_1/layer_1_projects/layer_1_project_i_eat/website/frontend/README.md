@@ -1,7 +1,6 @@
 ---
 resource_id: "2495cf4b-c219-442f-9559-41ce16582ffd"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Website Frontend README

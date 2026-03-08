@@ -1,7 +1,6 @@
 ---
 resource_id: "d0d25c4d-382b-47af-99f0-06bccd758e5e"
-resource_type: "readme
-output"
+resource_type: "readme_output"
 resource_name: "README"
 ---
 # Systems Organize Effectively

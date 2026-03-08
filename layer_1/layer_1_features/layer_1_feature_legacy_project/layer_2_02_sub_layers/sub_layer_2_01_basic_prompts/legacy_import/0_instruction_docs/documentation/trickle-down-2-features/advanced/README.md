@@ -1,7 +1,6 @@
 ---
 resource_id: "35257404-8093-48b0-ae5e-b30a394dfd1d"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Advanced Features Documentation

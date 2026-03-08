@@ -1,7 +1,6 @@
 ---
 resource_id: "da9293aa-7834-4848-9cad-b00efdcb49a8"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # 11_archives Stage Scripts

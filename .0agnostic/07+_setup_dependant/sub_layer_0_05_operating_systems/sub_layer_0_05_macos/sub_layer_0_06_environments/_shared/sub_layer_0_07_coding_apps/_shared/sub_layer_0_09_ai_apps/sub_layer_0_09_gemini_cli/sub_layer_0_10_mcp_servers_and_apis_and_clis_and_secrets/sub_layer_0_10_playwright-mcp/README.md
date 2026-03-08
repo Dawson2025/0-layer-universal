@@ -1,7 +1,6 @@
 ---
 resource_id: "84219976-22d8-4043-bbee-2626529ed302"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # playwright-mcp (gemini_cli on macos)

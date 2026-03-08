@@ -1,7 +1,6 @@
 ---
 resource_id: "653420f3-2e86-471e-a442-15c7f0c0df52"
-resource_type: "agnostic
-document"
+resource_type: "agnostic_document"
 resource_name: "0AGNOSTIC"
 ---
 # 0AGNOSTIC.md — sub_layer_0_10_05_agent_setup

@@ -1,7 +1,6 @@
 ---
 resource_id: "70deb470-da80-45c9-b136-a90ee1d5a5f1"
-resource_type: "agnostic
-document"
+resource_type: "agnostic_document"
 resource_name: "0AGNOSTIC"
 ---
 # ═══ STATIC CONTEXT (always loaded) ═══

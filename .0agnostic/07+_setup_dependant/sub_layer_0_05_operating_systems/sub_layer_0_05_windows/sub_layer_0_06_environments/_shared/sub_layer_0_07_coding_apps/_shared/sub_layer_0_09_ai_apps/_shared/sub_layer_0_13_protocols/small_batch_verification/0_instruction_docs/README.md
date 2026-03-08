@@ -1,7 +1,6 @@
 ---
 resource_id: "3e26b07a-971d-45e9-b82b-b462c6201ab2"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 <!-- section_id: "7573a024-d471-4d94-91bc-c6d13397fcc8" -->

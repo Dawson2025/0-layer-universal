@@ -1,7 +1,6 @@
 ---
 resource_id: "201a152d-c58a-4cb8-af81-1850ee450a81"
-resource_type: "agnostic
-document"
+resource_type: "agnostic_document"
 resource_name: "0AGNOSTIC"
 ---
 # dynamic_memory — Stage 05: design

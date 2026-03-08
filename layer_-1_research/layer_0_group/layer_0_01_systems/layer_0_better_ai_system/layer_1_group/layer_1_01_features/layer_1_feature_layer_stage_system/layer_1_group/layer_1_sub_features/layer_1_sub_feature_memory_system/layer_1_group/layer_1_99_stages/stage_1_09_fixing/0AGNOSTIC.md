@@ -1,7 +1,6 @@
 ---
 resource_id: "f8d96297-5fab-4723-904d-2a7598a8c543"
-resource_type: "agnostic
-document"
+resource_type: "agnostic_document"
 resource_name: "0AGNOSTIC"
 ---
 # memory_system — Stage 09: fixing

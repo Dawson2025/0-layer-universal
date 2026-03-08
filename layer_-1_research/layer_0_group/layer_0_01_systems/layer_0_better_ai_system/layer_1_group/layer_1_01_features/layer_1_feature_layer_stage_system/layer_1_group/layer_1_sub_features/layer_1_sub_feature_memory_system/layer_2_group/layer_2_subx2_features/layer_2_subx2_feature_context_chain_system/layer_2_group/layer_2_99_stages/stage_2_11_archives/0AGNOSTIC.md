@@ -1,7 +1,6 @@
 ---
 resource_id: "6993ef95-0c47-477f-96e8-cd0f79377c4d"
-resource_type: "agnostic
-document"
+resource_type: "agnostic_document"
 resource_name: "0AGNOSTIC"
 ---
 # context_chain_system — Stage 11: Archives

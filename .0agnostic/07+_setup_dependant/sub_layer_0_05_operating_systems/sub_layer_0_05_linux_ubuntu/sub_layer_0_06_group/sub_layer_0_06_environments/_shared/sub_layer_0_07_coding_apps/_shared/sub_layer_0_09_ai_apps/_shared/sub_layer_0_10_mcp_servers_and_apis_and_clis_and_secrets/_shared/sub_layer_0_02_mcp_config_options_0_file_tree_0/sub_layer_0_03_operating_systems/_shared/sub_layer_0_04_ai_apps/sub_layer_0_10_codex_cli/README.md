@@ -1,7 +1,6 @@
 ---
 resource_id: "86c47180-fafd-4271-9d18-2452d13e15d5"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Codex CLI MCP Setup

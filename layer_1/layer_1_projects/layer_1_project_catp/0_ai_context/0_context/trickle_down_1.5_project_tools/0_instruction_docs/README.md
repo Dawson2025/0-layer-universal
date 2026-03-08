@@ -1,7 +1,6 @@
 ---
 resource_id: "618e2bb6-ca76-47c8-908c-d20a720f60be"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Configure Firebase Authorized Domains (CI)

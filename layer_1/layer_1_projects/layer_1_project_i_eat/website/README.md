@@ -1,7 +1,6 @@
 ---
 resource_id: "2ecda3b2-d165-4fac-9d26-237ed6fb9ccb"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # React + Vite

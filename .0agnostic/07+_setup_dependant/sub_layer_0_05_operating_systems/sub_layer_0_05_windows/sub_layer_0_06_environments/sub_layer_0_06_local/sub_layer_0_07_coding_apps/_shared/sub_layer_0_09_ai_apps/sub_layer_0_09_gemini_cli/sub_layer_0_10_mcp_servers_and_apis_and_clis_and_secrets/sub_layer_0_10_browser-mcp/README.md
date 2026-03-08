@@ -1,7 +1,6 @@
 ---
 resource_id: "03fac412-e0a3-48ba-aeac-a00001247950"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # browser-mcp (gemini_cli on windows)

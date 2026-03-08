@@ -1,7 +1,6 @@
 ---
 resource_id: "fbca1e2b-2a69-49b9-b75f-4bc96106bb7a"
-resource_type: "agnostic
-document"
+resource_type: "agnostic_document"
 resource_name: "0AGNOSTIC"
 ---
 # navigation — Stage 10: current_product

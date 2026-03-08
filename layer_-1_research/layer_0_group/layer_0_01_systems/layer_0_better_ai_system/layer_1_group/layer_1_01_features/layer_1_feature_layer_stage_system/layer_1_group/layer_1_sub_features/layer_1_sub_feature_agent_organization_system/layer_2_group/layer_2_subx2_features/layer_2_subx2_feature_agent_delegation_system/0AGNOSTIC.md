@@ -1,7 +1,6 @@
 ---
 resource_id: "88ec146f-1434-4978-a06a-7453d95cd148"
-resource_type: "agnostic
-document"
+resource_type: "agnostic_document"
 resource_name: "0AGNOSTIC"
 ---
 # agent_delegation_system — Layer 2 Sub-Feature

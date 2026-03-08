@@ -1,7 +1,6 @@
 ---
 resource_id: "47f5b7d9-1993-4e3f-86b2-17d1ba53722f"
-resource_type: "agnostic
-document"
+resource_type: "agnostic_document"
 resource_name: "0AGNOSTIC"
 ---
 # 0AGNOSTIC.md - layer_3_subx3_feature_context_loading

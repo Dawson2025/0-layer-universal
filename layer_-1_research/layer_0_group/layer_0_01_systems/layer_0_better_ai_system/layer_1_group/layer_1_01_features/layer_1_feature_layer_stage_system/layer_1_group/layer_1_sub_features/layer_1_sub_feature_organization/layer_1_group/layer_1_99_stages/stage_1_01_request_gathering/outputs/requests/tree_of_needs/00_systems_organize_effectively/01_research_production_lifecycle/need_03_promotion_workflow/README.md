@@ -1,7 +1,6 @@
 ---
 resource_id: "f3a1cb07-bd54-4a9a-9919-094dce8b1f87"
-resource_type: "readme
-output"
+resource_type: "readme_output"
 resource_name: "README"
 ---
 # Need: Promotion Workflow

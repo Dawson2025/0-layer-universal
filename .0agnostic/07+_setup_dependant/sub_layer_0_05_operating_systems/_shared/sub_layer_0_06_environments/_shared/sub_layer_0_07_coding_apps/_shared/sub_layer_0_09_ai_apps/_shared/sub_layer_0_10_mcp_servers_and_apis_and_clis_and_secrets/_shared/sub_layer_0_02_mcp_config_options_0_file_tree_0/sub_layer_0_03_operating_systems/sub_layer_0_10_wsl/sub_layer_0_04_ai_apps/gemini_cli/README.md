@@ -1,7 +1,6 @@
 ---
 resource_id: "ac8ed5a9-f99c-4a0b-be1f-251acede261a"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Gemini CLI MCP Setup (WSL)

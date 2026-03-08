@@ -1,7 +1,6 @@
 ---
 resource_id: "a26950b2-d2e9-4ea0-bb8f-65b10cdf855d"
-resource_type: "agnostic
-document"
+resource_type: "agnostic_document"
 resource_name: "0AGNOSTIC"
 ---
 # memory_system — Stage 11: archives

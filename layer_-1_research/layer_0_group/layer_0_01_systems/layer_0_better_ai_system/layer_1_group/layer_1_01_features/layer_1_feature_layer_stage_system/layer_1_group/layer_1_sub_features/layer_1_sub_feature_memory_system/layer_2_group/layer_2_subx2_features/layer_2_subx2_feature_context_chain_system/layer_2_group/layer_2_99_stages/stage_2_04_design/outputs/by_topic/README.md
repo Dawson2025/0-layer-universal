@@ -1,7 +1,6 @@
 ---
 resource_id: "be52261a-719f-4e34-8742-73c6f9c4f593"
-resource_type: "readme
-output"
+resource_type: "readme_output"
 resource_name: "README"
 ---
 # Stage 3.04 Design — By Topic Index

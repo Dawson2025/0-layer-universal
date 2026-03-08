@@ -1,7 +1,6 @@
 ---
 resource_id: "2009ddbb-63f0-4f2d-a916-df8db9a52c9c"
-resource_type: "agnostic
-document"
+resource_type: "agnostic_document"
 resource_name: "0AGNOSTIC"
 ---
 # context_chain_system — Stage 10: Current Product

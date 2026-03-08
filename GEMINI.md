@@ -2,8 +2,7 @@
 
 ---
 resource_id: "6512d4dd-e3d9-4286-b7c4-48d54da4cf6d"
-resource_type: "agnostic
-document"
+resource_type: "agnostic_document"
 resource_name: "0AGNOSTIC"
 ---
 # 0_layer_universal - Agnostic Identity

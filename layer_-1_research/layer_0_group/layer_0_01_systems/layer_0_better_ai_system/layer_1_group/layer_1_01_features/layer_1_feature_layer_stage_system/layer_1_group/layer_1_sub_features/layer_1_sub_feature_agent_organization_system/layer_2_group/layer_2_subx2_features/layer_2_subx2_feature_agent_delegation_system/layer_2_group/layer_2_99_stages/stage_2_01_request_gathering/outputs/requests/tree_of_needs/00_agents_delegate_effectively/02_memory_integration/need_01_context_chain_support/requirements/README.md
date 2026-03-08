@@ -1,7 +1,6 @@
 ---
 resource_id: "7aef6c1d-a038-4c10-91fc-513a7b2edf6b"
-resource_type: "readme
-output"
+resource_type: "readme_output"
 resource_name: "README"
 ---
 # Context Chain Support -- Requirements Index

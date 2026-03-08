@@ -1,7 +1,6 @@
 ---
 resource_id: "c3d5ecb5-7169-4551-a613-d1e54e553c13"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # 0.02 MCP Config Options (Traversable File Tree)

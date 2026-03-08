@@ -1,7 +1,6 @@
 ---
 resource_id: "d1b7c122-84db-4e05-a262-0600c03ea2d7"
-resource_type: "readme
-knowledge"
+resource_type: "readme_knowledge"
 resource_name: "README"
 ---
 # Current Product - System Management

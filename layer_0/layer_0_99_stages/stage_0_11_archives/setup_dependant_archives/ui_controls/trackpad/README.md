@@ -1,7 +1,6 @@
 ---
 resource_id: "4e93604f-f92e-4e06-ae1a-08a8ce8424c4"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Trackpad Configuration

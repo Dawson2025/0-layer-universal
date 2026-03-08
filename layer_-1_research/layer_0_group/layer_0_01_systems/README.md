@@ -1,7 +1,6 @@
 ---
 resource_id: "220d8b2c-fc51-4b2d-a42b-b365ad2124ac"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # layer_0_01_systems — Layer 0 System Research

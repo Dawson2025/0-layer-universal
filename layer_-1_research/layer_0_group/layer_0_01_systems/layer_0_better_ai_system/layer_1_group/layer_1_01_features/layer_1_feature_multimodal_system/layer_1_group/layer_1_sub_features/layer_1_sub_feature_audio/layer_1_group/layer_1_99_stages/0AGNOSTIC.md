@@ -1,7 +1,6 @@
 ---
 resource_id: "4d16ba69-508d-45a2-b2ff-e857ad5edec0"
-resource_type: "agnostic
-document"
+resource_type: "agnostic_document"
 resource_name: "0AGNOSTIC"
 ---
 # 0AGNOSTIC.md - layer_1_99_stages (Audio Sub-Feature)

@@ -1,7 +1,6 @@
 ---
 resource_id: "4fc1a3fb-94ca-45b3-b89b-d1ef62e8281f"
-resource_type: "readme
-output"
+resource_type: "readme_output"
 resource_name: "README"
 ---
 # Level 02: Stage Reports → Layer Reports

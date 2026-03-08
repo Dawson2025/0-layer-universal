@@ -1,7 +1,6 @@
 ---
 resource_id: "e9688528-9029-4e62-8d8c-b985d17bec1b"
-resource_type: "readme
-output"
+resource_type: "readme_output"
 resource_name: "README"
 ---
 # AI Apps (04_ai_apps)

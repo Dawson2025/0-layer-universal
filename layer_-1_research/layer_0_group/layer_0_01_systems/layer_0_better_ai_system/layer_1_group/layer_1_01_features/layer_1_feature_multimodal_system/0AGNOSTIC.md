@@ -1,7 +1,6 @@
 ---
 resource_id: "e9644de5-d9ad-43d2-bfb6-a44c7a62e978"
-resource_type: "agnostic
-document"
+resource_type: "agnostic_document"
 resource_name: "0AGNOSTIC"
 ---
 # 0AGNOSTIC.md - layer_1_feature_multimodal_system

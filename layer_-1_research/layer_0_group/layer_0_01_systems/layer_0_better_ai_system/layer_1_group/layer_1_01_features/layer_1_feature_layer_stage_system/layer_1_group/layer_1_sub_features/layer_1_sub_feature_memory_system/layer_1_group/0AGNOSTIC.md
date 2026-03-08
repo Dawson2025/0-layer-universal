@@ -1,7 +1,6 @@
 ---
 resource_id: "85fe7c4f-b9bd-45e1-bcac-31ba41272eca"
-resource_type: "agnostic
-document"
+resource_type: "agnostic_document"
 resource_name: "0AGNOSTIC"
 ---
 # memory_system — Layer 1 Group

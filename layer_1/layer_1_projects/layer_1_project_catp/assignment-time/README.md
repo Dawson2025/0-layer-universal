@@ -1,7 +1,6 @@
 ---
 resource_id: "d0a61515-9f45-4d03-8e00-197a1306a995"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # assignment-time

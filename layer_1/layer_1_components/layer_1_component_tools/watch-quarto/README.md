@@ -1,7 +1,6 @@
 ---
 resource_id: "64a8639c-b493-4d3e-9d0c-08d0396e55f3"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Quarto Watcher Helper

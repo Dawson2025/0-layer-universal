@@ -1,7 +1,6 @@
 ---
 resource_id: "e50888f5-e5ce-4da0-976b-dd4030b4a30b"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # sub_layer_0_13_protocols

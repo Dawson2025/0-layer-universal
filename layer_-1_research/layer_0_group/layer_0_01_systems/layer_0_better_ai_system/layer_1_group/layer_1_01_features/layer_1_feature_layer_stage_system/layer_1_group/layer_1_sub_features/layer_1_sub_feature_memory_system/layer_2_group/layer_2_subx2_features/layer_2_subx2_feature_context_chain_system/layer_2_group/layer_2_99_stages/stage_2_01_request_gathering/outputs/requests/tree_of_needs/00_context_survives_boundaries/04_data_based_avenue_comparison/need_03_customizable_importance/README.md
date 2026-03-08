@@ -1,7 +1,6 @@
 ---
 resource_id: "ceadad1c-f5ba-493a-a327-7aee3e09e89f"
-resource_type: "readme
-output"
+resource_type: "readme_output"
 resource_name: "README"
 ---
 # Need: Customizable Importance Weighting

@@ -1,7 +1,6 @@
 ---
 resource_id: "509fcacc-95b0-46fd-b07e-75c90682aaeb"
-resource_type: "readme
-knowledge"
+resource_type: "readme_knowledge"
 resource_name: "README"
 ---
 # Handoff Documentation

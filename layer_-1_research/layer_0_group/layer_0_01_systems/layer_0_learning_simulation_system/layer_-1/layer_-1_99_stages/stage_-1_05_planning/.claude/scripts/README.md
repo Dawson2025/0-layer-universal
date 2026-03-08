@@ -1,7 +1,6 @@
 ---
 resource_id: "20384ecb-0d44-4c77-b52c-15aa84f8a79f"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # 04_planning Stage Scripts

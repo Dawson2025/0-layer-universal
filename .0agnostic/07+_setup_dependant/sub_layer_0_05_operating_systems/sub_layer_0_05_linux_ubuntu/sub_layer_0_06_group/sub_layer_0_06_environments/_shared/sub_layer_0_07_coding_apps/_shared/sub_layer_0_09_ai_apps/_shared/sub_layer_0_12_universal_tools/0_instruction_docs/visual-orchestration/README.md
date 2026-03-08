@@ -1,7 +1,6 @@
 ---
 resource_id: "72560c8d-b493-4ca4-a72b-a3754e116f71"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Visual Orchestration Framework

@@ -1,7 +1,6 @@
 ---
 resource_id: "4ed1df12-d651-4376-bdac-b205885b395c"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Gemini CLI MCP Setup (macOS)

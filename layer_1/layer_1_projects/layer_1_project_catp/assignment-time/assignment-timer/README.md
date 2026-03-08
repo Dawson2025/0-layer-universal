@@ -1,7 +1,6 @@
 ---
 resource_id: "21c42889-b511-4677-be3c-7c99bb0cd13b"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Assignment Timer CLI

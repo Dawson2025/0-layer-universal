@@ -1,7 +1,6 @@
 ---
 resource_id: "2be48daf-c1ad-4fb1-8ee3-4cef5f50d0a0"
-resource_type: "readme
-knowledge"
+resource_type: "readme_knowledge"
 resource_name: "README"
 ---
 # 1_scenario_based

@@ -1,7 +1,6 @@
 ---
 resource_id: "645cf795-ec75-4419-8124-e29a5e509a04"
-resource_type: "readme
-output"
+resource_type: "readme_output"
 resource_name: "README"
 ---
 # Scored Context Retrieval -- Requirements Index

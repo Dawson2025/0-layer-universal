@@ -1,7 +1,6 @@
 ---
 resource_id: "da981a20-9f24-40cb-8119-f927930f4cf1"
-resource_type: "readme
-output"
+resource_type: "readme_output"
 resource_name: "README"
 ---
 # Root Need: Agents Delegate Effectively

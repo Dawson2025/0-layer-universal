@@ -1,7 +1,6 @@
 ---
 resource_id: "ba685cab-b086-4355-b54c-d71cb8202b73"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # chrome-devtools-mcp (gemini_cli on linux_ubuntu)

@@ -1,7 +1,6 @@
 ---
 resource_id: "abe3fdb3-ba2e-455d-85c1-c83c08e2c665"
-resource_type: "readme
-knowledge"
+resource_type: "readme_knowledge"
 resource_name: "README"
 ---
 # sub_layer_1.04

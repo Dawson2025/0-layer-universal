@@ -1,7 +1,6 @@
 ---
 resource_id: "a8c00e5e-f3b7-466b-aef9-048329cda29d"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Project Analysis Framework

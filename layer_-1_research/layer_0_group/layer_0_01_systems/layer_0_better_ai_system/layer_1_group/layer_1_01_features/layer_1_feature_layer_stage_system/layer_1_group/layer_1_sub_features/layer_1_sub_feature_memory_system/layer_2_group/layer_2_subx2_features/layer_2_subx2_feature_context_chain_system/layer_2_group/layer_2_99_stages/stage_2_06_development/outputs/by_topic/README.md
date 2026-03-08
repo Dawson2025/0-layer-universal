@@ -1,7 +1,6 @@
 ---
 resource_id: "0078cbc9-76eb-4ade-bdac-474cb597e717"
-resource_type: "readme
-output"
+resource_type: "readme_output"
 resource_name: "README"
 ---
 # Stage 2.06 Development Outputs

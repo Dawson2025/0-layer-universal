@@ -1,7 +1,6 @@
 ---
 resource_id: "c307da2f-6f76-4af2-ba38-08014567faaf"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Features Archive

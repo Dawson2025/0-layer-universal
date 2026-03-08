@@ -1,7 +1,6 @@
 ---
 resource_id: "6cea9df1-c16f-4361-8b16-a3255d7915f1"
-resource_type: "readme
-output"
+resource_type: "readme_output"
 resource_name: "README"
 ---
 # Stage 2.05 Planning Outputs

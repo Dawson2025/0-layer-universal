@@ -1,7 +1,6 @@
 ---
 resource_id: "7c764f61-e039-4867-88ef-697f8117b221"
-resource_type: "agnostic
-document"
+resource_type: "agnostic_document"
 resource_name: "0AGNOSTIC"
 ---
 # navigation — Handoff Documents

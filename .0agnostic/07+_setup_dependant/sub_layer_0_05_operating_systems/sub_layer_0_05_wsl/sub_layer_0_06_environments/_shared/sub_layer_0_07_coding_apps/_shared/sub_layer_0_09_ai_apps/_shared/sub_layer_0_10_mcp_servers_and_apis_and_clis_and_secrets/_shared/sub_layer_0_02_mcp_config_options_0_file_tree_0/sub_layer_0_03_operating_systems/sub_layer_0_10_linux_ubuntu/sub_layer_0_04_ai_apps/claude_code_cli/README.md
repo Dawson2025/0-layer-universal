@@ -1,7 +1,6 @@
 ---
 resource_id: "c0b76801-1237-4934-a009-c02636ec3627"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Claude Code CLI MCP Setup (Ubuntu)

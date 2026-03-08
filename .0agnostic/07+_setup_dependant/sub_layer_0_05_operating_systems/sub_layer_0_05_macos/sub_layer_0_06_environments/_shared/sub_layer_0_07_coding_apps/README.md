@@ -1,7 +1,6 @@
 ---
 resource_id: "cbdc921f-30e7-482b-bf27-152ba49d18b9"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Coding Apps / IDEs

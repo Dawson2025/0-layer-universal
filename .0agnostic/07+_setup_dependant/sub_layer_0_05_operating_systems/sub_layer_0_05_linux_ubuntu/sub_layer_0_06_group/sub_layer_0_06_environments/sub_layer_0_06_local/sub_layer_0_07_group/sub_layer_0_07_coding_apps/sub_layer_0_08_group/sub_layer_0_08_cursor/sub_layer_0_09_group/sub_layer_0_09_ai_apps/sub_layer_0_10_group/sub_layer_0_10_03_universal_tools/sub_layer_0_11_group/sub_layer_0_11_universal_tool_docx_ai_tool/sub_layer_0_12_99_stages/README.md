@@ -1,7 +1,6 @@
 ---
 resource_id: "5d834ebd-b895-41d3-bae1-89dcf989e534"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # sub_layer_0_12_99_stages (Tool Development)

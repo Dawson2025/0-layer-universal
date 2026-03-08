@@ -1,7 +1,6 @@
 ---
 resource_id: "be0ec746-95ff-4f61-8a9d-422f812e7257"
-resource_type: "readme
-output"
+resource_type: "readme_output"
 resource_name: "README"
 ---
 # Multi-Agent Context Patterns

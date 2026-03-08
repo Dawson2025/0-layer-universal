@@ -1,7 +1,6 @@
 ---
 resource_id: "46383945-1129-44ea-847b-50163fe936b8"
-resource_type: "readme
-knowledge"
+resource_type: "readme_knowledge"
 resource_name: "README"
 ---
 # 00_stage_registry Workflow References

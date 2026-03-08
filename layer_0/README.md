@@ -1,7 +1,6 @@
 ---
 resource_id: "8f11590f-7c3f-4457-9c73-2eba2942f644"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 cl# layer_0 (Layer 0) – Operational Overlay

@@ -1,7 +1,6 @@
 ---
 resource_id: "c813bdbb-8c45-4322-9ee9-ad3ba632e79a"
-resource_type: "agnostic
-document"
+resource_type: "agnostic_document"
 resource_name: "0AGNOSTIC"
 ---
 # context_chain_system — Stage 03: Instructions

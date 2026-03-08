@@ -1,7 +1,6 @@
 ---
 resource_id: "ca47121d-ad62-4cf1-890b-f273220df00d"
-resource_type: "readme
-output"
+resource_type: "readme_output"
 resource_name: "README"
 ---
 # Testing Output Taxonomy (Canonical)

@@ -1,7 +1,6 @@
 ---
 resource_id: "519eb071-2beb-4846-926e-82bc70a946c1"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Cross-OS Setup (_shared)

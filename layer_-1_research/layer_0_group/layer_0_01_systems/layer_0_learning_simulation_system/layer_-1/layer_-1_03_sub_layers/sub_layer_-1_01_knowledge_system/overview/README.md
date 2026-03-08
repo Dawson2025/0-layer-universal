@@ -1,7 +1,6 @@
 ---
 resource_id: "524c389a-d7fe-48d6-a4e1-7c6c07314ff0"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Learning Simulation System - Overview

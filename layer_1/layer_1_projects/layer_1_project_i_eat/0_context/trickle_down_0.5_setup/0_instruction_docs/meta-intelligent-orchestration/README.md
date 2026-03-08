@@ -1,7 +1,6 @@
 ---
 resource_id: "0c691ff2-18e1-42e0-bb3b-dee0f5a67a6e"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Meta-Intelligent Orchestration Setup System

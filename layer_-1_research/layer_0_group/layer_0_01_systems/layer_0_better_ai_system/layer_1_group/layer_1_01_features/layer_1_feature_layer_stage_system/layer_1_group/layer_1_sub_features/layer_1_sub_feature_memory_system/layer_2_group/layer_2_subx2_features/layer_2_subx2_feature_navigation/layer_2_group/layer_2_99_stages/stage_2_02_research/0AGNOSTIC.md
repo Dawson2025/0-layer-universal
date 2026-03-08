@@ -1,7 +1,6 @@
 ---
 resource_id: "a08452eb-a491-49fd-a037-b4c2e6335c50"
-resource_type: "agnostic
-document"
+resource_type: "agnostic_document"
 resource_name: "0AGNOSTIC"
 ---
 # navigation — Stage 02: research

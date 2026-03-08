@@ -1,7 +1,6 @@
 ---
 resource_id: "6f90ee3f-baca-436f-9d04-37124ea8999a"
-resource_type: "readme
-output"
+resource_type: "readme_output"
 resource_name: "README"
 ---
 # The 0Agnostic System

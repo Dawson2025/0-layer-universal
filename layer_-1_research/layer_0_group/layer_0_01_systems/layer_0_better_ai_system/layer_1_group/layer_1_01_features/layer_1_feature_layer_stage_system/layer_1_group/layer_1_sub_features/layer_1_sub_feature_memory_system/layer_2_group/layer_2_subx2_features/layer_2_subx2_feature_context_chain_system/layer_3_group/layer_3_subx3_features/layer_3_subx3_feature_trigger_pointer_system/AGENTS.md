@@ -2,8 +2,7 @@
 
 ---
 resource_id: "c40951ce-b9a2-4c62-b5d1-7578710436aa"
-resource_type: "agnostic
-document"
+resource_type: "agnostic_document"
 resource_name: "0AGNOSTIC"
 ---
 # 0AGNOSTIC.md - layer_3_subx3_feature_trigger_pointer_system

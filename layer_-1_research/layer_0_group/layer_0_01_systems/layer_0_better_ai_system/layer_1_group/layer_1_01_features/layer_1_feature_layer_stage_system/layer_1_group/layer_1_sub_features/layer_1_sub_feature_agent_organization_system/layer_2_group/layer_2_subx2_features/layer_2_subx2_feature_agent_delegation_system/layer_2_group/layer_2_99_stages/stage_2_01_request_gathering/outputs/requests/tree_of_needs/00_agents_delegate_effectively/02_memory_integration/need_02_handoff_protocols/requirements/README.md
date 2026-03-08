@@ -1,7 +1,6 @@
 ---
 resource_id: "0e02947e-659a-4ded-a0ae-c81e8b893b14"
-resource_type: "readme
-output"
+resource_type: "readme_output"
 resource_name: "README"
 ---
 # Handoff Protocols -- Requirements Index

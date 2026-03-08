@@ -1,7 +1,6 @@
 ---
 resource_id: "55158857-718b-4c9c-9616-2e59b19f77ac"
-resource_type: "readme
-output"
+resource_type: "readme_output"
 resource_name: "README"
 ---
 # Core System (01-05) Overview

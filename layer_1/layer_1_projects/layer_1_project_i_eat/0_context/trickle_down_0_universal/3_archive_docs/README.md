@@ -1,7 +1,6 @@
 ---
 resource_id: "e9bbd7b5-0d76-4b0c-a444-eec672a1997c"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Universal Instructions Archive

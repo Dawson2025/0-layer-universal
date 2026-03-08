@@ -1,7 +1,6 @@
 ---
 resource_id: "9d6ca36e-bc1d-4273-b29b-7e55d77ed447"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # MCP Server Automation System

@@ -1,7 +1,6 @@
 ---
 resource_id: "3cd0d95a-c134-4c17-b2cf-664495631eb2"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Better AI System — Research Project

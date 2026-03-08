@@ -1,7 +1,6 @@
 ---
 resource_id: "d80dbcc5-2e77-4fa9-b688-271674afb375"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # MCP Servers Configuration for Claude Code CLI in WSL

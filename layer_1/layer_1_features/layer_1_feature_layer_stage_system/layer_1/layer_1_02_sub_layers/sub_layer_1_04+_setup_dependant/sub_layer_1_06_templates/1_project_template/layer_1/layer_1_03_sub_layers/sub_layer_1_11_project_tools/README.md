@@ -1,7 +1,6 @@
 ---
 resource_id: "10e33a57-fc98-4fc9-9b02-5e3314c03055"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # sub_layer_1.12

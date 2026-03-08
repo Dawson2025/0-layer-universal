@@ -1,7 +1,6 @@
 ---
 resource_id: "66652938-570c-4eb7-a5cc-d5fc37709a0c"
-resource_type: "readme
-output"
+resource_type: "readme_output"
 resource_name: "README"
 ---
 # by_topic (Legacy Compatibility)

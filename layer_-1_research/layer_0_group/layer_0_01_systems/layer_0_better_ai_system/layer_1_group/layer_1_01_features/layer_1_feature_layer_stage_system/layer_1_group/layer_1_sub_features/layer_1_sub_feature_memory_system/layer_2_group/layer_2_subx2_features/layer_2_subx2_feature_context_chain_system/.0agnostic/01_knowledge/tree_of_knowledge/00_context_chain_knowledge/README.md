@@ -1,7 +1,6 @@
 ---
 resource_id: "218b7644-f28f-4857-997f-53d27b5d672a"
-resource_type: "readme
-knowledge"
+resource_type: "readme_knowledge"
 resource_name: "README"
 ---
 # Context Chain Knowledge Tree

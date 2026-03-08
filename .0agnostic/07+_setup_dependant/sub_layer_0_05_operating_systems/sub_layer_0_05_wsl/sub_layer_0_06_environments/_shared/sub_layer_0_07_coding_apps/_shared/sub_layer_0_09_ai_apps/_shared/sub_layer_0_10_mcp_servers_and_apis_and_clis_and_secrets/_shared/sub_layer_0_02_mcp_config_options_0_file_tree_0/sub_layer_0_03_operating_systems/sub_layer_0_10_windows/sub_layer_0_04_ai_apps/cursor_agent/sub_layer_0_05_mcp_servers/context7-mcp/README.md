@@ -1,7 +1,6 @@
 ---
 resource_id: "cfeec41b-e9f3-4874-9824-026c2e2d0dec"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # context7-mcp (cursor_agent on windows)

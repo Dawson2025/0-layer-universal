@@ -1,7 +1,6 @@
 ---
 resource_id: "8d995d18-fc26-4a44-bf00-9abd2dad1eb0"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # macOS AI Apps (MCP Setup Runbooks)

@@ -1,7 +1,6 @@
 ---
 resource_id: "63802c72-d205-4b9e-9032-d3a1e0894e14"
-resource_type: "readme
-output"
+resource_type: "readme_output"
 resource_name: "README"
 ---
 # Chain Validation Enhancement -- User Stories Index

@@ -1,7 +1,6 @@
 ---
 resource_id: "fcb31b03-ffbe-4765-b968-65bcc10cf004"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Stage 0.02 Planning - AI Agent System

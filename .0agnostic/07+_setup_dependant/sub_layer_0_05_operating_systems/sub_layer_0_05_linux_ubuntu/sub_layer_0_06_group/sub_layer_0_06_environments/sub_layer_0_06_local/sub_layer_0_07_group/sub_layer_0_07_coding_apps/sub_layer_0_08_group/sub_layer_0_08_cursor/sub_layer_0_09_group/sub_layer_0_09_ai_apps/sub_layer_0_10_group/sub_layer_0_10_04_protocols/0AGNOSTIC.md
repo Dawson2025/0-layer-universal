@@ -1,7 +1,6 @@
 ---
 resource_id: "1511a418-f4d5-4c30-b971-412f00c4d533"
-resource_type: "agnostic
-document"
+resource_type: "agnostic_document"
 resource_name: "0AGNOSTIC"
 ---
 # 0AGNOSTIC.md — sub_layer_0_10_04_protocols

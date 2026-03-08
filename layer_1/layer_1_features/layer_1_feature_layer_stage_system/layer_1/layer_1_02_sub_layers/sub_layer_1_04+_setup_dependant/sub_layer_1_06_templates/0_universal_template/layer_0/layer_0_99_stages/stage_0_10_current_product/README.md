@@ -1,7 +1,6 @@
 ---
 resource_id: "c5bb19ad-1b38-4ab5-983b-0cdbc5379dfa"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Current Product

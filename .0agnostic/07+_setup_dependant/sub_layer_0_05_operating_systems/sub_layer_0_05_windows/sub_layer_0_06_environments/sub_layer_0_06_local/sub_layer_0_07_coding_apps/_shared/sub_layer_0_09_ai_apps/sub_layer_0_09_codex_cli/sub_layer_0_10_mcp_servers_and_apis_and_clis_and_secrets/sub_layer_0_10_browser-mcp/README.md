@@ -1,7 +1,6 @@
 ---
 resource_id: "e9ebd5ac-351c-424f-9e6b-c0a32119a70c"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # browser-mcp (codex_cli on windows)

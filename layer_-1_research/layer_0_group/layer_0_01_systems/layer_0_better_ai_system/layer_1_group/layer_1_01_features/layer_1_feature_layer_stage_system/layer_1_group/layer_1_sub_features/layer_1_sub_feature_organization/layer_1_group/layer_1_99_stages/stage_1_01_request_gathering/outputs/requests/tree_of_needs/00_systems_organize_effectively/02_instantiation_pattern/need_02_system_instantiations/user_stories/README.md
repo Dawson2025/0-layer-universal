@@ -1,7 +1,6 @@
 ---
 resource_id: "04654d6f-728c-49c9-aea4-675294b1a86b"
-resource_type: "readme
-output"
+resource_type: "readme_output"
 resource_name: "README"
 ---
 # User Stories — System Instantiations

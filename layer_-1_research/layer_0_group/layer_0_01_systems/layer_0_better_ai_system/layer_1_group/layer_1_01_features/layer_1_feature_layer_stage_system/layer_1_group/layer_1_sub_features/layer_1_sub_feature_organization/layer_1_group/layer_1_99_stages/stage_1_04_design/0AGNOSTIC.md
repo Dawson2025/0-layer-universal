@@ -1,7 +1,6 @@
 ---
 resource_id: "94eb49e1-0062-48b3-85db-4c9ef2cb078b"
-resource_type: "agnostic
-document"
+resource_type: "agnostic_document"
 resource_name: "0AGNOSTIC"
 ---
 # organization — Stage 04: Design

@@ -1,7 +1,6 @@
 ---
 resource_id: "e7c8f672-8f11-481a-9694-ee2897847873"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Content Management Feature Documentation

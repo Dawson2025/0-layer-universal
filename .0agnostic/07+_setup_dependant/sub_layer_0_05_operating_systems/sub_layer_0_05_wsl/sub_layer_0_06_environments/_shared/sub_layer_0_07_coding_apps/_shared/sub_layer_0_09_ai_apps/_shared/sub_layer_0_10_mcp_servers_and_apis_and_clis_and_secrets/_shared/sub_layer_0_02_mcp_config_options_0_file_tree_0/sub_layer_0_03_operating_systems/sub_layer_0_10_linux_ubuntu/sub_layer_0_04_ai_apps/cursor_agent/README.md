@@ -1,7 +1,6 @@
 ---
 resource_id: "ad0e5800-a364-409b-8bab-96d00edde906"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Cursor MCP Setup (Ubuntu)

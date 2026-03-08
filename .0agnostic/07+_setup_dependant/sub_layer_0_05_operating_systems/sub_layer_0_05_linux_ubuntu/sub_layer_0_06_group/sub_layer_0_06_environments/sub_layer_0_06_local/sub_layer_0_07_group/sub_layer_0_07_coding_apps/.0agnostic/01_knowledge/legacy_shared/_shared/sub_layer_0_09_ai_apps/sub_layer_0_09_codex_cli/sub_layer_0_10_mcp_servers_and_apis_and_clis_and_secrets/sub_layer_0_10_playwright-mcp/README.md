@@ -1,7 +1,6 @@
 ---
 resource_id: "a8b25a2f-a24a-4848-8e2d-16268e97a177"
-resource_type: "readme
-knowledge"
+resource_type: "readme_knowledge"
 resource_name: "README"
 ---
 # playwright-mcp (codex_cli on linux_ubuntu)

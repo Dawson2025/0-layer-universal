@@ -1,7 +1,6 @@
 ---
 resource_id: "9c46aa7f-79a2-47cb-9af9-17f750124ca2"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # 0.01 Core System (MCP Servers & Tools Setup)

@@ -1,7 +1,6 @@
 ---
 resource_id: "44f1d7ca-d828-408e-bf33-8c5f5dfa92da"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Layer 0 (Universal) AI Manager System

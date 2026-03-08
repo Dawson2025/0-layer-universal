@@ -1,7 +1,6 @@
 ---
 resource_id: "e36a6646-a24c-4027-83c0-0377d9f43259"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # browser-mcp (cursor_agent on linux_ubuntu)

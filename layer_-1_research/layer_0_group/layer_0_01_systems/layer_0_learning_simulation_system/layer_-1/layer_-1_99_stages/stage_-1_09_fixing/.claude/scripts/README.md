@@ -1,7 +1,6 @@
 ---
 resource_id: "4d0aabbd-4e75-4cbc-ab8f-216dac7d123d"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # 09_fixing Stage Scripts

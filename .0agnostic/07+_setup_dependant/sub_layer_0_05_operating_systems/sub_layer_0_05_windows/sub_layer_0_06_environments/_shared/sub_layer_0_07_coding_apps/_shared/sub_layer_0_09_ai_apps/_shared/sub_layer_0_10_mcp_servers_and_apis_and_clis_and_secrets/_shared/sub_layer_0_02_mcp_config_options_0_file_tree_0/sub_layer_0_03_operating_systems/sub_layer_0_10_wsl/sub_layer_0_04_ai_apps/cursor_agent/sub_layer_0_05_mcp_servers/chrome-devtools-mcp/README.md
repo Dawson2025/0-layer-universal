@@ -1,7 +1,6 @@
 ---
 resource_id: "68e03f33-63e3-404c-98c2-bb38fde44513"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # chrome-devtools-mcp (cursor_agent on wsl)

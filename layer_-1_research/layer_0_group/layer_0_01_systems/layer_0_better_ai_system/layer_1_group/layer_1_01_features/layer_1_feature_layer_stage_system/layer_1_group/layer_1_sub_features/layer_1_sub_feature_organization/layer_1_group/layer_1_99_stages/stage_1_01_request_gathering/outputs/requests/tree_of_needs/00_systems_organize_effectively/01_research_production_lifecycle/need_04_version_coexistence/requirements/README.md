@@ -1,7 +1,6 @@
 ---
 resource_id: "3e2aed18-c227-4fcc-8143-dacbbdd57a3b"
-resource_type: "readme
-output"
+resource_type: "readme_output"
 resource_name: "README"
 ---
 # Requirements — Version Coexistence

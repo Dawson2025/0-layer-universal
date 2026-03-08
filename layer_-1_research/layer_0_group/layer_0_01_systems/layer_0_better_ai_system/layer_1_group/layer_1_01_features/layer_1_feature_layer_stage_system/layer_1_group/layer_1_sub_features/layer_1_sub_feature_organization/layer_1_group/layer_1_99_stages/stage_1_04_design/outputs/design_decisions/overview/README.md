@@ -1,7 +1,6 @@
 ---
 resource_id: "2579ad15-52f5-4bb6-af10-55a7ad333692"
-resource_type: "readme
-output"
+resource_type: "readme_output"
 resource_name: "README"
 ---
 # Design Decisions Overview — Organization Sub-Feature

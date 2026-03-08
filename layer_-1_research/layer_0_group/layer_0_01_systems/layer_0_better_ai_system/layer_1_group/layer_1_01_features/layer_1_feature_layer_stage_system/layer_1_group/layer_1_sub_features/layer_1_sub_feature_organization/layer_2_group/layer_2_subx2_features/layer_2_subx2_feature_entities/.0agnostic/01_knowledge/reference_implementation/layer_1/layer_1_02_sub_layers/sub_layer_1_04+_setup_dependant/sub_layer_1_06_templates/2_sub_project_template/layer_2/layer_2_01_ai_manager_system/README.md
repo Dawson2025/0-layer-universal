@@ -1,7 +1,6 @@
 ---
 resource_id: "d1fa1c50-8fc1-4c9b-a2c9-2ecc7314f0cb"
-resource_type: "readme
-knowledge"
+resource_type: "readme_knowledge"
 resource_name: "README"
 ---
 # Project Manager Agent (Template)

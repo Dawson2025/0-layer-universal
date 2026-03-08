@@ -1,7 +1,6 @@
 ---
 resource_id: "45aa82e3-bb13-469d-bb71-ee2769fc35f4"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Changes

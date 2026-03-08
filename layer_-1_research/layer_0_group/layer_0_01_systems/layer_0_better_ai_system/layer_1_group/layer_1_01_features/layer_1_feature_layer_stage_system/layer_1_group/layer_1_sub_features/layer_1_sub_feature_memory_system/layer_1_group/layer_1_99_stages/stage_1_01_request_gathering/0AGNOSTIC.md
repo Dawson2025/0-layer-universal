@@ -1,7 +1,6 @@
 ---
 resource_id: "5ddcf13a-057f-4cef-ab5f-a7720602d97c"
-resource_type: "agnostic
-document"
+resource_type: "agnostic_document"
 resource_name: "0AGNOSTIC"
 ---
 # memory_system — Stage 01: request_gathering

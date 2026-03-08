@@ -1,7 +1,6 @@
 ---
 resource_id: "577bda88-4255-47db-8f9e-bfac2c2d63f7"
-resource_type: "agnostic
-document"
+resource_type: "agnostic_document"
 resource_name: "0AGNOSTIC"
 ---
 # 0AGNOSTIC.md - layer_0_group

@@ -1,7 +1,6 @@
 ---
 resource_id: "ac628f3e-f71e-41ff-a000-40374d356be8"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # context7-mcp (claude_code_cli on macos)

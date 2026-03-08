@@ -1,7 +1,6 @@
 ---
 resource_id: "a3f8e675-c176-4758-9b25-9b56f3ac973b"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Universal Tools

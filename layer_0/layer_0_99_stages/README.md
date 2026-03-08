@@ -1,7 +1,6 @@
 ---
 resource_id: "680e4295-3b60-4c68-be96-a9f44216b43a"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Staging System Quick Reference

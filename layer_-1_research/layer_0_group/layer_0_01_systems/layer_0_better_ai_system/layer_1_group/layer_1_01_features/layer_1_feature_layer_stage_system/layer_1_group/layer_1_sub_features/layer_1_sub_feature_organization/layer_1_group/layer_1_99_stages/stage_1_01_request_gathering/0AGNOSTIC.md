@@ -1,7 +1,6 @@
 ---
 resource_id: "81a44911-232c-4960-8235-49725c0b7094"
-resource_type: "agnostic
-document"
+resource_type: "agnostic_document"
 resource_name: "0AGNOSTIC"
 ---
 # organization — Stage 01: Request Gathering

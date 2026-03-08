@@ -1,7 +1,6 @@
 ---
 resource_id: "164cbd87-4db1-4183-a642-5e332b56aeda"
-resource_type: "agnostic
-document"
+resource_type: "agnostic_document"
 resource_name: "0AGNOSTIC"
 ---
 # navigation — Stage 04: planning

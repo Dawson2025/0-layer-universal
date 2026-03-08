@@ -1,7 +1,6 @@
 ---
 resource_id: "32f410af-210e-48f0-8f1a-dae93bfd9109"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Framework Documentation

@@ -1,7 +1,6 @@
 ---
 resource_id: "bf721645-d214-4a39-8549-75a25681e53c"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # layer_-1_school_agent_system_development

@@ -1,7 +1,6 @@
 ---
 resource_id: "4ff4141b-32aa-406f-b3d4-12834e35b4a9"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Software Engineering Knowledge System

@@ -1,7 +1,6 @@
 ---
 resource_id: "6c7ca0c5-589b-440a-9967-8c677e19c97a"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Framework Templates

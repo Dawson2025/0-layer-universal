@@ -1,7 +1,6 @@
 ---
 resource_id: "7c5a1a18-a4c4-467c-8972-95033e26df44"
-resource_type: "readme
-knowledge"
+resource_type: "readme_knowledge"
 resource_name: "README"
 ---
 # Branch 01: Delegation Model

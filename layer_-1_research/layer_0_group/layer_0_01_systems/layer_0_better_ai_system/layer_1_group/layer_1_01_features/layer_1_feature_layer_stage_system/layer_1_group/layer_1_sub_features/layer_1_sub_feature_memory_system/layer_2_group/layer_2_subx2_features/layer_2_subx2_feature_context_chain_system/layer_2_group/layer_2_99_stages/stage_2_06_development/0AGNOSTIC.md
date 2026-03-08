@@ -1,7 +1,6 @@
 ---
 resource_id: "a0f977ac-a073-4b96-b82d-231e0287fb95"
-resource_type: "agnostic
-document"
+resource_type: "agnostic_document"
 resource_name: "0AGNOSTIC"
 ---
 # context_chain_system — Stage 06: Development

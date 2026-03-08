@@ -1,7 +1,6 @@
 ---
 resource_id: "3edb2f14-b386-40f5-beb4-48d1f18438fd"
-resource_type: "readme
-output"
+resource_type: "readme_output"
 resource_name: "README"
 ---
 # Need: Comprehensive Operation Measurement

@@ -1,7 +1,6 @@
 ---
 resource_id: "54414974-b5dd-4545-af54-f19759d5d2e5"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Cursor MCP Setup (macOS)

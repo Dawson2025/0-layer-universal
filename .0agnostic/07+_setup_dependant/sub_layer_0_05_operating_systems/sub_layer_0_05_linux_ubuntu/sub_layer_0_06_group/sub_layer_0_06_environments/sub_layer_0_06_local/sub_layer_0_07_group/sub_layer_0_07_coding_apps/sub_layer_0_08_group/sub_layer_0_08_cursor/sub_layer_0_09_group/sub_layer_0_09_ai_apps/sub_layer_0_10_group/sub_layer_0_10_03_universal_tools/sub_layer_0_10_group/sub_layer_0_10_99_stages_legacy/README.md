@@ -1,7 +1,6 @@
 ---
 resource_id: "b4a7670b-3b87-44fd-bcd9-fda6c9752591"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # sub_layer_0_12_universal_tools (Stages)

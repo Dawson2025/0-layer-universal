@@ -1,7 +1,6 @@
 ---
 resource_id: "3a94f059-6e54-4f4e-9815-f36a5f5ab1cf"
-resource_type: "agnostic
-document"
+resource_type: "agnostic_document"
 resource_name: "0AGNOSTIC"
 ---
 # navigation — AI Manager System

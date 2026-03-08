@@ -1,7 +1,6 @@
 ---
 resource_id: "c7a6f9bf-f7fc-40d1-b8e6-54f2a35bfc85"
-resource_type: "readme
-output"
+resource_type: "readme_output"
 resource_name: "README"
 ---
 # Stage Reports -- Requirements Index

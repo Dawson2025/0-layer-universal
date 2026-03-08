@@ -1,7 +1,6 @@
 ---
 resource_id: "a3d471b3-437a-4d85-b4c4-afc9cbe33a04"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # chrome-devtools-mcp (gemini_cli on wsl)

@@ -1,7 +1,6 @@
 ---
 resource_id: "d865cac6-e2ad-4f98-a892-610c885e0232"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Firebase Instance Tools

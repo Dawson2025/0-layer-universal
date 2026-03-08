@@ -1,7 +1,6 @@
 ---
 resource_id: "3c0c840c-e88e-498d-8e01-7f6f558140bb"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Windows MCP Notes

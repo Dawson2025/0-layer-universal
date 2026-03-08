@@ -1,7 +1,6 @@
 ---
 resource_id: "8df131e3-cc78-4391-b6ff-44e18892884b"
-resource_type: "readme
-rule"
+resource_type: "readme_rule"
 resource_name: "README"
 ---
 # Universal Rules Sublayer - Stage Structure

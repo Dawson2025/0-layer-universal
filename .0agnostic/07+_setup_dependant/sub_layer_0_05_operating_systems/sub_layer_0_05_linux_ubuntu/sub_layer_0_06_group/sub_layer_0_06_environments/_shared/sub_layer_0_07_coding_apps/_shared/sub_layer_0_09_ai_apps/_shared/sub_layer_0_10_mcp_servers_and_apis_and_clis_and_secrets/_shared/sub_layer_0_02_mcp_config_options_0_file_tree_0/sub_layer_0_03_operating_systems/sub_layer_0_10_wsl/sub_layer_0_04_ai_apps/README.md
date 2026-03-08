@@ -1,7 +1,6 @@
 ---
 resource_id: "00138df8-7ea6-4c66-8f3d-dbcaadcc34a8"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # WSL AI Apps (MCP Setup Runbooks)

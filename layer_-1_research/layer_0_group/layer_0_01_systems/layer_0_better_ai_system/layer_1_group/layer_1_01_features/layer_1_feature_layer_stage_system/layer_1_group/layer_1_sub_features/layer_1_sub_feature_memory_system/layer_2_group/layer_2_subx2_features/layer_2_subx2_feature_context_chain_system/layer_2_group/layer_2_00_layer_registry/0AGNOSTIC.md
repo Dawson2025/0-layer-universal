@@ -1,7 +1,6 @@
 ---
 resource_id: "9691fc04-818a-4ab3-8c30-2a72a611a35d"
-resource_type: "agnostic
-document"
+resource_type: "agnostic_document"
 resource_name: "0AGNOSTIC"
 ---
 # context_chain_system — Layer Registry

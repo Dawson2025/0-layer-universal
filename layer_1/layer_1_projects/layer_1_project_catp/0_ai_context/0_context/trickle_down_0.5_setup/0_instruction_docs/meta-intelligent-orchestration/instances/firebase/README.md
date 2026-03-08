@@ -1,7 +1,6 @@
 ---
 resource_id: "573fd172-99e5-41c8-988f-f7075af51fd8"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Firebase Orchestration System

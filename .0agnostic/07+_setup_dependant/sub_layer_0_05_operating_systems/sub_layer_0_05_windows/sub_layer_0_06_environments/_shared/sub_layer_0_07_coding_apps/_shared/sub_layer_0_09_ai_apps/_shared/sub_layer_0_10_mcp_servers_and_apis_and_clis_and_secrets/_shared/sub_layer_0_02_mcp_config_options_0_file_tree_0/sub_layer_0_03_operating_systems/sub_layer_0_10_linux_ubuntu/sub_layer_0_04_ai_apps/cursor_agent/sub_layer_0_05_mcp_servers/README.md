@@ -1,7 +1,6 @@
 ---
 resource_id: "69e20e13-b0d2-416a-add8-9a09920d1e30"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # MCP Servers (cursor_agent on linux_ubuntu)

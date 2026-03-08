@@ -1,7 +1,6 @@
 ---
 resource_id: "c9d63975-df00-4e34-8429-77fceff2c3e8"
-resource_type: "agnostic
-document"
+resource_type: "agnostic_document"
 resource_name: "0AGNOSTIC"
 ---
 # 0AGNOSTIC.md - layer_3_subx3_feature_chain_visualization

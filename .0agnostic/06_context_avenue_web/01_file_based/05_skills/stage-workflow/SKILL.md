@@ -1,7 +1,6 @@
 ---
 resource_id: "33bde27b-a7a5-46ad-bcb3-d9ea37e5662a"
-resource_type: "skill
-document"
+resource_type: "skill_document"
 resource_name: "SKILL"
 ---
 # Skill: Stage Workflow

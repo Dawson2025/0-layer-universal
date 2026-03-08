@@ -1,7 +1,6 @@
 ---
 resource_id: "aa0a94d3-c42b-48ca-bbf5-9f177389b6cf"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Feature Layer Template (2.x, zero-padded)

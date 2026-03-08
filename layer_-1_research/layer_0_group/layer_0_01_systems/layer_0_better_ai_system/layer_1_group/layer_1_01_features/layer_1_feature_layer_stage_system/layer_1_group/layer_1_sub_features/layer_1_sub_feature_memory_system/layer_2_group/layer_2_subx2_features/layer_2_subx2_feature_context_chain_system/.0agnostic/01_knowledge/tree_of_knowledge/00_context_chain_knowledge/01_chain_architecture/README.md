@@ -1,7 +1,6 @@
 ---
 resource_id: "1717cf48-bbf0-4a0e-a813-906ac945e173"
-resource_type: "readme
-knowledge"
+resource_type: "readme_knowledge"
 resource_name: "README"
 ---
 # Branch: Chain Architecture

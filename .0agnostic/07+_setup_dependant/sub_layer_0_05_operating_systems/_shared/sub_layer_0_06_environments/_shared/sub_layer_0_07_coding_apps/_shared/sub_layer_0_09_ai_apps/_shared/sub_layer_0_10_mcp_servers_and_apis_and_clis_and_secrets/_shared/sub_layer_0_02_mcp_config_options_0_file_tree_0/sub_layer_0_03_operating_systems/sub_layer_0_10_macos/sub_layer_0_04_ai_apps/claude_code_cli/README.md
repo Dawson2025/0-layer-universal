@@ -1,7 +1,6 @@
 ---
 resource_id: "d2610bc7-0e18-43a3-8c56-43443b554905"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Claude Code CLI MCP Setup (macOS)

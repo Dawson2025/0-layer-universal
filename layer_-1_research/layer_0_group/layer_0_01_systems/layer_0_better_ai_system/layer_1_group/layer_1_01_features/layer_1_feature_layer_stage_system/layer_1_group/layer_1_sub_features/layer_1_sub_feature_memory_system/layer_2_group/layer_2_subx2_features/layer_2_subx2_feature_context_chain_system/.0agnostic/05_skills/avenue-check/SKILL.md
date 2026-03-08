@@ -1,7 +1,6 @@
 ---
 resource_id: "9cf6e0c7-cce0-4195-b646-d2668f7fae2c"
-resource_type: "skill
-document"
+resource_type: "skill_document"
 resource_name: "SKILL"
 ---
 # Skill: Avenue Check

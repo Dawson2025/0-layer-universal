@@ -1,7 +1,6 @@
 ---
 resource_id: "c429600f-bfd5-410f-a622-b644c50612b8"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # sub_layer_0_13_protocols (Stages)

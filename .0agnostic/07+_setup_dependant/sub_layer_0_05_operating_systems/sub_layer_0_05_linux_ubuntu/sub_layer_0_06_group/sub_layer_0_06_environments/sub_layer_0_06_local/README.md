@@ -1,7 +1,6 @@
 ---
 resource_id: "e3d6d66d-78a0-47e7-b16c-025bf84421fd"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Local Ubuntu Environment

@@ -1,7 +1,6 @@
 ---
 resource_id: "4d54a7ce-f86a-4f08-949b-6aff33ee89ad"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Development Workflow Tools

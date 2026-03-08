@@ -1,7 +1,6 @@
 ---
 resource_id: "a5e7a9a1-215f-4610-84f1-ea6931495004"
-resource_type: "readme
-output"
+resource_type: "readme_output"
 resource_name: "README"
 ---
 # Level 03: Layer Reports → Entity Reports

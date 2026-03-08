@@ -1,7 +1,6 @@
 ---
 resource_id: "904ddf77-2897-4e07-8385-0db86ef5dc47"
-resource_type: "agnostic
-document"
+resource_type: "agnostic_document"
 resource_name: "0AGNOSTIC"
 ---
 # Claude in Chrome MCP Server

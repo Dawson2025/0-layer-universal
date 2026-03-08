@@ -1,7 +1,6 @@
 ---
 resource_id: "4ab47b24-0e74-44c9-9ab3-310240c53785"
-resource_type: "readme
-output"
+resource_type: "readme_output"
 resource_name: "README"
 ---
 # Need: Staleness Detection

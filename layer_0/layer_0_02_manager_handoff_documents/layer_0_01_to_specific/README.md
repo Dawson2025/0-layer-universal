@@ -1,7 +1,6 @@
 ---
 resource_id: "26f24b6b-aeb3-4842-a07a-56d39d9b2b25"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Layer 0.01 to Specific Handoff

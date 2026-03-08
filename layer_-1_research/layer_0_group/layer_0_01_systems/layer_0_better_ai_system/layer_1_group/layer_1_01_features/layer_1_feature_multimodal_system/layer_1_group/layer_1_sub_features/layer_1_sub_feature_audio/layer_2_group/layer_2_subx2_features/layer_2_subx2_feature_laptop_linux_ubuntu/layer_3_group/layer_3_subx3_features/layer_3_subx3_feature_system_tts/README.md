@@ -1,7 +1,6 @@
 ---
 resource_id: "010d7bfa-8369-4053-af71-01cbf0d1818c"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # System TTS Sub-Feature

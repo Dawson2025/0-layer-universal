@@ -1,7 +1,6 @@
 ---
 resource_id: "8facd0f8-3c82-47dd-b4f6-b29d2e4c3459"
-resource_type: "readme
-knowledge"
+resource_type: "readme_knowledge"
 resource_name: "README"
 ---
 # Framework Scripts

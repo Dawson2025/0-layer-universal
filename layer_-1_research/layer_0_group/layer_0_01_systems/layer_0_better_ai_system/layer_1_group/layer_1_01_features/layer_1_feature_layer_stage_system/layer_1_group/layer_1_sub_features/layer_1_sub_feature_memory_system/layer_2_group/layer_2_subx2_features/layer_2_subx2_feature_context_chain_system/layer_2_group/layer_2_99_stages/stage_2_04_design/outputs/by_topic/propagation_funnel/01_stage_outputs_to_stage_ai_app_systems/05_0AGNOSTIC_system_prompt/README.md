@@ -1,7 +1,6 @@
 ---
 resource_id: "caa5cffa-a258-483f-bcb7-7454c8bb1ba0"
-resource_type: "readme
-output"
+resource_type: "readme_output"
 resource_name: "README"
 ---
 # Stage 02: 0AGNOSTIC System Prompt Generation

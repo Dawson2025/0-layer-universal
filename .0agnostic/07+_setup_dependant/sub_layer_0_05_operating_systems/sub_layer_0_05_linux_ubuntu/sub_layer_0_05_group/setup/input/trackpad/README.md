@@ -1,7 +1,6 @@
 ---
 resource_id: "b0f70c2a-5338-455a-bb6d-f1cf4196e7e5"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Trackpad Configuration for Ubuntu Linux

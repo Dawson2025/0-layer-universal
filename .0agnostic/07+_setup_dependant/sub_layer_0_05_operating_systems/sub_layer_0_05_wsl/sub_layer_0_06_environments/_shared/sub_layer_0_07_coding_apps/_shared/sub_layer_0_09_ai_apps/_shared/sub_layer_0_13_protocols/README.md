@@ -1,7 +1,6 @@
 ---
 resource_id: "0ed19c9d-67bc-4244-8056-66cc2edfca60"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Universal Protocols

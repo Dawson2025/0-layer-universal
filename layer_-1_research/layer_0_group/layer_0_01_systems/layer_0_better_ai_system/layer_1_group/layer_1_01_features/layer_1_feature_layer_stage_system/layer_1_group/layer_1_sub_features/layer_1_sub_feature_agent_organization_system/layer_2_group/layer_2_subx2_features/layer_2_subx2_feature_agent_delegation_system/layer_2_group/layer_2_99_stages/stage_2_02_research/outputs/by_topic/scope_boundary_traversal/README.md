@@ -1,7 +1,6 @@
 ---
 resource_id: "ae2a9e42-20c4-41e4-bcd6-f0533b3ee76b"
-resource_type: "readme
-output"
+resource_type: "readme_output"
 resource_name: "README"
 ---
 # Scope Boundary Traversal Patterns

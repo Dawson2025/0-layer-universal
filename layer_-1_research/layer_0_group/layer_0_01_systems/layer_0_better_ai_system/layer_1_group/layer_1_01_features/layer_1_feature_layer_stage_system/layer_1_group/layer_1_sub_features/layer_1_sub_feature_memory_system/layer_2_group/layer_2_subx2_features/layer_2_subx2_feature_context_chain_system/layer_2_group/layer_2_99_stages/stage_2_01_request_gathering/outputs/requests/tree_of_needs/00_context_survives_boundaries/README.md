@@ -1,7 +1,6 @@
 ---
 resource_id: "c9912856-871c-4860-8c72-5c25610e3aeb"
-resource_type: "readme
-output"
+resource_type: "readme_output"
 resource_name: "README"
 ---
 # Root Need: Context Survives Boundaries

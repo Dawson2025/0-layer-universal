@@ -1,7 +1,6 @@
 ---
 resource_id: "419adc6b-1150-42df-8c51-176e7b8ad6c5"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # 0.01 Universal Setup File Tree (Traversable Hierarchy)

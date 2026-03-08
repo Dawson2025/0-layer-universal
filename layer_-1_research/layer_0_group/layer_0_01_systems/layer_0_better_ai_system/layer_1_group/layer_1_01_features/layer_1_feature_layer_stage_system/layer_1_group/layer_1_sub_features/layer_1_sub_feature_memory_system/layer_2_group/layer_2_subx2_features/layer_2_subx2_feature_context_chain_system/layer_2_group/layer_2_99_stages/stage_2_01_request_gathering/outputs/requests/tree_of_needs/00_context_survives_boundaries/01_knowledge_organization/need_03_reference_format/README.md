@@ -1,7 +1,6 @@
 ---
 resource_id: "8be5cb48-1cf6-49ed-8748-12e094c76a75"
-resource_type: "readme
-output"
+resource_type: "readme_output"
 resource_name: "README"
 ---
 # Need: Reference Format Standard

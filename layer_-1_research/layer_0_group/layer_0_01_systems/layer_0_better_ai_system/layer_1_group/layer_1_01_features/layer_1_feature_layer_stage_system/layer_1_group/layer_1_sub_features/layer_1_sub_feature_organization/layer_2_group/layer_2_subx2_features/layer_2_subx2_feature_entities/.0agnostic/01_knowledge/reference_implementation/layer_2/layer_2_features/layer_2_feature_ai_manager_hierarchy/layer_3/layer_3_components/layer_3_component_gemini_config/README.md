@@ -1,7 +1,6 @@
 ---
 resource_id: "5b3c4e5b-b352-4e84-a862-4af225df209b"
-resource_type: "readme
-knowledge"
+resource_type: "readme_knowledge"
 resource_name: "README"
 ---
 # Gemini Config Component

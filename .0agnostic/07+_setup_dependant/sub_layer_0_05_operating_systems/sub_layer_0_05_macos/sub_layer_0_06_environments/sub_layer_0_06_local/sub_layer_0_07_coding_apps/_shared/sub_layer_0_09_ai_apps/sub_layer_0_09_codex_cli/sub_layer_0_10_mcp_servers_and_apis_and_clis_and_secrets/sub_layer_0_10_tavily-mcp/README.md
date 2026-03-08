@@ -1,7 +1,6 @@
 ---
 resource_id: "24556366-4859-4f82-ad81-56c72cff27ac"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # tavily-mcp (codex_cli on macos)

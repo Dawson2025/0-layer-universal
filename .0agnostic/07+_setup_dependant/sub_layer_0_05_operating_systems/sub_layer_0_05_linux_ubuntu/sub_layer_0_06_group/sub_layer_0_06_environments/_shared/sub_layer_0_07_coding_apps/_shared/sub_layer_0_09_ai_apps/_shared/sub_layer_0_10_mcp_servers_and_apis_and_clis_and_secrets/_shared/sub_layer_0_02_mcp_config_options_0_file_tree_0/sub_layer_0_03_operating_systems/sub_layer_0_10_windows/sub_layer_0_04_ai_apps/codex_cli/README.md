@@ -1,7 +1,6 @@
 ---
 resource_id: "eff2c7c6-e3cd-4fae-bbce-cedea2de5660"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Codex CLI MCP Setup (Windows)

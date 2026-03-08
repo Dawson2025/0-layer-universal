@@ -1,7 +1,6 @@
 ---
 resource_id: "25be6047-be7f-46ad-94e8-74b8fb40f7f6"
-resource_type: "readme
-output"
+resource_type: "readme_output"
 resource_name: "README"
 ---
 # Agent Hierarchy -- Requirements Index

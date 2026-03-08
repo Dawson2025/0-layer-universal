@@ -1,7 +1,6 @@
 ---
 resource_id: "e54296cc-7b07-4743-8487-5a8d980a6909"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Context7 MCP (Codex CLI on WSL)

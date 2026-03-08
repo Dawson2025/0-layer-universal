@@ -1,7 +1,6 @@
 ---
 resource_id: "092a97bb-e311-4232-b268-bde49a59c8ad"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Cursor MCP Setup (Windows)

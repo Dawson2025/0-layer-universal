@@ -1,7 +1,6 @@
 ---
 resource_id: "f2aabe29-7fdd-4057-aea3-6a1a2b6c0fc8"
-resource_type: "readme
-rule"
+resource_type: "readme_rule"
 resource_name: "README"
 ---
 # Rules — Universal Rule System

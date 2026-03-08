@@ -1,7 +1,6 @@
 ---
 resource_id: "228e9246-8fd0-424e-a4a7-c4303453bced"
-resource_type: "agnostic
-document"
+resource_type: "agnostic_document"
 resource_name: "0AGNOSTIC"
 ---
 # dynamic_memory — Stage 09: fixing

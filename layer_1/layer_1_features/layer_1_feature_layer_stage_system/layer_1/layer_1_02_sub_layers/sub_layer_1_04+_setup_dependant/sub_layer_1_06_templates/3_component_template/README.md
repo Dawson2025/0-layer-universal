@@ -1,7 +1,6 @@
 ---
 resource_id: "a6ed3c57-7e5e-4f12-852c-fc7218ce8593"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Component Layer Template (3.x, zero-padded)

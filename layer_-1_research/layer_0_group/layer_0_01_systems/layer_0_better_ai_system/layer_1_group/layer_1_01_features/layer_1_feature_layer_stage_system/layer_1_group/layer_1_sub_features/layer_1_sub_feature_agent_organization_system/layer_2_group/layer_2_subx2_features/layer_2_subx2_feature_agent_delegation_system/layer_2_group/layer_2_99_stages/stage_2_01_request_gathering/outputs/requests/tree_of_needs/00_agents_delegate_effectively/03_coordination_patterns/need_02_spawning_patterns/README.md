@@ -1,7 +1,6 @@
 ---
 resource_id: "10e3c554-bb11-43ec-85d1-dcc327397dae"
-resource_type: "readme
-output"
+resource_type: "readme_output"
 resource_name: "README"
 ---
 # Need: Spawning Patterns

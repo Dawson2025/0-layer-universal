@@ -1,7 +1,6 @@
 ---
 resource_id: "4c05234e-5bf4-42f9-bc90-d60874ae8fb9"
-resource_type: "readme
-output"
+resource_type: "readme_output"
 resource_name: "README"
 ---
 # Customizable Importance -- User Stories Index

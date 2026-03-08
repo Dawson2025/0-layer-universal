@@ -1,7 +1,6 @@
 ---
 resource_id: "e3af68a2-c5c9-43a2-9565-fda6e30062b5"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Authentication Management System

@@ -1,7 +1,6 @@
 ---
 resource_id: "863fa6be-358f-44b7-b0e2-16ba840ee888"
-resource_type: "readme
-output"
+resource_type: "readme_output"
 resource_name: "README"
 ---
 # Requirements — System Instantiations

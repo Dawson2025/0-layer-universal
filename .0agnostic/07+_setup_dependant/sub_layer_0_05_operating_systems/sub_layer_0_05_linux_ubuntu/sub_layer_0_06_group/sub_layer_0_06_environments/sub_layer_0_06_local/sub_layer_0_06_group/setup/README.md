@@ -1,7 +1,6 @@
 ---
 resource_id: "6ea3cb00-a671-4f55-82f9-5d4a6e98b2a7"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Local Environment Setup - Ubuntu Linux

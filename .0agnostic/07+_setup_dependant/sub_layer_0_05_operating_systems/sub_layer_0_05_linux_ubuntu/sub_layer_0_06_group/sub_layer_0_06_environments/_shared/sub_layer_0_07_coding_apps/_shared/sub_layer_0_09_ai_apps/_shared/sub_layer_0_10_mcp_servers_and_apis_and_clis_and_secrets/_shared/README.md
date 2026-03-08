@@ -1,7 +1,6 @@
 ---
 resource_id: "9f4a8a01-29e0-407f-b6af-49588b0a07e9"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # MCP Servers (OS-Specific View)

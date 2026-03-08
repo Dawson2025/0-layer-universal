@@ -1,7 +1,6 @@
 ---
 resource_id: "5feacbb5-00b6-46dc-94e4-b40aa362f27a"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # 11_archives Workflow References

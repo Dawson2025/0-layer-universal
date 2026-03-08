@@ -1,7 +1,6 @@
 ---
 resource_id: "4e72fb64-a33d-4649-a3a1-fceb8fcc667e"
-resource_type: "skill
-document"
+resource_type: "skill_document"
 resource_name: "SKILL"
 ---
 ---

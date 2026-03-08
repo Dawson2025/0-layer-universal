@@ -1,7 +1,6 @@
 ---
 resource_id: "b539e93a-3013-4a6e-a04a-c746a3c08dcf"
-resource_type: "readme
-output"
+resource_type: "readme_output"
 resource_name: "README"
 ---
 # Level 04: Entity Context → AI Apps

@@ -1,7 +1,6 @@
 ---
 resource_id: "0db828f8-1a2f-4dc8-a953-1e383ae7921a"
-resource_type: "readme
-knowledge"
+resource_type: "readme_knowledge"
 resource_name: "README"
 ---
 # Branch: Production Reference

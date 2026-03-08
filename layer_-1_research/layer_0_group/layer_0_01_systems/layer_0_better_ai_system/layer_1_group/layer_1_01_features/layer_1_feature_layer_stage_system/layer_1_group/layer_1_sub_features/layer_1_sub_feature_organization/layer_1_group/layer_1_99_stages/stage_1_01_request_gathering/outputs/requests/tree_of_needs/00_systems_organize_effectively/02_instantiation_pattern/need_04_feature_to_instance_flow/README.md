@@ -1,7 +1,6 @@
 ---
 resource_id: "f86831bf-0dcc-4c64-af6c-15dd68285004"
-resource_type: "readme
-output"
+resource_type: "readme_output"
 resource_name: "README"
 ---
 # Need: Feature to Instance Flow

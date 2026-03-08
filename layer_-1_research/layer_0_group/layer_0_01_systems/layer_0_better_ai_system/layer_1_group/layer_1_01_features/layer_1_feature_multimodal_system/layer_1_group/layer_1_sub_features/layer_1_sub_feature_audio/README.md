@@ -1,7 +1,6 @@
 ---
 resource_id: "364e4bfc-9aef-4aa7-b911-78a5e371056e"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Audio Sub-Feature

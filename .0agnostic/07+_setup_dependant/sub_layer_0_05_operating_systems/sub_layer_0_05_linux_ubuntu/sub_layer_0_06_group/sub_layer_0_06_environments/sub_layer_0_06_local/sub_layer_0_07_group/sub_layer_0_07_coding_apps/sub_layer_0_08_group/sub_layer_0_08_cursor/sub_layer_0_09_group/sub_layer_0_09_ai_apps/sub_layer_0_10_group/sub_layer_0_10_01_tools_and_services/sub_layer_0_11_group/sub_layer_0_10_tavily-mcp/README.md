@@ -1,7 +1,6 @@
 ---
 resource_id: "665aefb1-1307-43bb-a3b6-997231da23a4"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Tavily MCP Server

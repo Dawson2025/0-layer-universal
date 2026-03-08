@@ -1,7 +1,6 @@
 ---
 resource_id: "e7453d96-ed54-4470-b315-c047807dd4ba"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # WSL (Windows Subsystem for Linux) MCP Notes

@@ -1,7 +1,6 @@
 ---
 resource_id: "af551ab3-8096-4453-b291-ae9dd4ea3b95"
-resource_type: "readme
-output"
+resource_type: "readme_output"
 resource_name: "README"
 ---
 # Knowledge Graph -- User Stories Index

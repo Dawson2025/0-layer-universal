@@ -1,7 +1,6 @@
 ---
 resource_id: "56bceab4-8f21-4f07-8ca8-27d0d010b1d1"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # MCP Servers (codex_cli on windows)

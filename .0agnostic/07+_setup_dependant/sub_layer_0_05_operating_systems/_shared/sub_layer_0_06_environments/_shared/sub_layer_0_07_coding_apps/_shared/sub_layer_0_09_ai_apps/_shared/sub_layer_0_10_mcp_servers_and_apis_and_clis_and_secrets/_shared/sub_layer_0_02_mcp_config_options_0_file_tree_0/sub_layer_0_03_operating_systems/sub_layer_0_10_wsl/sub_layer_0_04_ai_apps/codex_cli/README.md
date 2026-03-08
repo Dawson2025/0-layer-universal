@@ -1,7 +1,6 @@
 ---
 resource_id: "3627de7e-f656-46ac-9b77-54dd897d106d"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Codex CLI MCP Setup (WSL)

@@ -1,7 +1,6 @@
 ---
 resource_id: "b7c2e2b7-5a43-4df4-9ceb-f317bdc5647c"
-resource_type: "readme
-output"
+resource_type: "readme_output"
 resource_name: "README"
 ---
 # Need: Agent Context Model

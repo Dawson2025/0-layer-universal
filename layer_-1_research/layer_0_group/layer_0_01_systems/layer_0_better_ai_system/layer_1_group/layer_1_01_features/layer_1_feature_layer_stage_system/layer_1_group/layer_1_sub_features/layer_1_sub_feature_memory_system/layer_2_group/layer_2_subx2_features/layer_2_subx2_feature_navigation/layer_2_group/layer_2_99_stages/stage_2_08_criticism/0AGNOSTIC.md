@@ -1,7 +1,6 @@
 ---
 resource_id: "b5d07b5e-b934-4cf6-977e-7dabdb493048"
-resource_type: "agnostic
-document"
+resource_type: "agnostic_document"
 resource_name: "0AGNOSTIC"
 ---
 # navigation — Stage 08: criticism

@@ -1,7 +1,6 @@
 ---
 resource_id: "d6d4f1e6-9713-408d-a239-85ec3cae7489"
-resource_type: "agnostic
-document"
+resource_type: "agnostic_document"
 resource_name: "0AGNOSTIC"
 ---
 # memory_system — Stage 00: stage_registry

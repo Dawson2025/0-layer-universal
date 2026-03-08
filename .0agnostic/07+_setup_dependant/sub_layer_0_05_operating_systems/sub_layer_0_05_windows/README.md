@@ -1,7 +1,6 @@
 ---
 resource_id: "fce91b90-bd2d-41c4-ba81-72f7d5bab95a"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Windows Setup

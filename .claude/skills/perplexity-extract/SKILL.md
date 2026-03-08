@@ -1,7 +1,6 @@
 ---
 resource_id: "be6caf0c-c399-409b-abb7-4cf4c19608bd"
-resource_type: "skill
-document"
+resource_type: "skill_document"
 resource_name: "SKILL"
 name: perplexity-extract
 description: "Extract structured content and citation source URLs from Perplexity search pages using Claude in Chrome browser automation. Navigates to Perplexity, scrolls to render virtualized content, extracts citations via React fiber traversal, and outputs structured markdown with all source links preserved."

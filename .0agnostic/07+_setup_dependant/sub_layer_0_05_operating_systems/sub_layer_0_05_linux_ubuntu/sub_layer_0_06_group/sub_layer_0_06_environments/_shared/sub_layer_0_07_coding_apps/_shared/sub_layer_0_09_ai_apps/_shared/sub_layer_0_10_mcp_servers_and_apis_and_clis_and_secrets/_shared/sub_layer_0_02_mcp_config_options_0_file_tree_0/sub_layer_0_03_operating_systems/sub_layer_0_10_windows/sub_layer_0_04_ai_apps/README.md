@@ -1,7 +1,6 @@
 ---
 resource_id: "d1e190d3-8482-47b2-a0fe-f1d21af4ecf1"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Windows AI Apps (MCP Setup Runbooks)

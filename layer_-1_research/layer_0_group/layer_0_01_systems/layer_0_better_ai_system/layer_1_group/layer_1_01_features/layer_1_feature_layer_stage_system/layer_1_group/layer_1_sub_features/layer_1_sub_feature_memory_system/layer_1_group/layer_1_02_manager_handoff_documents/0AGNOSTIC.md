@@ -1,7 +1,6 @@
 ---
 resource_id: "48ca4e86-ae35-4461-972a-db8bc9a21269"
-resource_type: "agnostic
-document"
+resource_type: "agnostic_document"
 resource_name: "0AGNOSTIC"
 ---
 # memory_system — Handoff Documents

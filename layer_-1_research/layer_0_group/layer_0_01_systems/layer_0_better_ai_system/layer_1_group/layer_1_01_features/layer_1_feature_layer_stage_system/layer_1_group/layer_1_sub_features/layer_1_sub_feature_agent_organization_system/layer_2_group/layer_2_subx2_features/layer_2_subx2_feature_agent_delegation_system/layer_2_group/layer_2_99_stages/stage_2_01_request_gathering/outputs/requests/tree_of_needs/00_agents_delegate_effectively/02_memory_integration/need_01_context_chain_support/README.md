@@ -1,7 +1,6 @@
 ---
 resource_id: "86d8bc4b-cf9c-4d97-ba84-87328b157de1"
-resource_type: "readme
-output"
+resource_type: "readme_output"
 resource_name: "README"
 ---
 # Need: Context Chain Support

@@ -1,7 +1,6 @@
 ---
 resource_id: "c84c54b7-f094-49e0-a161-2a460f45372a"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Sub Layer 0.06: Environment Setup

@@ -1,7 +1,6 @@
 ---
 resource_id: "2e07eb47-af0e-4446-a1a4-d9a81b79a878"
-resource_type: "readme
-output"
+resource_type: "readme_output"
 resource_name: "README"
 ---
 # User Stories — Feature to Instance Flow

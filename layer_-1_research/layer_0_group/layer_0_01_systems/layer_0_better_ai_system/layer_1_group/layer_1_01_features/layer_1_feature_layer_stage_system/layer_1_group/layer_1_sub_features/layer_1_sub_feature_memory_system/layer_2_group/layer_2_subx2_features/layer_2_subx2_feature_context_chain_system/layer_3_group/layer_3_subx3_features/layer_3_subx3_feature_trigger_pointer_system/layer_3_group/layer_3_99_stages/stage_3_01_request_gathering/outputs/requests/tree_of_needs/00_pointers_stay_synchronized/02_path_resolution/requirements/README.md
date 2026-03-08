@@ -1,7 +1,6 @@
 ---
 resource_id: "d2728874-b50b-4be7-a5fd-9c9234dc3e85"
-resource_type: "readme
-output"
+resource_type: "readme_output"
 resource_name: "README"
 ---
 # Path Resolution -- Requirements Index

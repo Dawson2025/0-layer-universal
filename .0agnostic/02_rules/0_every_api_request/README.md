@@ -1,7 +1,6 @@
 ---
 resource_id: "c78a3d84-4c91-44f4-b5ec-009a7396e981"
-resource_type: "readme
-rule"
+resource_type: "readme_rule"
 resource_name: "README"
 ---
 # Every API Request Rules

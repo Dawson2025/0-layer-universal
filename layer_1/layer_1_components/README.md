@@ -1,7 +1,6 @@
 ---
 resource_id: "fd2b9be5-6f56-4039-a365-d2c927f2330f"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Layer 1 Components

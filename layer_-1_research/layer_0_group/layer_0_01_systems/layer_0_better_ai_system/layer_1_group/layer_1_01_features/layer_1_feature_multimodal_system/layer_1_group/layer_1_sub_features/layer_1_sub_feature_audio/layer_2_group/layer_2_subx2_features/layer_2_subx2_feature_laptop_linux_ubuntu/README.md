@@ -1,7 +1,6 @@
 ---
 resource_id: "f89dc550-6020-4b1e-a287-f9cac46a44a9"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Laptop Linux Ubuntu — Platform-Specific TTS

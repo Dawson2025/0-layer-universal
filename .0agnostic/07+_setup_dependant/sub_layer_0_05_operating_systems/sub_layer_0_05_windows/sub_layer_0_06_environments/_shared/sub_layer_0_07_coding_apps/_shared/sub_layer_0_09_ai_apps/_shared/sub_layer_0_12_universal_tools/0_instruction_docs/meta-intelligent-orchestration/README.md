@@ -1,7 +1,6 @@
 ---
 resource_id: "bcfeed81-e617-4414-af64-cdcb3a1b095b"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Meta-Intelligent Universal Orchestration System

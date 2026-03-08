@@ -1,7 +1,6 @@
 ---
 resource_id: "3250c79a-0022-4586-947b-59fd9c90a73d"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Sub-Project Layer Template (2.x, zero-padded)

@@ -1,7 +1,6 @@
 ---
 resource_id: "4ec3fbd4-57a1-4022-a90d-e10209c3f3e7"
-resource_type: "readme
-knowledge"
+resource_type: "readme_knowledge"
 resource_name: "README"
 ---
 # 10_current_product Workflow References

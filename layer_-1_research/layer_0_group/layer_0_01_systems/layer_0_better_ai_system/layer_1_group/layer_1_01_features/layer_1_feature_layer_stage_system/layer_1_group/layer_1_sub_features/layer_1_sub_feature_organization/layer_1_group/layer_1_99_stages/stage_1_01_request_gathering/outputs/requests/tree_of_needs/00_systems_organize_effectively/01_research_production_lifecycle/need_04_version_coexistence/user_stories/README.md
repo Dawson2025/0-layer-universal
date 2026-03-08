@@ -1,7 +1,6 @@
 ---
 resource_id: "fdf01c40-fe1b-42ae-b177-5f324bf1a56f"
-resource_type: "readme
-output"
+resource_type: "readme_output"
 resource_name: "README"
 ---
 # User Stories — Version Coexistence

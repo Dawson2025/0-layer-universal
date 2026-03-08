@@ -1,7 +1,6 @@
 ---
 resource_id: "c40dec3f-7a09-4f6c-981c-8201fe38cda7"
-resource_type: "agnostic
-document"
+resource_type: "agnostic_document"
 resource_name: "0AGNOSTIC"
 ---
 # 0AGNOSTIC.md - layer_3_subx3_feature_system_tts

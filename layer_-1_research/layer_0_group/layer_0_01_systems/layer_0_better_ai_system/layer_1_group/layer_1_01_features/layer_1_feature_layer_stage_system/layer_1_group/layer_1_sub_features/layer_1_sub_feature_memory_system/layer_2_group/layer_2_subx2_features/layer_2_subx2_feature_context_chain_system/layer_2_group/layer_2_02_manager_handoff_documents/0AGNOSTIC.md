@@ -1,7 +1,6 @@
 ---
 resource_id: "8aff89b9-b059-42e6-bce6-d900dd572919"
-resource_type: "agnostic
-document"
+resource_type: "agnostic_document"
 resource_name: "0AGNOSTIC"
 ---
 # context_chain_system — Handoff Documents

@@ -1,7 +1,6 @@
 ---
 resource_id: "9f5642a0-876d-43b0-92e7-6622e687b9a7"
-resource_type: "readme
-output"
+resource_type: "readme_output"
 resource_name: "README"
 ---
 # Need: Stage Reports

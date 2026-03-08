@@ -1,7 +1,6 @@
 ---
 resource_id: "e93e520a-c486-466c-819b-4cb757d7e467"
-resource_type: "agnostic
-document"
+resource_type: "agnostic_document"
 resource_name: "0AGNOSTIC"
 ---
 # context_chain_system — Stage 00: stage_registry

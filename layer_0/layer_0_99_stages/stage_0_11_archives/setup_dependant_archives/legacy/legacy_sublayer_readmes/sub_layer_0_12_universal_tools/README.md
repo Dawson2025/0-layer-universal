@@ -1,7 +1,6 @@
 ---
 resource_id: "2cd6f6d8-fbe0-4ca9-a45a-53306192f97d"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # ⚠️ DEPRECATED - This Sublayer Has Been Consolidated

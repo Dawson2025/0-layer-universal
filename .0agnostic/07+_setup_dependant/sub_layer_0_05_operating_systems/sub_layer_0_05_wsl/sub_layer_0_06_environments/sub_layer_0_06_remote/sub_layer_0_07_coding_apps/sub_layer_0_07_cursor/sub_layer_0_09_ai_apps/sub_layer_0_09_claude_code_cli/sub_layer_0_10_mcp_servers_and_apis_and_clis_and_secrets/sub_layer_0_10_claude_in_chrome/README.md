@@ -1,7 +1,6 @@
 ---
 resource_id: "304f2927-3ebf-46be-93fc-e66c6068e1cd"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Claude in Chrome Extension Integration

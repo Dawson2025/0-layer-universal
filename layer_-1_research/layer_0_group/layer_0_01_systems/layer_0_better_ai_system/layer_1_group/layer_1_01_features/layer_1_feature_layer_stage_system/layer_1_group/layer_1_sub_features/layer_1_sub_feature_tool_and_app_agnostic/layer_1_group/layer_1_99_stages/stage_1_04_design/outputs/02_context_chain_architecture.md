@@ -426,7 +426,7 @@ If any step is missing, context doesn't reach AI app.
 ## References
 
 - **Terminology Clarification**: This document (2026-02-27)
-- **agnostic-sync.sh Implementation**: `0_layer_universal/.0agnostic/agnostic-sync.sh`
+- **agnostic-sync.sh Implementation**: `0_layer_universal/.0agnostic/03_protocols/agnostic_sync_protocol/tools/agnostic-sync.sh`
 - **Entity Structure Reference**: `.0agnostic/06_context_avenue_web/01_file_based/04_@import_references/entity_structure.md`
 - **MCP Server Tools Reference**: `.0agnostic/07+_setup_dependant/sub_layer_0_10_mcp_servers_and_apis/`
 - **Canvas MCP Tool Documentation**: `.0agnostic/07+_setup_dependant/.../sub_layer_0_10_canvas_mcp/`

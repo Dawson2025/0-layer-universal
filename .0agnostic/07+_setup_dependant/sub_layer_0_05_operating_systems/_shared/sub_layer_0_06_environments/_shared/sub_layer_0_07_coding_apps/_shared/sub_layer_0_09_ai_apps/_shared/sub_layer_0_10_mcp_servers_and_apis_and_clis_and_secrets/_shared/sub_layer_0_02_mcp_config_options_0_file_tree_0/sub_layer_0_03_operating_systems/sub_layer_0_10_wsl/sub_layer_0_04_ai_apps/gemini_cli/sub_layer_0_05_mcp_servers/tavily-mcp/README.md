@@ -1,7 +1,6 @@
 ---
 resource_id: "b01bfb96-98b7-4121-b31d-61d0aed7954e"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # tavily-mcp (gemini_cli on wsl)

@@ -1,7 +1,6 @@
 ---
 resource_id: "5a0629d9-8128-4645-97da-aeb8377dc5a9"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # macOS Setup

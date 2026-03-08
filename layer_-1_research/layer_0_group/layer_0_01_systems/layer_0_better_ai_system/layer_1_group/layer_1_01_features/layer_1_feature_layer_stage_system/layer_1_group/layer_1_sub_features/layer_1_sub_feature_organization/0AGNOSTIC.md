@@ -1,7 +1,6 @@
 ---
 resource_id: "9fe09a42-5a31-4908-9eb0-9badbe2b8559"
-resource_type: "agnostic
-document"
+resource_type: "agnostic_document"
 resource_name: "0AGNOSTIC"
 ---
 # layer_1_sub_feature_organization

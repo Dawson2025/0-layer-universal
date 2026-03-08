@@ -1,7 +1,6 @@
 ---
 resource_id: "bf6bc508-3329-49d5-9838-78a07335cde4"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Layer 3 (Component) AI Manager System

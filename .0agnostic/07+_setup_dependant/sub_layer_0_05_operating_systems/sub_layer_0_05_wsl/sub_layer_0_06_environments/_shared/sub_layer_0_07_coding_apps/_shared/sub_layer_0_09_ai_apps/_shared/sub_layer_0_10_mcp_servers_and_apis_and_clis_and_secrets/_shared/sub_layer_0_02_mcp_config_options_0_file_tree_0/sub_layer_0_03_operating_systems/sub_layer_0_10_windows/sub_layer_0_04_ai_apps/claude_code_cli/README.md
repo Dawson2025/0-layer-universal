@@ -1,7 +1,6 @@
 ---
 resource_id: "12fa9de2-466f-4723-af57-e7910f9dfe3c"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Claude Code CLI MCP Setup (Windows)

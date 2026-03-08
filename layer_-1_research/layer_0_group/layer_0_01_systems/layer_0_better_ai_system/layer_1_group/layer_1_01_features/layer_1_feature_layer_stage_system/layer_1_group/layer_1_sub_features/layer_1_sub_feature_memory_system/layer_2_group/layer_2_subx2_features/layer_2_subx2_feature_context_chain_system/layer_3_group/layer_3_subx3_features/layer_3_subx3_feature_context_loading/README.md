@@ -1,7 +1,6 @@
 ---
 resource_id: "553c535b-910b-4a44-b600-319f55b72e5f"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Context Loading

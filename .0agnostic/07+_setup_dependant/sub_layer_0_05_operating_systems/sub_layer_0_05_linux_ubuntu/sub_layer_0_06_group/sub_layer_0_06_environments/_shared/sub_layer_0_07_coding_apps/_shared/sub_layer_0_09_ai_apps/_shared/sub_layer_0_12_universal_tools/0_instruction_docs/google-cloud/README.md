@@ -1,7 +1,6 @@
 ---
 resource_id: "ec03dc29-e737-42bc-9b19-c0c7d12abb6d"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Google Cloud Tools

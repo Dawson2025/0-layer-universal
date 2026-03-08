@@ -1,7 +1,6 @@
 ---
 resource_id: "0e600d28-7553-4a85-830f-ffccf9115798"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Layer 1 (Project) AI Manager System

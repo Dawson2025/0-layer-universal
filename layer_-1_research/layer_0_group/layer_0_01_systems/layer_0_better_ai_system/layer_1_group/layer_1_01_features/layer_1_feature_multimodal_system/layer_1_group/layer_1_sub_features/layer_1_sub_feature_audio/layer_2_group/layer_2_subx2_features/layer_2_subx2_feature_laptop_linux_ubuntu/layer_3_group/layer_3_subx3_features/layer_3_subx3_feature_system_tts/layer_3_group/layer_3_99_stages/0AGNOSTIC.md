@@ -1,7 +1,6 @@
 ---
 resource_id: "b8c4fabb-05e4-4fee-a6fb-e63e56d78682"
-resource_type: "agnostic
-document"
+resource_type: "agnostic_document"
 resource_name: "0AGNOSTIC"
 ---
 # 0AGNOSTIC.md - layer_3_99_stages (System TTS)

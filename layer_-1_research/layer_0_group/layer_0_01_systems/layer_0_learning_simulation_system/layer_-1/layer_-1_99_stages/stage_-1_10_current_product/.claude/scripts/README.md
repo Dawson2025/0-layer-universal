@@ -1,7 +1,6 @@
 ---
 resource_id: "6f50fe7e-22b0-4f32-afd4-6fa06db26eba"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # 10_current_product Stage Scripts

@@ -1,7 +1,6 @@
 ---
 resource_id: "32146d88-3f33-41ef-95bb-b67420318561"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # AI Development Frameworks

@@ -1,7 +1,6 @@
 ---
 resource_id: "7f589079-538c-4bc7-9855-c39c8419fa01"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # 07_testing Workflow References

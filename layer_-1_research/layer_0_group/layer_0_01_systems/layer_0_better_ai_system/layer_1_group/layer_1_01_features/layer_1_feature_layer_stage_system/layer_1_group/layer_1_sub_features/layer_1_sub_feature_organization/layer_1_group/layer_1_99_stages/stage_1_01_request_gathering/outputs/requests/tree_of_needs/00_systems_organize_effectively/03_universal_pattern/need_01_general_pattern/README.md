@@ -1,7 +1,6 @@
 ---
 resource_id: "86bf8bf3-690d-486a-96cd-76ea39d2f24b"
-resource_type: "readme
-output"
+resource_type: "readme_output"
 resource_name: "README"
 ---
 # Need: General Pattern

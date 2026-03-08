@@ -1,7 +1,6 @@
 ---
 resource_id: "bdf90c08-e8cd-499b-b1a8-30101bf9e266"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # tavily-mcp (cursor_agent on linux_ubuntu)

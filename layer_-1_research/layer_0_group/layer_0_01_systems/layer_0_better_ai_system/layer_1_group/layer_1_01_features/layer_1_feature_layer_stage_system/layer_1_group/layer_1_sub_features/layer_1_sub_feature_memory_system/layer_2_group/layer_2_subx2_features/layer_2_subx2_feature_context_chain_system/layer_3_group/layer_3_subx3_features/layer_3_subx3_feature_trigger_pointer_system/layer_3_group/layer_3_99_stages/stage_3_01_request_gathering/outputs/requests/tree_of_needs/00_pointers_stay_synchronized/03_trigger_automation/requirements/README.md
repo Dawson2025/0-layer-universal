@@ -1,7 +1,6 @@
 ---
 resource_id: "15c42026-03f3-40bb-8404-63974f30a7f0"
-resource_type: "readme
-output"
+resource_type: "readme_output"
 resource_name: "README"
 ---
 # Trigger Automation -- Requirements Index

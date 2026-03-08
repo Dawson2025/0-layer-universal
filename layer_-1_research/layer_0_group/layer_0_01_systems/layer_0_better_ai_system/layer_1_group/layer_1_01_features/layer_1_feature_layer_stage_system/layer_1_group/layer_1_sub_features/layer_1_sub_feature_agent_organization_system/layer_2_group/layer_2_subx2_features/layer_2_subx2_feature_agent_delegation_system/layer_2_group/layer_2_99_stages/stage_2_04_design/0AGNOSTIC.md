@@ -1,7 +1,6 @@
 ---
 resource_id: "1151d25b-2f59-4de4-9bd8-d2dc89e08ef6"
-resource_type: "agnostic
-document"
+resource_type: "agnostic_document"
 resource_name: "0AGNOSTIC"
 ---
 # agent_delegation_system — Stage 04: Design

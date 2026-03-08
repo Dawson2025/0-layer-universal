@@ -1,7 +1,6 @@
 ---
 resource_id: "ed10ee7e-f5e9-4cd9-9bf5-66d59a5a331a"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # 08_criticism Workflow References

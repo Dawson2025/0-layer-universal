@@ -1,7 +1,6 @@
 ---
 resource_id: "a760a1bc-739a-4eff-8ac2-f637450a0916"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Environment Considerations for Speech-to-Text

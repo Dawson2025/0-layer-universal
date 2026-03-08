@@ -1,7 +1,6 @@
 ---
 resource_id: "1c0422ae-6dcd-447d-80dd-9fd1d45180e4"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Universal Scripts

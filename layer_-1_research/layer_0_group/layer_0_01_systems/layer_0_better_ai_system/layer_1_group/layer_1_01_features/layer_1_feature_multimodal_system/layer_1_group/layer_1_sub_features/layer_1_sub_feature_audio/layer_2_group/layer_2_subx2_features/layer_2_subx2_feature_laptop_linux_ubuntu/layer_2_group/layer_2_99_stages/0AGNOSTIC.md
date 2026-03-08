@@ -1,7 +1,6 @@
 ---
 resource_id: "c542f56c-551d-43f6-a592-f24921cfd89d"
-resource_type: "agnostic
-document"
+resource_type: "agnostic_document"
 resource_name: "0AGNOSTIC"
 ---
 # 0AGNOSTIC.md - layer_2_99_stages (Laptop Linux Ubuntu)

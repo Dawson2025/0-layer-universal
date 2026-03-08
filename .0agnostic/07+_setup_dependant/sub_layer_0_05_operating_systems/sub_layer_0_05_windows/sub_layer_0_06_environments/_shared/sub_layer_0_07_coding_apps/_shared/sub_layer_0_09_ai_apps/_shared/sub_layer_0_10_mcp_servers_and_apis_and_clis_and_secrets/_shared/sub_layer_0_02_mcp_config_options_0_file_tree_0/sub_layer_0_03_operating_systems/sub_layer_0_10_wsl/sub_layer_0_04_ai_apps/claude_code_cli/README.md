@@ -1,7 +1,6 @@
 ---
 resource_id: "ca25d1a8-006c-407d-b6b3-fd79d022fae7"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Claude Code CLI MCP Setup (WSL)

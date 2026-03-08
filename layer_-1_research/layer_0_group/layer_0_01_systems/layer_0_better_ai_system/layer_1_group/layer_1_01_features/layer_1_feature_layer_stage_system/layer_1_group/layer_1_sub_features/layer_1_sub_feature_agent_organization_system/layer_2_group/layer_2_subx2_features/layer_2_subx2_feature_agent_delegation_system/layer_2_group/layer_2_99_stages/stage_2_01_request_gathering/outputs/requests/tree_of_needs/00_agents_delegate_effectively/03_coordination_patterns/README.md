@@ -1,7 +1,6 @@
 ---
 resource_id: "1f2688e2-942f-4e76-b756-5de4a1e8e773"
-resource_type: "readme
-output"
+resource_type: "readme_output"
 resource_name: "README"
 ---
 # Branch: Coordination Patterns

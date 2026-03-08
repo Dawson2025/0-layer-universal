@@ -1,7 +1,6 @@
 ---
 resource_id: "4e62f06a-f497-4ed8-80cb-4e4ee9b37c54"
-resource_type: "agnostic
-document"
+resource_type: "agnostic_document"
 resource_name: "0AGNOSTIC"
 ---
 # 0AGNOSTIC.md - layer_1_feature_layer_stage_system

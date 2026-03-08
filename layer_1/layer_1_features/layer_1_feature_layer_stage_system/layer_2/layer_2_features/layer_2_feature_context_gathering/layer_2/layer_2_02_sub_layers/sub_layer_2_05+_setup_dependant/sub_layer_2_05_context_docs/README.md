@@ -1,7 +1,6 @@
 ---
 resource_id: "49bc1ee8-0363-40ce-9b60-07349f2f2c4d"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Context Gathering Documentation

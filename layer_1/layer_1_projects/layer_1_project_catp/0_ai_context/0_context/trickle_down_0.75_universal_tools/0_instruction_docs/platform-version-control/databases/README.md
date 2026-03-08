@@ -1,7 +1,6 @@
 ---
 resource_id: "0fa24ad3-1c0e-4b4e-ab96-5f7ceab267be"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Database Version Control System

@@ -1,7 +1,6 @@
 ---
 resource_id: "df076886-afd7-4255-a97c-a8675710c8fc"
-resource_type: "agnostic
-document"
+resource_type: "agnostic_document"
 resource_name: "0AGNOSTIC"
 ---
 # 0AGNOSTIC.md — sub_layer_0_10_cursor_agent

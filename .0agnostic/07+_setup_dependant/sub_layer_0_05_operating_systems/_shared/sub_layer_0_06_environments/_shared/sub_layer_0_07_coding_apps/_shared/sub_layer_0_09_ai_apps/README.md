@@ -1,7 +1,6 @@
 ---
 resource_id: "a206faeb-48e2-4c26-ab8c-3492dc2eff72"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # AI Apps and Tools

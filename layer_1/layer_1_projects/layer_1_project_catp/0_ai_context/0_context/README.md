@@ -1,7 +1,6 @@
 ---
 resource_id: "d05ebd73-e508-4cb6-acdb-1dd5ed149a13"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # AI Agent Context System

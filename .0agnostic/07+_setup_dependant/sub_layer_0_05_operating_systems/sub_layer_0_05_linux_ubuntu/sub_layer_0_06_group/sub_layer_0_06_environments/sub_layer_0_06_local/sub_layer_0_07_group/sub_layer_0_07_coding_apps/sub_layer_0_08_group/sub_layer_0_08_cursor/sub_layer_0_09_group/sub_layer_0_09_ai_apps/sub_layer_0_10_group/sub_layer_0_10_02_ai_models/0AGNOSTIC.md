@@ -1,7 +1,6 @@
 ---
 resource_id: "f6a79f4a-4f60-48ed-a9ef-096c09108b54"
-resource_type: "agnostic
-document"
+resource_type: "agnostic_document"
 resource_name: "0AGNOSTIC"
 ---
 # 0AGNOSTIC.md — sub_layer_0_10_02_ai_models

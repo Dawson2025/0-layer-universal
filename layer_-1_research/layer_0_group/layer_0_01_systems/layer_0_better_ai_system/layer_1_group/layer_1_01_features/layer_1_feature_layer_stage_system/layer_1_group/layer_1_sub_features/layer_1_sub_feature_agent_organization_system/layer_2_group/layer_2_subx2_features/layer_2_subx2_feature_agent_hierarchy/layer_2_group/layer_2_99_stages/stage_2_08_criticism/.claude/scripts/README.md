@@ -1,7 +1,6 @@
 ---
 resource_id: "d666d768-cc07-42cb-9c17-7899cf19a7fe"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # 08_criticism Stage Scripts

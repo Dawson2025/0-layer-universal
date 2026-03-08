@@ -1,7 +1,6 @@
 ---
 resource_id: "6080f4a3-8ce7-4ff2-bb99-f9e204ff0e9f"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # playwright-mcp (claude_code_cli on linux_ubuntu)

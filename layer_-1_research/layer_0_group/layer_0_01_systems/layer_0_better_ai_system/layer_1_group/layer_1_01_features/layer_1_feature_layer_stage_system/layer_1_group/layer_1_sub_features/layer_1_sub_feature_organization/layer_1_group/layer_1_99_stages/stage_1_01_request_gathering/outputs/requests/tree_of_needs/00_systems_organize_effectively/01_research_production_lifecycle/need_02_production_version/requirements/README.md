@@ -1,7 +1,6 @@
 ---
 resource_id: "5bd305a3-81f5-42b3-8b52-deb45c5e1e6e"
-resource_type: "readme
-output"
+resource_type: "readme_output"
 resource_name: "README"
 ---
 # Requirements — Production Version

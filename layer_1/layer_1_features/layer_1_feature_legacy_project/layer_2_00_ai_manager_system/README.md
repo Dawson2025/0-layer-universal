@@ -1,7 +1,6 @@
 ---
 resource_id: "3ddd61da-0210-48d5-a35f-36a20f910a22"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Layer 2 (Feature) AI Manager System

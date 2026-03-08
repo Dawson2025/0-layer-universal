@@ -1,7 +1,6 @@
 ---
 resource_id: "231d48be-ceea-4d8c-9f3d-0c5e302c5d65"
-resource_type: "readme
-knowledge"
+resource_type: "readme_knowledge"
 resource_name: "README"
 ---
 # Cursor Config Component

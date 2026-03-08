@@ -1,7 +1,6 @@
 ---
 resource_id: "6dafde61-ee84-4f8d-a311-94709845f41d"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Website Documentation

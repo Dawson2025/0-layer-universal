@@ -1,7 +1,6 @@
 ---
 resource_id: "b2c44098-305e-486a-bcd5-000b2350f018"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # layer_0_02_projects — Layer 0 Project Research

@@ -1,7 +1,6 @@
 ---
 resource_id: "36382906-7e49-405e-8a86-d25a81718ddc"
-resource_type: "readme
-output"
+resource_type: "readme_output"
 resource_name: "README"
 ---
 # Research Topic: Agent Class/Object Patterns

@@ -1,7 +1,6 @@
 ---
 resource_id: "9580b09b-d076-4021-af4b-cd2e18fc5856"
-resource_type: "readme
-output"
+resource_type: "readme_output"
 resource_name: "README"
 ---
 # Stage Delegation -- User Stories Index

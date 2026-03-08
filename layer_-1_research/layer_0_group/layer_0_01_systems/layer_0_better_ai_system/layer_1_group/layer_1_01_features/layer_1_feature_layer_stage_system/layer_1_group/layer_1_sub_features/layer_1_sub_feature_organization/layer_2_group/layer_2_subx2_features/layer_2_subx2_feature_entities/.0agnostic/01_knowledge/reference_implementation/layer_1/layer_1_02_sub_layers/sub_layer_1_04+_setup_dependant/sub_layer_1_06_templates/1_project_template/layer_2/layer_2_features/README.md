@@ -1,7 +1,6 @@
 ---
 resource_id: "b27ad415-bf1f-4715-bc17-c564101bddee"
-resource_type: "readme
-knowledge"
+resource_type: "readme_knowledge"
 resource_name: "README"
 ---
 # Features

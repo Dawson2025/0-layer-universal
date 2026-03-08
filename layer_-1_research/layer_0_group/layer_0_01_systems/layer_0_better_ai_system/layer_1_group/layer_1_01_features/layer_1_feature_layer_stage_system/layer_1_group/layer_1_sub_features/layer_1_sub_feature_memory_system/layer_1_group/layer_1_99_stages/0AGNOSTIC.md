@@ -1,7 +1,6 @@
 ---
 resource_id: "44d1c15d-2487-4233-a627-c86138bd2da9"
-resource_type: "agnostic
-document"
+resource_type: "agnostic_document"
 resource_name: "0AGNOSTIC"
 ---
 # 0AGNOSTIC.md - layer_1_99_stages

@@ -1,7 +1,6 @@
 ---
 resource_id: "0f2229c3-258d-46c7-b4d2-6939002522ae"
-resource_type: "agnostic
-document"
+resource_type: "agnostic_document"
 resource_name: "0AGNOSTIC"
 ---
 # navigation — Stage 00: stage_registry

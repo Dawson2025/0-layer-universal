@@ -1,7 +1,6 @@
 ---
 resource_id: "1e7ba6f4-3fd9-42d3-9aa7-ae2da23b512a"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Layer 3 Component Manager Handoff Documents

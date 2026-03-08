@@ -1,7 +1,6 @@
 ---
 resource_id: "ff8653f0-f4f3-4d00-ae93-2372b42c44af"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Hand Off Documents

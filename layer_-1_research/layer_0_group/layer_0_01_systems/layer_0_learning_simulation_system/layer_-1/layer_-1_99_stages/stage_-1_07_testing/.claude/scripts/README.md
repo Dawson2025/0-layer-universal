@@ -1,7 +1,6 @@
 ---
 resource_id: "77104f2a-72d7-400a-80aa-07dc919abff3"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # 07_testing Stage Scripts

@@ -1,7 +1,6 @@
 ---
 resource_id: "8fc9989f-4238-45f4-a3b6-1fe0bfe68401"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Context7 MCP Server

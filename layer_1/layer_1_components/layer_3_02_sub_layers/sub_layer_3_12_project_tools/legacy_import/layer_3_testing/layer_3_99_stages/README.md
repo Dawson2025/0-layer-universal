@@ -1,7 +1,6 @@
 ---
 resource_id: "77a4aec1-62b6-489d-8d39-43ce5aa4dd05"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # layer_3_testing: Stage System (3.99)

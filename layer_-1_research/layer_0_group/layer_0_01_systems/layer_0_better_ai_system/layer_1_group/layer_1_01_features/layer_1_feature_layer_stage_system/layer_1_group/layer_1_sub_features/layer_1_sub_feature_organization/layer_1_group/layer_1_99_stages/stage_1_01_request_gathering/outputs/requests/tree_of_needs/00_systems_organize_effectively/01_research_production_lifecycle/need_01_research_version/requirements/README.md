@@ -1,7 +1,6 @@
 ---
 resource_id: "841a27b8-bb83-44a8-b5d6-388e1de62905"
-resource_type: "readme
-output"
+resource_type: "readme_output"
 resource_name: "README"
 ---
 # Requirements — Research Version

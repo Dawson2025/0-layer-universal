@@ -1,7 +1,6 @@
 ---
 resource_id: "e314789d-6791-4d3f-bb59-62834b0db4a6"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Sub Layer 0.07: Coding App Setup

@@ -1,7 +1,6 @@
 ---
 resource_id: "974d4177-fcbd-46b5-925a-edb69887fed2"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # context7-mcp (gemini_cli on windows)

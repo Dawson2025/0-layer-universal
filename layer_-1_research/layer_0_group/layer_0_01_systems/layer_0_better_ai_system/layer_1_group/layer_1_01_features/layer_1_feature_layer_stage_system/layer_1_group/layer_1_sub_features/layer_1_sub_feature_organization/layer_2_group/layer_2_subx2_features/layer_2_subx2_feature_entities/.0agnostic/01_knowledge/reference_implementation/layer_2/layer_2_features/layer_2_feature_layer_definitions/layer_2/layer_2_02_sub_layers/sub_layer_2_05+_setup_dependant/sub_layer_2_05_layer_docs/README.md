@@ -1,7 +1,6 @@
 ---
 resource_id: "04c9799b-0bf5-4387-b1bf-dc5f11f1f9c2"
-resource_type: "readme
-knowledge"
+resource_type: "readme_knowledge"
 resource_name: "README"
 ---
 # Layer Documentation

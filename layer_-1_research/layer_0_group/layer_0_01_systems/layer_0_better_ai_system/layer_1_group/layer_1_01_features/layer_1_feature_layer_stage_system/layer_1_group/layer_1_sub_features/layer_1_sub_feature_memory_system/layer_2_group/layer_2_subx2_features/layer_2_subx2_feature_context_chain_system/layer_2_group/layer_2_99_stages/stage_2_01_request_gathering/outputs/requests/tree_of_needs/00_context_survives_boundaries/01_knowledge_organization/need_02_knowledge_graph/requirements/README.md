@@ -1,7 +1,6 @@
 ---
 resource_id: "9e4bebc9-5246-4b1b-b469-fd62e33db0b0"
-resource_type: "readme
-output"
+resource_type: "readme_output"
 resource_name: "README"
 ---
 # Knowledge Graph -- Requirements Index

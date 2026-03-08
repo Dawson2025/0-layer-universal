@@ -1,7 +1,6 @@
 ---
 resource_id: "b6f4d111-fa6d-476f-baf6-777494a1da7a"
-resource_type: "readme
-output"
+resource_type: "readme_output"
 resource_name: "README"
 ---
 # Plugins (05_plugins)

@@ -1,7 +1,6 @@
 ---
 resource_id: "737eb6e3-c874-4cef-bc27-2407ef17081f"
-resource_type: "readme
-output"
+resource_type: "readme_output"
 resource_name: "README"
 ---
 # Path Resolution -- User Stories Index

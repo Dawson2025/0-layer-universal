@@ -1,7 +1,6 @@
 ---
 resource_id: "c26fe8b5-f6b5-4557-9481-4f7deb542c85"
-resource_type: "readme
-knowledge"
+resource_type: "readme_knowledge"
 resource_name: "README"
 ---
 # Branch: Principles

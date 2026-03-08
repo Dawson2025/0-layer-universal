@@ -1,7 +1,6 @@
 ---
 resource_id: "22110712-7d86-48bf-b28f-2f4f7f44cd91"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Universal Tools Archive

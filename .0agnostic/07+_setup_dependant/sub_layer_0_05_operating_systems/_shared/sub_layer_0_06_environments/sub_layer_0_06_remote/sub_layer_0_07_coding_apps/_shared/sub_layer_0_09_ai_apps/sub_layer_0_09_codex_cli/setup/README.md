@@ -1,7 +1,6 @@
 ---
 resource_id: "8fbbdb91-af5e-418e-adf2-a639697518c1"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Sub Layer 0.09: AI Apps & Tools Setup

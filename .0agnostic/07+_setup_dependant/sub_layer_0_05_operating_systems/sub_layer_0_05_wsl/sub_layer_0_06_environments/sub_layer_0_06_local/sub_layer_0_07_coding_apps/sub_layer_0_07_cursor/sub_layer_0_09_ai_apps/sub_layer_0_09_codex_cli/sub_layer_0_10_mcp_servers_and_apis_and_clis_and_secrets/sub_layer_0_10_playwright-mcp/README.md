@@ -1,7 +1,6 @@
 ---
 resource_id: "90c77700-8d2d-4f74-9d48-0fc68515a792"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Playwright MCP (Codex CLI on WSL/WSLg)

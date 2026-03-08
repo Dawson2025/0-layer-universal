@@ -1,7 +1,6 @@
 ---
 resource_id: "16d2258f-1940-4785-8556-3696ebe47e34"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Language Tracker App Documentation

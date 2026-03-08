@@ -1,7 +1,6 @@
 ---
 resource_id: "2230d429-673e-4985-ad79-e39c53554a73"
-resource_type: "readme
-output"
+resource_type: "readme_output"
 resource_name: "README"
 ---
 # File-Based Avenues (01-08) — Ordered by Comprehensiveness

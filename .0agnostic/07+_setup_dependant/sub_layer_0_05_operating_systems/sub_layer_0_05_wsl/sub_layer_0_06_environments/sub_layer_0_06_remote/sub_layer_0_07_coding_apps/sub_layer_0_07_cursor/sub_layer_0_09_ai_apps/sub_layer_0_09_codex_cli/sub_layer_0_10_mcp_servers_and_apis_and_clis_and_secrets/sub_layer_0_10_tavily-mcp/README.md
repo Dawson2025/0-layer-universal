@@ -1,7 +1,6 @@
 ---
 resource_id: "94df2cf5-6c71-4f43-9b76-d6f4eb37662a"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Tavily MCP (web-search) (Codex CLI on WSL)

@@ -1,7 +1,6 @@
 ---
 resource_id: "a7673a89-9f68-41ae-9de7-45cd92ef543a"
-resource_type: "readme
-knowledge"
+resource_type: "readme_knowledge"
 resource_name: "README"
 ---
 # Setup

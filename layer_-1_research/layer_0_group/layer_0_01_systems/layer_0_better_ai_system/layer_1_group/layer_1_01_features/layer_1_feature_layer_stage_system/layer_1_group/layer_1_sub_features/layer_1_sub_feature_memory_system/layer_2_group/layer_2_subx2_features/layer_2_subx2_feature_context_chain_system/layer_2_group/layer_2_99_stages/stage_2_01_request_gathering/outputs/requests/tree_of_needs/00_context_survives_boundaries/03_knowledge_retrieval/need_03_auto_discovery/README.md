@@ -1,7 +1,6 @@
 ---
 resource_id: "f6bf1ff5-f331-4751-9419-709e819a2730"
-resource_type: "readme
-output"
+resource_type: "readme_output"
 resource_name: "README"
 ---
 # Need 03: Auto-Discovery of Update Protocols

@@ -1,7 +1,6 @@
 ---
 resource_id: "2fa76925-dd19-4433-bd55-8a0749e9af20"
-resource_type: "readme
-output"
+resource_type: "readme_output"
 resource_name: "README"
 ---
 # Reference Format Standard -- User Stories Index

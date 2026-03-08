@@ -1,7 +1,6 @@
 ---
 resource_id: "3dc79a05-a949-4397-8104-0981f889c09b"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Observability and Logging Protocol

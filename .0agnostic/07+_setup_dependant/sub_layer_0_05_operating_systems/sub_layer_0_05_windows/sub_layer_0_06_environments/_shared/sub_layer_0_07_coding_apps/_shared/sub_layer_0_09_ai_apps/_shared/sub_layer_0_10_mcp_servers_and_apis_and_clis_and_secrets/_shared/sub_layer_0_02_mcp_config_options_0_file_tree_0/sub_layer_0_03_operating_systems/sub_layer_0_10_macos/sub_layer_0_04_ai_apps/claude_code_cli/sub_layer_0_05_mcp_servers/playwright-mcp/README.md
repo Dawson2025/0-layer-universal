@@ -1,7 +1,6 @@
 ---
 resource_id: "9b117f10-ef7f-4e6d-bcfe-3bae64a9ce17"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # playwright-mcp (claude_code_cli on macos)

@@ -1,7 +1,6 @@
 ---
 resource_id: "988cce45-72f2-4952-b22d-e57e4516222f"
-resource_type: "readme
-output"
+resource_type: "readme_output"
 resource_name: "README"
 ---
 # Spawning Patterns -- User Stories Index

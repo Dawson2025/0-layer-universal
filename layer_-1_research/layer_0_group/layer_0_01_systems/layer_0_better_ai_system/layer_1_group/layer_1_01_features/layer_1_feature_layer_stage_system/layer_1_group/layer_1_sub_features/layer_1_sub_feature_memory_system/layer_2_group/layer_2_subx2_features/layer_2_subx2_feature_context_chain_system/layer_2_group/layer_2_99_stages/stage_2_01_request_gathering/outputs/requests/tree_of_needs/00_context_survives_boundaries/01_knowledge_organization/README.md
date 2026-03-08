@@ -1,7 +1,6 @@
 ---
 resource_id: "80fd9fca-07f1-460c-8e37-9c5238bbe6dc"
-resource_type: "readme
-output"
+resource_type: "readme_output"
 resource_name: "README"
 ---
 # Branch: Knowledge is ORGANIZED

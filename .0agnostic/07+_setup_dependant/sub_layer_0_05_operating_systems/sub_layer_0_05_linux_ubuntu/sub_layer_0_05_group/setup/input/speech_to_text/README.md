@@ -1,7 +1,6 @@
 ---
 resource_id: "6e2eda19-92e0-46c1-9fbb-d4c1a06afe37"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Speech-to-Text / Dictation Tools for Linux

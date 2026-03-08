@@ -1,7 +1,6 @@
 ---
 resource_id: "886ce023-087d-4402-b006-cfca310adb39"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Features

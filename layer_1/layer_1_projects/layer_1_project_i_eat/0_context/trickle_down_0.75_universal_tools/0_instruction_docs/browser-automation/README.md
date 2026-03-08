@@ -1,7 +1,6 @@
 ---
 resource_id: "52082f3d-f48f-4fc2-bd00-54e68557c290"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Browser Automation Framework

@@ -1,7 +1,6 @@
 ---
 resource_id: "85cd43ec-137a-4065-ab8b-9677449ac1b1"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Operating System (MCP Setup)

@@ -1,7 +1,6 @@
 ---
 resource_id: "6d1a3af3-cd2a-42ce-a811-4266549fd517"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # context7-mcp (codex_cli on linux_ubuntu)

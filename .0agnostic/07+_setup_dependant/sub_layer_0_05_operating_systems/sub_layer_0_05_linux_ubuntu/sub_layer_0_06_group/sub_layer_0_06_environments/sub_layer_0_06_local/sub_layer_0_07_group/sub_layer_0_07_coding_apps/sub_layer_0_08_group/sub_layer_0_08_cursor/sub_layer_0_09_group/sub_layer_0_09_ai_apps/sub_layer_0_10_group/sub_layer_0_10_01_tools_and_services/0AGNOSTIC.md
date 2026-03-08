@@ -1,7 +1,6 @@
 ---
 resource_id: "83743c27-cd5d-48fc-9d35-b8944df49387"
-resource_type: "agnostic
-document"
+resource_type: "agnostic_document"
 resource_name: "0AGNOSTIC"
 ---
 # 0AGNOSTIC.md — sub_layer_0_10_01_tools_and_services

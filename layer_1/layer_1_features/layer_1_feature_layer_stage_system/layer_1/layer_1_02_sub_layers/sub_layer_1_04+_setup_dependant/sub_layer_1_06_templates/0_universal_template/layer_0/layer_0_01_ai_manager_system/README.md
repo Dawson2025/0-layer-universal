@@ -1,7 +1,6 @@
 ---
 resource_id: "106287ad-f8eb-412a-9a07-6ba1eea1623e"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Universal Manager Agent (Template)

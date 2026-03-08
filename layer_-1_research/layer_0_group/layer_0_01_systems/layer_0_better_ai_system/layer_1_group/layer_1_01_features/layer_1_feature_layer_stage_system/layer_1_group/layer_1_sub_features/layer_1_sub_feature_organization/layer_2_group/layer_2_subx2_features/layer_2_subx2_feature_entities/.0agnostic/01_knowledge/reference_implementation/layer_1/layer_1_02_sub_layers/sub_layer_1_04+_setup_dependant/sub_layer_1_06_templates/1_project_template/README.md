@@ -1,7 +1,6 @@
 ---
 resource_id: "41552fde-9dbd-42c1-aecc-44b3097de0ee"
-resource_type: "readme
-knowledge"
+resource_type: "readme_knowledge"
 resource_name: "README"
 ---
 # Project Layer Template (1.x, zero-padded)

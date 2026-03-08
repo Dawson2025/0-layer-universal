@@ -1,7 +1,6 @@
 ---
 resource_id: "fbd179f2-988d-437b-90a6-63c3c8b1d236"
-resource_type: "readme
-document"
+resource_type: "readme_document"
 resource_name: "README"
 ---
 # Linux (Ubuntu) MCP Notes

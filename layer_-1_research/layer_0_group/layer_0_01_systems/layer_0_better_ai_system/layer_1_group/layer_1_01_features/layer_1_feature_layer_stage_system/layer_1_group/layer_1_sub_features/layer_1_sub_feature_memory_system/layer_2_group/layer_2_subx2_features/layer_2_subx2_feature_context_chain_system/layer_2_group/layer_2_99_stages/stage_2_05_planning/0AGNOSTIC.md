@@ -1,7 +1,6 @@
 ---
 resource_id: "1cf80044-1b70-4e47-a8bf-959d4cdde7f8"
-resource_type: "agnostic
-document"
+resource_type: "agnostic_document"
 resource_name: "0AGNOSTIC"
 ---
 # context_chain_system — Stage 05: Planning

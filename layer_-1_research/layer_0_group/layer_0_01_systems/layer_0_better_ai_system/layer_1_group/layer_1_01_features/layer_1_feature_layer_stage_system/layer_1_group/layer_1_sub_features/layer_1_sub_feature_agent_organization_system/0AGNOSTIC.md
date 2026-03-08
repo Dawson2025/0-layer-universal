@@ -1,7 +1,6 @@
 ---
 resource_id: "d3e8ba31-104b-4ed7-8235-d40c2d47c522"
-resource_type: "agnostic
-document"
+resource_type: "agnostic_document"
 resource_name: "0AGNOSTIC"
 ---
 # 0AGNOSTIC.md - layer_1_sub_feature_agent_organization_system

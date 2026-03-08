@@ -1,7 +1,6 @@
 ---
 resource_id: "6e7bec7d-e227-4c3c-b93f-5805de8c242a"
-resource_type: "agnostic
-document"
+resource_type: "agnostic_document"
 resource_name: "0AGNOSTIC"
 ---
 # 0AGNOSTIC.md — sub_layer_0_10_claude_code_cli
