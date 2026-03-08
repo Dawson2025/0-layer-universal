@@ -322,12 +322,7 @@ jq -r '.uuids["THE-UUID"].path // empty' "$ROOT/.uuid-index.json"
 This returns a relative path from repo root. Prefix with $ROOT/ for absolute path. Do NOT hardcode paths — always resolve the UUID.
 
 ### MANDATORY: Entity Lookup
-When finding entities by name, you MUST use entity-find.sh. Do NOT use Glob or Grep for entity discovery — they miss nested registries and UUID relationships.
-```bash
-ROOT=$(git rev-parse --show-toplevel)
-ENTITY_FIND="$ROOT/$(jq -r '.uuids["f4a2b3c5-d6e7-4f89-a0b1-c2d3e4f5a6b7"].path // empty' "$ROOT/.uuid-index.json")"
-$ENTITY_FIND memory
-```
+For entity discovery, Grep `.entity-lookup.tsv` at the repo root. Each line has: name, UUID, path, parent_UUID (tab-separated). Example: `Grep pattern="memory" path=".entity-lookup.tsv"`. Use UUIDs for stable references, paths for file access.
 
 ### CLAUDE.md Integration
 This file is auto-generated from 0AGNOSTIC.md. Edit 0AGNOSTIC.md to make changes.

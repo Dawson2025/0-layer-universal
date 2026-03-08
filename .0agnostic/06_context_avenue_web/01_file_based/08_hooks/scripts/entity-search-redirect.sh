@@ -6,8 +6,8 @@
 # entity-search-redirect.sh — PostToolUse hook for Glob|Grep
 #
 # Fires after Glob or Grep operations. If the search pattern looks
-# like entity discovery, returns additionalContext redirecting the
-# agent to use entity-find.sh instead.
+# like entity discovery, returns additionalContext suggesting
+# Grep on .entity-lookup.tsv for structured results with UUIDs.
 #
 # Input: JSON on stdin with tool_name, tool_input, etc.
 # Output: JSON with additionalContext if entity-search pattern detected
@@ -61,7 +61,7 @@ fi
 if [ "$ENTITY_SEARCH" = true ]; then
     cat <<'EOF'
 {
-  "additionalContext": "ENTITY SEARCH DETECTED: You used Glob/Grep for what appears to be entity discovery. entity-find.sh provides better results — it searches nested registries, parent chains, and UUID relationships that Glob/Grep miss.\n\nUse this instead:\n```\nROOT=$(git rev-parse --show-toplevel)\nENTITY_FIND=\"$ROOT/$(jq -r '.uuids[\"f4a2b3c5-d6e7-4f89-a0b1-c2d3e4f5a6b7\"].path // empty' \"$ROOT/.uuid-index.json\")\"\n$ENTITY_FIND <your-search-term>\n```\n\nThis is Critical Rule #5 — entity-find.sh is MANDATORY for entity discovery."
+  "additionalContext": "TIP: For entity discovery, Grep .entity-lookup.tsv at the repo root for structured results including UUIDs, paths, and parent UUIDs. Example: Grep pattern=\"your-search\" path=\".entity-lookup.tsv\". Each line has tab-separated fields: name, UUID, path, parent_UUID."
 }
 EOF
 else

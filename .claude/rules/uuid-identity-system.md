@@ -21,15 +21,15 @@ Do NOT copy `$(resolve-uuid ...)` into a shell command. Do NOT hardcode paths yo
 <!-- section_id: "a8b9c0d1-e2f3-4a5b-6c7d-8e9f0a1b2c3d" -->
 ## MANDATORY: Entity Lookup
 
-When you need to find entities by name, path, or UUID, you MUST use entity-find.sh. Do NOT use Glob, Grep, or find commands for entity discovery — they miss nested registries, parent chains, and UUID relationships.
+For entity discovery, use the **Grep tool** on `.entity-lookup.tsv` at the repo root. This file is a tab-separated index of all 382 entities with their UUIDs, paths, and parent UUIDs.
 
-```bash
-ROOT=$(git rev-parse --show-toplevel)
-ENTITY_FIND="$ROOT/$(jq -r '.uuids["f4a2b3c5-d6e7-4f89-a0b1-c2d3e4f5a6b7"].path // empty' "$ROOT/.uuid-index.json")"
-$ENTITY_FIND memory         # Find entities matching "memory"
-$ENTITY_FIND --path chain   # Show paths only
-$ENTITY_FIND --uuid memory  # Show UUIDs only
 ```
+Grep pattern="<search-term>" path=".entity-lookup.tsv"
+```
+
+Each result line: `name\tUUID\tpath\tparent_UUID`
+
+Use the UUID for stable references (survives renames/moves). Use the path for immediate file access.
 
 <!-- section_id: "b9c0d1e2-f3a4-4b5c-6d7e-8f9a0b1c2d3e" -->
 ## Other Tools (resolve UUID first, then run)

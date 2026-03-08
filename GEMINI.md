@@ -70,11 +70,13 @@ When any nested repository exists in a child path:
 <!-- section_id: "e5f6a7b8-c9d0-4e1f-2a3b-4c5d6e7f8a9b" -->
 ### 5. Entity Lookup Rule
 
-When finding entities by name, path, or type, you MUST use entity-find.sh. Do NOT use Glob, Grep, or find commands for entity discovery — they miss nested registries, parent chains, and UUID relationships.
+For entity discovery, use the Grep tool on `.entity-lookup.tsv` at the repo root. This TSV contains every entity's name, UUID, path, and parent UUID — updated automatically when entities move.
 
-```bash
-ROOT=$(git rev-parse --show-toplevel) && "$ROOT/$(jq -r '.uuids["f4a2b3c5-d6e7-4f89-a0b1-c2d3e4f5a6b7"].path // empty' "$ROOT/.uuid-index.json")" <search-term>
 ```
+Grep pattern="<search-term>" path=".entity-lookup.tsv"
+```
+
+Each result line has 4 tab-separated fields: `name  UUID  path  parent_UUID`. Use the UUID for stable references. Use the path for immediate file access.
 
 <!-- section_id: "a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d" -->
 ## UUID Identity System
@@ -139,7 +141,7 @@ $(resolve-uuid 08a4e9bc-8cc1-457e-b966-0a912ae6dff7) --query type=resource entit
 | Creating or modifying pointer files | Follow `.0agnostic/03_protocols/pointer_sync_protocol/pointer_sync_protocol.md` and run `$(resolve-uuid 08a4e9bc-8cc1-457e-b966-0a912ae6dff7) --validate` |
 | Modifying agent delegation patterns | Load `.0agnostic/02_rules/dynamic/agent_delegation_workspace_rule/agent_delegation_workspace_rule.md` |
 | Querying UUID identity system (entity lookup, hierarchy, resources) | Load skill: uuid-query |
-| Locating an entity by name or finding where something lives | MUST use entity-find.sh (Critical Rule 5). Do NOT use Glob/Grep. |
+| Locating an entity by name or finding where something lives | Grep `.entity-lookup.tsv` at repo root (Critical Rule 5). Returns name, UUID, path, parent UUID. |
 | Finding an entity, stage, or resource by name or UUID | Run `$(resolve-uuid 08a4e9bc-8cc1-457e-b966-0a912ae6dff7) --query` or load skill: uuid-query |
 | Checking references before renaming or deleting an entity | Run `$(resolve-uuid 08a4e9bc-8cc1-457e-b966-0a912ae6dff7) --find-references <uuid>` |
 | Multi-step development tasks | Load `.0agnostic/02_rules/1_scenario_based/sequential_development_methodology/sequential_development_methodology.md` |
