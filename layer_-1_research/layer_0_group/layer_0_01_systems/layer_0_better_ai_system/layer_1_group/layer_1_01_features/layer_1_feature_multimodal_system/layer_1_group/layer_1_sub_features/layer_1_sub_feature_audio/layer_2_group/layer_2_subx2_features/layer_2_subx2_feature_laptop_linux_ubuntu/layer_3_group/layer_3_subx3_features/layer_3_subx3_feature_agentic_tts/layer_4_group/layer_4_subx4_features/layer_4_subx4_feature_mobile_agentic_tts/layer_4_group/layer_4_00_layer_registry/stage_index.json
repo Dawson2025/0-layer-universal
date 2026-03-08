@@ -1,0 +1,17 @@
+{
+  "entity": "layer_4_subx4_feature_mobile_agentic_tts",
+  "stages": {
+    "stage_4_00_stage_registry": "a539f522-41de-430f-a13f-c55a66415418",
+    "stage_4_01_request_gathering": "f24ec1ab-7528-4ff9-beab-badc6a826fae",
+    "stage_4_02_research": "b6848ea2-8295-454d-8319-9be0754d0f32",
+    "stage_4_03_instructions": "f6195481-c979-48b8-b7ce-bc8c45bf3be5",
+    "stage_4_04_design": "e4e69f70-7dcf-4387-95c1-edc58eeae94a",
+    "stage_4_05_planning": "a4f0001b-3614-4f51-8ac7-b2cee5680a55",
+    "stage_4_06_development": "2f86aff3-83d7-41ff-ade8-2b7536fd1d9e",
+    "stage_4_07_testing": "fb5a5f43-3eb2-4f44-b2cf-5dd03ad21018",
+    "stage_4_08_criticism": "e468d63c-8568-48d4-af8c-3e731c3e0d9e",
+    "stage_4_09_fixing": "0ea9906a-4949-49b1-a2ff-d1db49049fdd",
+    "stage_4_10_current_product": "fe414460-aef5-4310-91d8-e6bbaf16e2f2",
+    "stage_4_11_archives": "25bfea35-d4a2-4e4e-b224-e78c5c0bd7f5"
+  }
+}

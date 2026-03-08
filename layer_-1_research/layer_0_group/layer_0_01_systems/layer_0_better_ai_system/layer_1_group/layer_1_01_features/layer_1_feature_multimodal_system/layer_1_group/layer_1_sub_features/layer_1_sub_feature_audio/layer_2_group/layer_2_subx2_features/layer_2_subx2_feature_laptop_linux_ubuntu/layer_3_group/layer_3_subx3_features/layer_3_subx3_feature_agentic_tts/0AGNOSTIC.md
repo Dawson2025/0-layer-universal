@@ -15,7 +15,7 @@ You are an agent at **Layer 3** (Sub-Feature), **Sub-Feature**: Agentic TTS.
 - **Role**: Claude Code agentic text-to-speech — hooks, MCP plugins, split-output patterns
 - **Scope**: AI-driven speech for CLI tools, PostToolUse hooks, spoken summary extraction
 - **Parent**: `../../../0AGNOSTIC.md` (layer_2_subx2_feature_laptop_linux_ubuntu)
-- **Children**: None (leaf entity)
+- **Children**: `layer_4_group/layer_4_subx4_features/` contains 1 sub-feature (mobile_agentic_tts)
 
 <!-- section_id: "6d5a3368-9ea5-43e7-9122-d268500bc90a" -->
 ## Triggers
@@ -39,6 +39,7 @@ Load this context when:
 | Parent | `../../../0AGNOSTIC.md` |
 | Sibling (System TTS) | `../layer_3_subx3_feature_system_tts/` |
 | Stages | `layer_3_group/layer_3_99_stages/` |
+| Mobile Agentic TTS | `layer_4_group/layer_4_subx4_features/layer_4_subx4_feature_mobile_agentic_tts/` |
 | Platform parent | `../../../0AGNOSTIC.md` (has hardware specs, platform deps) |
 | Audio research | `../../../../../../layer_1_group/layer_1_99_stages/stage_1_02_research/outputs/` |
 

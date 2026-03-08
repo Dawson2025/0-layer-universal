@@ -257,6 +257,30 @@ AALang agent files live inside `.0agnostic/06_context_avenue_web/01_file_based/0
 | **.0agnostic/ subdirs** | All numbered | `01_knowledge/`, `02_rules/`, etc. |
 | **Knowledge topics** | Self-contained per topic | `01_knowledge/[topic]/{principles,docs,resources}` |
 
+<!-- section_id: "a4e5f6b7-c8d9-4e0f-1a2b-3c4d5e6f7a8b" -->
+## Sub-Feature Depth Naming (subxN Convention)
+
+When entities are sub-features nested within other sub-features, the grouping container and child entity names reflect nesting depth using the `subxN` convention:
+
+| Depth | Grouping Container | Entity Name Pattern | Example |
+|-------|-------------------|---------------------|---------|
+| 0 (base) | `layer_N+1_01_features/` | `layer_N+1_feature_name/` | `layer_1_01_features/layer_1_feature_multimodal_system/` |
+| 1 | `layer_N+1_sub_features/` | `layer_N+1_sub_feature_name/` | `layer_1_sub_features/layer_1_sub_feature_audio/` |
+| 2 | `layer_N+1_subx2_features/` | `layer_N+1_subx2_feature_name/` | `layer_2_subx2_features/layer_2_subx2_feature_laptop_linux_ubuntu/` |
+| 3 | `layer_N+1_subx3_features/` | `layer_N+1_subx3_feature_name/` | `layer_3_subx3_features/layer_3_subx3_feature_agentic_tts/` |
+| N (N>1) | `layer_N+1_subxN_features/` | `layer_N+1_subxN_feature_name/` | `layer_4_subx4_features/layer_4_subx4_feature_mobile_agentic_tts/` |
+
+**Key rules**:
+- **Depth 1** uses `sub_feature` — no multiplier, no `subx1`
+- **Depth 2+** uses `subxN_feature` where N = nesting depth
+- **Match parent convention**: If the parent grouping container used `subx3_features/`, the children's grouping container uses `subx4_features/`
+
+**When to use subxN vs numbered containers** (01_features, 02_projects):
+- Use `sub[xN]_features/` when children are **sub-features deepening within a feature hierarchy** (same conceptual domain, increasing specificity)
+- Use `01_features/`, `02_projects/`, etc. when children are organized by **TYPE** (features vs projects vs components at a given layer)
+
+**Hierarchy flow**: feature → sub_feature → subx2_feature → subx3_feature → ... → subxN_feature
+
 <!-- section_id: "6cb7d56e-1450-462f-8466-5120cc95865a" -->
 ## mkdir Command Template
 
