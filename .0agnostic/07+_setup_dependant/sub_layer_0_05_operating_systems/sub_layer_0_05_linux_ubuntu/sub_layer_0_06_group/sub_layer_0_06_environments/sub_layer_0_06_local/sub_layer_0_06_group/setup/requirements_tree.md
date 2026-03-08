@@ -39,6 +39,12 @@ Local Ubuntu environment must work reliably without manual intervention
 │   ├── N4.3: Must be imported BEFORE gsd services trigger
 │   └── **Detailed breakdown** → gsd_session_startup/stages/stage_02_research/outputs/display_race_condition.md
 │
+├── N5: D-Bus App Launching
+│   ├── N5.1: D-Bus-activated apps must launch from taskbar/toolbar
+│   ├── N5.2: Nautilus (Files), Settings, Terminal must open from icons
+│   ├── N5.3: GDK_BACKEND must be x11 for systemd user services on X11 sessions
+│   └── **Fix** → gsd_session_startup/ (Cycle 3: zz-x11-session.conf)
+│
 └── NOT in scope (handled elsewhere)
     └── Volume keys — handled by custom volume-control.sh, not dependent on gsd
 ```
@@ -50,7 +56,7 @@ Local Ubuntu environment must work reliably without manual intervention
 
 | Child Entity | Their Tree | Satisfies Parent Needs |
 |-------------|-----------|----------------------|
-| gsd_session_startup | `gsd_session_startup/stages/stage_01_request_gathering/outputs/requirements_tree.md` | N1 (Desktop Services), N4 (Display Server) |
+| gsd_session_startup | `gsd_session_startup/stages/stage_01_request_gathering/outputs/requirements_tree.md` | N1 (Desktop Services), N4 (Display Server), N5 (D-Bus App Launching) |
 
 ### Triggers
 
@@ -66,7 +72,8 @@ Local Ubuntu environment must work reliably without manual intervention
 
 | Need | Status | Last Checked |
 |------|--------|-------------|
-| N1: Desktop Services | **Implemented (pre-reboot verified)** — gsd services active with single-instance checks passing; reboot validation pending | 2026-03-06 |
+| N1: Desktop Services | **Resolved (post-reboot verified)** — all 5 gsd services active at boot with Cycle 3 global GDK_BACKEND fix | 2026-03-07 |
 | N2: System Resource Limits | **Resolved** | 2026-01-25 |
 | N3: Audio Stack | **Resolved** (workarounds) | 2026-03-06 |
-| N4: Display Server | **Implemented (pre-reboot verified)** — DISPLAY/XAUTHORITY boot import + service-level X11 backend override applied; reboot validation pending | 2026-03-06 |
+| N4: Display Server | **Resolved (post-reboot verified)** — DISPLAY/XAUTHORITY boot import via environment.d confirmed working | 2026-03-07 |
+| N5: D-Bus App Launching | **Resolved** — global GDK_BACKEND=x11 via zz-x11-session.conf; pending user toolbar test | 2026-03-07 |

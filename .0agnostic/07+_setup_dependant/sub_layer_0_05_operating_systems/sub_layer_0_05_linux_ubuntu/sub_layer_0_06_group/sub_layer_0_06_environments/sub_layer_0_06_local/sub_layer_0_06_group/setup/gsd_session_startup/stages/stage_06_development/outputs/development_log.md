@@ -60,3 +60,38 @@ During pre-reboot testing, the initial environment.d + keepalive approach failed
 ### Pending: Post-Reboot Test
 
 The environment.d config and service drop-ins will be tested after reboot to confirm they work at boot time (not just mid-session).
+
+---
+
+## Cycle 3: Global GDK_BACKEND Override (2026-03-07)
+
+### Post-Reboot Discovery
+
+Post-reboot testing confirmed Cycle 2 fix works for MediaKeys/Power but revealed the GDK_BACKEND=wayland issue affects ALL D-Bus-activated services/apps:
+- gsd-Color, gsd-Keyboard, gsd-Wacom: same 5-crash pattern
+- xdg-desktop-portal-gnome: segfault (SEGV)
+- Toolbar-launched apps (Nautilus, Settings, Terminal, OBS): fail silently
+
+### Files Created
+
+| File | Purpose |
+|------|---------|
+| `~/.config/environment.d/zz-x11-session.conf` | Global GDK_BACKEND=x11 override (sorts after nvidia-wayland.conf) |
+
+### Files Modified
+
+| File | Change |
+|------|--------|
+| `~/.config/systemd/user/gsd-keepalive.service` | Extended to monitor all 5 gsd services (added Color, Keyboard, Wacom) |
+| `~/.config/systemd/user/xdg-desktop-portal-gnome.service.d/override.conf` | Added GDK_BACKEND=x11 |
+| `~/.config/systemd/user/xdg-desktop-portal-gtk.service.d/override.conf` | Added GDK_BACKEND=x11 |
+| `~/.config/systemd/user/xdg-desktop-portal.service.d/override.conf` | Added GDK_BACKEND=x11 |
+| `~/.config/systemd/user/gnome-terminal-server.service.d/override.conf` | Added GDK_BACKEND=x11 |
+
+### Verification Results
+
+After applying the global fix + daemon-reload + reset-failed + restart:
+- All 5 gsd services: **active** (1 process each)
+- xdg-desktop-portal-gnome: **active**
+- `systemctl --user show-environment | grep GDK_BACKEND` → **x11**
+- `systemctl --user --failed` → only unrelated services (sync-health, update-notifier)

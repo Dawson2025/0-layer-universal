@@ -61,6 +61,17 @@ GSD daemons start reliably after every reboot
 │   ├── R6.2: No 2>/dev/null on daemon startup commands
 │   └── R6.3: Keepalive service should log success/failure for each attempt
 │
+├── R7: ALL gsd services must start reliably (not just MediaKeys/Power)
+│   ├── R7.1: gsd-color must be running
+│   ├── R7.2: gsd-keyboard must be running
+│   └── R7.3: gsd-wacom must be running (even if no tablet — prevents failed state)
+│
+├── R8: D-Bus-activated apps must launch from toolbar
+│   ├── R8.1: Nautilus (Files) must open from taskbar icon
+│   ├── R8.2: GNOME Settings must open from taskbar icon
+│   ├── R8.3: GNOME Terminal must open from taskbar icon
+│   └── R8.4: Other GDK apps (OBS Studio) must open from taskbar icon
+│
 └── NOT in scope
     └── Volume keys — handled by custom volume-control.sh script, NOT dependent on gsd
 ```
@@ -76,6 +87,8 @@ GSD daemons start reliably after every reboot
 | R2 (gsd-power) | High | Brightness keys, power management |
 | R5 (No multi-instance) | Medium | Stability issue |
 | R6 (Visible errors) | Medium | Debugging/maintenance |
+| R7 (All gsd services) | High | Color, Keyboard, Wacom also fail from same root cause |
+| R8 (Toolbar app launch) | High | Files, Settings, Terminal broken from toolbar |
 
 <!-- section_id: "5e672ab5-221f-47dd-a044-bff75b3429cc" -->
 ## Acceptance Criteria
@@ -87,3 +100,5 @@ The fix is considered complete when:
 4. No duplicate daemon processes
 5. Journal shows clean startup (no "Cannot open display:" errors)
 6. The keepalive timer becomes a safety net, not a necessity
+7. All 5 gsd services start reliably (MediaKeys, Power, Color, Keyboard, Wacom)
+8. D-Bus-activated apps (Files, Settings, Terminal) launch from toolbar

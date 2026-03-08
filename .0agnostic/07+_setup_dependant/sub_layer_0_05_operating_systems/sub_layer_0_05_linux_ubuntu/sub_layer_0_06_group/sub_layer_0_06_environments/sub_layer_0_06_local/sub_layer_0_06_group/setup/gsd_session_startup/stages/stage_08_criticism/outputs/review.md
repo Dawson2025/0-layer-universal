@@ -46,5 +46,41 @@ Added to the solution:
 |---------|-----------|
 | Ubuntu upgrade | environment.d and drop-in files are in user config (`~/.config/`), not overwritten by upgrades |
 | gnome-settings-daemon update | Drop-in directories survive package updates (user override takes precedence) |
-| nvidia-wayland.conf change | Service drop-ins explicitly set GDK_BACKEND, independent of nvidia-wayland.conf |
-| Session type change to Wayland | Would need to update drop-ins (remove GDK_BACKEND=x11) |
+| nvidia-wayland.conf change | Global zz-x11-session.conf override takes precedence regardless |
+| Session type change to Wayland | Would need to remove zz-x11-session.conf and per-service GDK_BACKEND=x11 drop-ins |
+
+---
+
+## Cycle 3 Review (2026-03-07)
+
+### Post-Reboot Results
+
+**Cycle 2 fix validated**: MediaKeys and Power started cleanly at boot. Zero "Cannot open display:" errors. T7, T8, T10 all pass.
+
+### What Cycle 2 Missed
+
+**Per-service drop-ins were insufficient.** The Cycle 2 design only created GDK_BACKEND=x11 drop-ins for MediaKeys and Power. Post-reboot revealed 4 additional failed services:
+- `org.gnome.SettingsDaemon.Color` — failed (5-crash pattern)
+- `org.gnome.SettingsDaemon.Keyboard` — failed (5-crash pattern)
+- `org.gnome.SettingsDaemon.Wacom` — failed (5-crash pattern)
+- `xdg-desktop-portal-gnome` — failed (SEGV, Wayland/X11 mismatch)
+
+**Broader impact**: D-Bus-activated desktop apps (Nautilus, Settings, Terminal, OBS) also failed to launch from the toolbar because they inherit `GDK_BACKEND=wayland` from the systemd user environment. They worked from the terminal because the shell overrides `GDK_BACKEND=x11`.
+
+### Cycle 2 Design Flaw
+
+The Cycle 2 rationale stated: "nvidia-wayland.conf may be needed for other applications. Setting GDK_BACKEND=x11 globally would break those."
+
+**This was wrong.** On an X11 session, `GDK_BACKEND=wayland` breaks EVERY GDK app launched via systemd. No legitimate application benefits from trying Wayland when the session is X11. The conservative per-service approach left all other GDK services and apps broken.
+
+### Cycle 3 Fix
+
+**Global override**: Created `~/.config/environment.d/zz-x11-session.conf` with `GDK_BACKEND=x11`. This sorts after `nvidia-wayland.conf` alphabetically and overrides it for ALL systemd user services.
+
+**Defense-in-depth**: Added `GDK_BACKEND=x11` to existing drop-ins for portal and terminal services. Extended keepalive to cover all 5 gsd services (not just MediaKeys/Power).
+
+### Open Questions (Updated)
+
+1. ~~Should nvidia-wayland.conf be fixed?~~ **Resolved**: The global override (`zz-x11-session.conf`) is cleaner than modifying nvidia-wayland.conf. nvidia-wayland.conf's other settings (GBM_BACKEND, __GLX_VENDOR_LIBRARY_NAME, QT_QPA_PLATFORM) may still be relevant for some apps.
+2. ~~Post-reboot validation pending~~ **Resolved**: Post-reboot test passed (2026-03-07).
+3. **Should per-service drop-ins be removed?** No — keep as defense-in-depth. If zz-x11-session.conf is ever deleted, per-service drop-ins still protect MediaKeys and Power.

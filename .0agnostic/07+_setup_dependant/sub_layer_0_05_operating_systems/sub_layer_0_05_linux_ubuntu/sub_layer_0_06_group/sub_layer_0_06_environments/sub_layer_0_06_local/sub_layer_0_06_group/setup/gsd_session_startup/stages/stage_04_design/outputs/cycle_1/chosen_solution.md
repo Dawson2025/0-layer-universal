@@ -140,6 +140,27 @@ Each sets `Environment=GDK_BACKEND=x11` in addition to DISPLAY and XAUTHORITY.
 
 **Why service drop-ins instead of environment.d**: nvidia-wayland.conf (`GDK_BACKEND=wayland`) may be needed for other applications. Setting `GDK_BACKEND=x11` globally would break those. Service drop-ins override only for gsd services.
 
+<!-- section_id: "9a0b1c2d-3e4f-5a6b-7c8d-9e0f1a2b3c4d" -->
+## Cycle 3 Revision: Global GDK_BACKEND Override
+
+**Discovered during post-reboot testing (2026-03-07)**: The Cycle 2 per-service drop-ins only fixed MediaKeys and Power. All other D-Bus-activated GDK services and apps still inherited `GDK_BACKEND=wayland` from nvidia-wayland.conf:
+- gsd-Color, gsd-Keyboard, gsd-Wacom: same 5-crash-and-die pattern
+- xdg-desktop-portal-gnome: SEGV
+- Desktop apps from toolbar (Nautilus, Settings, Terminal, OBS): fail silently
+
+**Cycle 2 assumption was wrong**: "nvidia-wayland.conf may be needed for other applications." On an X11 session, NO application benefits from `GDK_BACKEND=wayland`. Every GDK app launched via systemd tries Wayland and fails.
+
+**Fix**: Global environment.d override — `~/.config/environment.d/zz-x11-session.conf`:
+```ini
+GDK_BACKEND=x11
+```
+
+**Why `zz-` prefix**: environment.d files are processed alphabetically. `zz-x11-session.conf` sorts after `nvidia-wayland.conf` (z > n), ensuring the override takes effect.
+
+**Why not modify nvidia-wayland.conf**: The other settings in nvidia-wayland.conf (`GBM_BACKEND=nvidia-drm`, `__GLX_VENDOR_LIBRARY_NAME=nvidia`, `QT_QPA_PLATFORM=wayland`, `XCURSOR_SIZE=24`) may be useful. Only `GDK_BACKEND` is problematic on X11.
+
+**Defense-in-depth**: Per-service drop-ins for MediaKeys/Power remain (Cycle 2). Additional `GDK_BACKEND=x11` added to existing portal/terminal drop-ins. Keepalive extended to all 5 gsd services.
+
 ## Previous Solutions Considered
 
 See `../pre_testing/solution_overview.md` for the 3 original approaches (systemd ordering override, post-login autostart hook, re-login notification). The environment.d approach was identified during research as superior to all three because it eliminates the race condition at the earliest possible point rather than working around it.

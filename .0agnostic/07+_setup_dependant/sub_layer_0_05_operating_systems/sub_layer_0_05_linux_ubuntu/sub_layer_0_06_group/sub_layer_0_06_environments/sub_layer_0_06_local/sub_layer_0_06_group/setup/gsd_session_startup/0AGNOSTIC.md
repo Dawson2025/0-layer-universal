@@ -11,7 +11,7 @@ resource_name: "gsd_session_startup"
 entity_id: "40e7fab8-642b-42a6-b3eb-a94ed47b0944"
 
 **Role**: Setup Entity — GSD Session Startup Fix
-**Scope**: Fix startup failures for GNOME Settings Daemons (gsd-media-keys, gsd-power) caused by systemd user environment issues on Unity/X11 (DISPLAY race + GDK backend mismatch).
+**Scope**: Fix startup failures for GNOME Settings Daemons and D-Bus-activated desktop apps caused by systemd user environment issues on Unity/X11 (DISPLAY race + GDK backend mismatch).
 **Parent**: `../0AGNOSTIC.md` (Setup Container)
 
 ## Problem Statement
@@ -19,26 +19,23 @@ entity_id: "40e7fab8-642b-42a6-b3eb-a94ed47b0944"
 Two root causes were identified:
 
 1. Unity desktop (`XDG_CURRENT_DESKTOP=Unity`) doesn't import `DISPLAY` into the systemd user environment before GNOME session triggers gsd-media-keys and gsd-power. This causes 5 rapid "Cannot open display:" crashes in <1 second, after which systemd permanently gives up on the services.
-2. `~/.config/environment.d/nvidia-wayland.conf` sets `GDK_BACKEND=wayland` for systemd user services. On X11 sessions, gsd services (GDK-based) then try Wayland and fail even when DISPLAY is present.
+2. `~/.config/environment.d/nvidia-wayland.conf` sets `GDK_BACKEND=wayland` for ALL systemd user services. On X11 sessions, every GDK app/service launched via systemd tries Wayland and fails. This affects all 5 gsd services, desktop portals, and D-Bus-activated toolbar apps (Nautilus, Settings, Terminal, OBS).
 
 Stock GNOME calls `systemctl --user import-environment DISPLAY` before activating gsd targets. Unity doesn't.
 
-Current status: fix implemented and pre-reboot validated; post-reboot validation is the remaining step.
+Current status: fix implemented and post-reboot validated (2026-03-07). Global GDK_BACKEND override applied (Cycle 3).
 
-### Session Resume
+### Session History
 
-| Field | Value |
-|-------|-------|
-| Session ID | `02bc5c9c-3f8a-400a-8e52-9a9fab8d5b73` |
-| Date | 2026-03-06 |
-| Status | Pre-reboot verified, post-reboot pending |
+| Session | Date | Status |
+|---------|------|--------|
+| Cycle 1-2 implementation | 2026-03-06 | Completed — DISPLAY import + per-service GDK_BACKEND for MediaKeys/Power |
+| Cycle 3 post-reboot fix | 2026-03-07 | Completed — global GDK_BACKEND override, all services verified |
 
-Resume command:
-```bash
-cd ~/dawson-workspace/code/0_layer_universal/layer_-1_research/layer_0_group/layer_0_01_systems/layer_0_better_ai_system/layer_1_group/layer_1_01_features/layer_1_feature_multimodal_system/layer_1_group/layer_1_sub_features/layer_1_sub_feature_audio && claude --resume 02bc5c9c-3f8a-400a-8e52-9a9fab8d5b73 --dangerously-skip-permissions
-```
+### Remaining
 
-After reboot, tell the agent: "We rebooted. Run the post-reboot verification tests."
+- User functional tests (toolbar apps, Ctrl+Alt+S, brightness)
+- Next cold boot to verify zz-x11-session.conf at boot time
 
 **Impact**:
 - ~5 min dead zone after every boot for custom keybindings (Ctrl+Alt+S speak-selection)

@@ -8,21 +8,23 @@ resource_name: "gsd_session_startup_index"
 <!-- section_id: "a89d7885-4767-43e5-929e-5b009f9f6c1f" -->
 ## Current Status
 
-**Phase**: Fix Implemented (pre-reboot verified, post-reboot pending)
-**Blocking**: None — pre-reboot tests pass, awaiting reboot confirmation
-**Last Updated**: 2026-03-06
+**Phase**: Fix Verified (post-reboot 2026-03-07)
+**Blocking**: None — all services active, pending user functional test (toolbar apps, keybindings)
+**Last Updated**: 2026-03-07
 
 ## Root Causes
 
 1. **DISPLAY race condition**: Unity doesn't call `systemctl --user import-environment DISPLAY` before GNOME session activates gsd targets → 5 rapid "Cannot open display:" crashes → permanent systemd failure
-2. **GDK_BACKEND conflict**: `nvidia-wayland.conf` sets `GDK_BACKEND=wayland` in systemd user environment. gsd services (GDK-based) try Wayland instead of X11. Shell sessions override this with `GDK_BACKEND=x11`, hiding the issue from manual testing.
+2. **GDK_BACKEND conflict**: `nvidia-wayland.conf` sets `GDK_BACKEND=wayland` in systemd user environment. ALL GDK services/apps launched via systemd try Wayland instead of X11. Shell sessions override this with `GDK_BACKEND=x11`, hiding the issue from manual testing.
+3. **Broader impact (Cycle 3)**: Affects not just gsd-media-keys/gsd-power but ALL D-Bus-activated GDK apps — gsd-Color/Keyboard/Wacom, desktop portals, and toolbar-launched apps (Nautilus, Settings, Terminal, OBS).
 
 ## Solution Summary
 
-Three-layer defense:
-1. **environment.d**: `~/.config/environment.d/10-display.conf` — DISPLAY + XAUTHORITY at user manager startup
-2. **Service drop-ins**: `GDK_BACKEND=x11` + DISPLAY for both gsd services
-3. **Safety nets**: Enhanced display-ready.service + rewritten keepalive with reset-failed
+Four-layer defense:
+1. **environment.d DISPLAY**: `10-display.conf` — DISPLAY + XAUTHORITY at user manager startup
+2. **environment.d GDK_BACKEND**: `zz-x11-session.conf` — global GDK_BACKEND=x11 override (Cycle 3)
+3. **Service drop-ins**: GDK_BACKEND=x11 + DISPLAY for gsd and portal/terminal services
+4. **Safety nets**: display-ready.service + gsd-keepalive (all 5 services)
 
 See `stages/stage_10_current_product/outputs/current_fix.md` for full details.
 
@@ -36,13 +38,13 @@ See `stages/stage_10_current_product/outputs/current_fix.md` for full details.
 | 04 Design | Done | `cycle_1/chosen_solution.md` — three-layer defense |
 | 05 Planning | Done | `implementation_plan.md` — 6-step implementation |
 | 06 Development | Done | `development_log.md` — files created/modified/deleted |
-| 07 Testing | Done (pre-reboot) | `pre_reboot_test.md` — T1-T4 pass, T5 pending user test |
-| 08 Criticism | Done | `review.md` — GDK_BACKEND discovery, design revision |
-| 09 Fixing | Done | `fixes_applied.md` — GDK_BACKEND override added |
-| 10 Current Product | Active | `current_fix.md` — full fix documentation |
+| 07 Testing | Done | `pre_reboot_test.md` + `post_reboot_test.md` — all automated tests pass |
+| 08 Criticism | Done (Cycle 3) | `review.md` — per-service insufficient, global fix needed |
+| 09 Fixing | Done (Cycle 3) | `fixes_applied.md` — global GDK_BACKEND + extended keepalive |
+| 10 Current Product | Active | `current_fix.md` — four-layer defense |
 | 11 Archives | Empty | |
 
 ## Pending
 
-- **Post-reboot test**: Reboot and verify gsd services start cleanly at boot
-- **Functional test**: User verifies Ctrl+Alt+S and brightness keys work after reboot
+- **Functional test**: User verifies Ctrl+Alt+S, brightness keys, and toolbar app launching work
+- **Next reboot validation**: Confirm zz-x11-session.conf fixes all services at cold boot
