@@ -66,13 +66,56 @@ org.gnome.SettingsDaemon.Wacom: active
 xdg-desktop-portal-gnome: active
 ```
 
-### T12: Toolbar App Launching — PENDING
-User must verify: Nautilus, Settings, Terminal, OBS launch from toolbar after Cycle 3 fix.
+### T12: Toolbar App Launching — FAILED (this session) / EXPECTED PASS (next boot)
 
-### T13: Global GDK_BACKEND Verification — PASS
+**Finding**: Toolbar apps still fail to launch via cursor click in this session despite the Cycle 3 fix.
+
+**Root cause**: gnome-shell (PID 3149) was started at boot BEFORE the `zz-x11-session.conf` fix was applied. gnome-shell's own process environment still has `GDK_BACKEND=wayland`:
+
+```
+$ cat /proc/3149/environ | tr '\0' '\n' | grep GDK_BACKEND
+GDK_BACKEND=wayland
+```
+
+When user clicks a toolbar icon:
+1. gnome-shell forks a child process
+2. Child inherits gnome-shell's env (`GDK_BACKEND=wayland`)
+3. GTK app tries Wayland backend, fails immediately
+4. Process dies before systemd can even add it to a cgroup scope
+
+**Journal evidence**:
+```
+$ journalctl --user --since "10 min ago"
+app-gnome-org.gnome.Terminal-145287.scope: Couldn't move process 145287 to
+  requested cgroup '...': No such process
+app-gnome-org.gnome.Terminal-145287.scope: Failed to add PIDs to scope's
+  control group: No such process
+app-gnome-org.gnome.Terminal-145287.scope: Failed with result 'resources'.
+Failed to start app-gnome-org.gnome.Terminal-145287.scope
+```
+
+**DING extension** (Desktop Icons NG) also affected — gnome-shell repeatedly tries to launch DING's gjs process which fails with "cannot open display: :0":
+```
+gnome-shell[3149]: DING: (gjs:152578): Gtk-WARNING: cannot open display: :0
+```
+
+**Key distinction**:
+- `systemctl --user set-environment GDK_BACKEND=x11` updates the systemd user manager's env → works for D-Bus-activated services (gsd, portals)
+- gnome-shell's OWN process env is frozen at boot time → toolbar app launches inherit the OLD wayland value
+- `zz-x11-session.conf` is processed by `systemd-environment-d-generator` at user manager startup → gnome-shell will get `GDK_BACKEND=x11` on next boot
+
+**Resolution**: Requires either:
+1. Reboot (preferred — validates zz-x11-session.conf end-to-end)
+2. `gnome-shell --replace` (restarts shell mid-session, picks up new env)
+3. Log out + log back in
+
+### T13: Global GDK_BACKEND Verification — PASS (systemd env) / NOTE (gnome-shell env stale)
 ```
 $ systemctl --user show-environment | grep GDK_BACKEND
 GDK_BACKEND=x11
+
+$ cat /proc/$(pgrep -x gnome-shell)/environ | tr '\0' '\n' | grep GDK_BACKEND
+GDK_BACKEND=wayland   ← stale, will be x11 after reboot
 ```
 
 ### T9: Functional Post-Reboot — PENDING
@@ -89,10 +132,12 @@ GDK_BACKEND=x11
 | T9: Functional | PENDING | User to test keybindings/brightness |
 | T10: No Duplicates | PASS | 1 process each |
 | T11: Other GSD services | PASS (after fix) | Color/Keyboard/Wacom now active via global GDK_BACKEND fix |
-| T12: Toolbar apps | PENDING | User to test Nautilus/Settings/Terminal from toolbar |
-| T13: Global GDK_BACKEND | PASS | systemd user env shows x11 |
+| T12: Toolbar apps | FAILED (this session) | gnome-shell has stale GDK_BACKEND=wayland; will fix on reboot |
+| T13: Global GDK_BACKEND | PARTIAL | systemd env correct, gnome-shell env stale until reboot |
 
-## Key Discovery: Cycle 3
+## Key Discoveries
+
+### Cycle 3 (systemd user env)
 
 The Cycle 2 approach of per-service drop-ins was insufficient. The `GDK_BACKEND=wayland` setting from `nvidia-wayland.conf` affects ALL D-Bus-activated GDK apps — not just the two gsd services we fixed. This includes:
 - Other gsd services (Color, Keyboard, Wacom)
@@ -100,3 +145,13 @@ The Cycle 2 approach of per-service drop-ins was insufficient. The `GDK_BACKEND=
 - D-Bus-activated apps (Nautilus, Settings, Terminal) launched from toolbar
 
 The fix: `~/.config/environment.d/zz-x11-session.conf` with `GDK_BACKEND=x11` overrides `nvidia-wayland.conf` globally for ALL systemd user services.
+
+### Cycle 3b (gnome-shell process env)
+
+The environment.d fix only works for processes started AFTER it takes effect. gnome-shell is started early in the boot sequence and its process environment is frozen at that point. Apps launched by clicking toolbar icons are forked from gnome-shell, so they inherit gnome-shell's stale environment — NOT the systemd user manager environment.
+
+This is a different propagation path than D-Bus activation:
+- **D-Bus activation** (gsd services, portals): systemd starts the service → gets systemd user env → `GDK_BACKEND=x11` ✓
+- **gnome-shell fork** (toolbar clicks): gnome-shell forks → child inherits gnome-shell env → `GDK_BACKEND=wayland` ✗
+
+The `zz-x11-session.conf` fix resolves this on next boot because `systemd-environment-d-generator` processes environment.d files BEFORE gnome-shell starts. gnome-shell will inherit `GDK_BACKEND=x11` from birth.

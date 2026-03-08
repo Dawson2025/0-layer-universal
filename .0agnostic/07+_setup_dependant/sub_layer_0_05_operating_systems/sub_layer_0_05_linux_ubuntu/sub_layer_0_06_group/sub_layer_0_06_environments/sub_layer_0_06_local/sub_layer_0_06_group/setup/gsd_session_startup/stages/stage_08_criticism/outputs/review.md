@@ -79,8 +79,23 @@ The Cycle 2 rationale stated: "nvidia-wayland.conf may be needed for other appli
 
 **Defense-in-depth**: Added `GDK_BACKEND=x11` to existing drop-ins for portal and terminal services. Extended keepalive to cover all 5 gsd services (not just MediaKeys/Power).
 
+### Cycle 3b Finding: gnome-shell Process Environment
+
+Even after applying the global `zz-x11-session.conf` and updating the systemd user environment mid-session, toolbar app launches still fail. Investigation revealed a third propagation path:
+
+**Two distinct environment propagation paths**:
+1. **D-Bus activation** (gsd, portals): systemd starts service → inherits systemd user env → `GDK_BACKEND=x11` ✓
+2. **gnome-shell fork** (toolbar clicks): gnome-shell forks child → inherits gnome-shell's own process env → `GDK_BACKEND=wayland` ✗
+
+gnome-shell (PID 3149) started at boot with `GDK_BACKEND=wayland` baked into its process environment. This cannot be changed without restarting gnome-shell. Mid-session `systemctl --user set-environment` only updates the systemd manager's env, not running processes.
+
+**Evidence**: `cat /proc/3149/environ` shows `GDK_BACKEND=wayland` while `systemctl --user show-environment` shows `GDK_BACKEND=x11`. When user clicks an icon, gnome-shell forks a child that inherits the stale wayland value, the GDK app tries Wayland, dies instantly, and systemd reports `Failed to add PIDs to scope's control group: No such process`.
+
+**Why zz-x11-session.conf fixes this on reboot**: `systemd-environment-d-generator` processes environment.d files at user manager startup, BEFORE gnome-shell starts. gnome-shell will inherit the correct `GDK_BACKEND=x11` from its first breath.
+
 ### Open Questions (Updated)
 
 1. ~~Should nvidia-wayland.conf be fixed?~~ **Resolved**: The global override (`zz-x11-session.conf`) is cleaner than modifying nvidia-wayland.conf. nvidia-wayland.conf's other settings (GBM_BACKEND, __GLX_VENDOR_LIBRARY_NAME, QT_QPA_PLATFORM) may still be relevant for some apps.
-2. ~~Post-reboot validation pending~~ **Resolved**: Post-reboot test passed (2026-03-07).
+2. ~~Post-reboot validation pending~~ **Partially resolved**: D-Bus-activated services work. Toolbar apps require reboot to validate.
 3. **Should per-service drop-ins be removed?** No — keep as defense-in-depth. If zz-x11-session.conf is ever deleted, per-service drop-ins still protect MediaKeys and Power.
+4. **gnome-shell --replace vs reboot?** A reboot is the cleanest validation — confirms the entire boot chain works end-to-end. `gnome-shell --replace` would fix the current session but doesn't validate boot-time behavior.

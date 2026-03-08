@@ -8,8 +8,8 @@ resource_name: "gsd_session_startup_index"
 <!-- section_id: "a89d7885-4767-43e5-929e-5b009f9f6c1f" -->
 ## Current Status
 
-**Phase**: Fix Verified (post-reboot 2026-03-07)
-**Blocking**: None — all services active, pending user functional test (toolbar apps, keybindings)
+**Phase**: Fix Applied — services verified, toolbar apps require reboot
+**Blocking**: Reboot needed to validate toolbar app launching (gnome-shell has stale GDK_BACKEND)
 **Last Updated**: 2026-03-07
 
 ## Root Causes
@@ -46,5 +46,6 @@ See `stages/stage_10_current_product/outputs/current_fix.md` for full details.
 
 ## Pending
 
-- **Functional test**: User verifies Ctrl+Alt+S, brightness keys, and toolbar app launching work
-- **Next reboot validation**: Confirm zz-x11-session.conf fixes all services at cold boot
+- **Reboot**: Required to validate toolbar app launching — gnome-shell's process env has stale `GDK_BACKEND=wayland` from boot (before fix). On next boot, `zz-x11-session.conf` will set `GDK_BACKEND=x11` before gnome-shell starts.
+- **Functional test**: After reboot, verify Ctrl+Alt+S, brightness keys, and toolbar app launching
+- **Two propagation paths discovered**: D-Bus activation (systemd env → works now) vs gnome-shell fork (process env → needs reboot)

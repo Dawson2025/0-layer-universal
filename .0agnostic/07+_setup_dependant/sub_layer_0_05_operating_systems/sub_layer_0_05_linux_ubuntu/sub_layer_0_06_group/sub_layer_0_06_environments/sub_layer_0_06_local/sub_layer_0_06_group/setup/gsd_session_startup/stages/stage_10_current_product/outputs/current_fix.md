@@ -99,4 +99,9 @@ Environment=GDK_BACKEND=x11
 - xdg-desktop-portal-gnome active
 - No duplicate processes
 - `systemctl --user show-environment | grep GDK_BACKEND` → `x11`
-- Functional tests: pending user verification (Ctrl+Alt+S, brightness, toolbar apps)
+- Functional tests: pending user verification (Ctrl+Alt+S, brightness)
+- Toolbar apps: FAILED this session (gnome-shell process env still has GDK_BACKEND=wayland from boot). Will fix on next reboot — gnome-shell will inherit GDK_BACKEND=x11 from environment.d at startup.
+
+### Known Limitation: Mid-Session Fix
+
+The `zz-x11-session.conf` fix updates the systemd user manager environment, but does NOT change the environment of already-running processes like gnome-shell. Apps launched by clicking toolbar icons are forked from gnome-shell, so they inherit gnome-shell's stale `GDK_BACKEND=wayland`. This is resolved by rebooting (or `gnome-shell --replace`).
