@@ -78,21 +78,26 @@ gen_uuid() {
 }
 
 # Determine resource_type from file path
+# IMPORTANT: filename-based matches return immediately to prevent
+# the path-based case from also firing (which caused the multi-line
+# resource_type bug — "agnostic\ndocument" etc.)
 get_resource_type() {
   local filepath="$1"
   local basename
   basename=$(basename "$filepath")
 
+  # Filename-specific types take priority — return immediately on match
   case "$basename" in
-    0AGNOSTIC.md) echo "agnostic" ;;
-    0INDEX.md) echo "index" ;;
-    README.md) echo "readme" ;;
-    SKILL.md) echo "skill" ;;
-    *.integration.md) echo "integration" ;;
-    CLAUDE.md|AGENTS.md|GEMINI.md|OPENAI.md) echo "derived" ;;
-    .cursorrules) echo "derived" ;;
+    0AGNOSTIC.md) echo "agnostic_document"; return ;;
+    0INDEX.md) echo "index_document"; return ;;
+    README.md) echo "readme"; return ;;
+    SKILL.md) echo "skill"; return ;;
+    *.integration.md) echo "integration"; return ;;
+    CLAUDE.md|AGENTS.md|GEMINI.md|OPENAI.md) echo "derived"; return ;;
+    .cursorrules) echo "derived"; return ;;
   esac
 
+  # Path-based types — only reached for files without a filename match above
   case "$filepath" in
     */01_knowledge/*) echo "knowledge" ;;
     */02_rules/*) echo "rule" ;;
@@ -102,7 +107,7 @@ get_resource_type() {
     */outputs/*) echo "output" ;;
     */synthesis/*) echo "synthesis" ;;
     *) echo "document" ;;
-  esac | tail -1
+  esac
 }
 
 # Check if file is auto-generated (derived)

@@ -1,6 +1,6 @@
 ---
 resource_id: "ac451a4c-1705-4077-a988-80dfc2f20cd4"
-resource_type: "agnostic document"
+resource_type: "agnostic_document"
 resource_name: "0AGNOSTIC"
 ---
 # 0AGNOSTIC.md - layer_1_sub_feature_tool_and_app_agnostic
