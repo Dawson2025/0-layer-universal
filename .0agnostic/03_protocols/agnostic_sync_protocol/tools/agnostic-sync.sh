@@ -313,6 +313,22 @@ read -r -d '' CLAUDE_BP << 'BPEOF' || true
 
 ## Claude-Specific Rules
 
+### MANDATORY: UUID Runtime Resolution
+This file contains $(resolve-uuid UUID) references. These are NOT runnable shell functions. You MUST resolve them before use:
+```bash
+ROOT=$(git rev-parse --show-toplevel)
+jq -r '."THE-UUID" // empty' "$ROOT/.uuid-index.json"
+```
+This returns the current filesystem path for that script. Do NOT hardcode paths from this file — always resolve the UUID to get the current path.
+
+### MANDATORY: Entity Lookup
+When finding entities by name, you MUST use entity-find.sh. Do NOT use Glob or Grep for entity discovery — they miss nested registries and UUID relationships.
+```bash
+ROOT=$(git rev-parse --show-toplevel)
+ENTITY_FIND=$(jq -r '."f4a2b3c5-d6e7-4f89-a0b1-c2d3e4f5a6b7" // empty' "$ROOT/.uuid-index.json")
+$ENTITY_FIND memory
+```
+
 ### CLAUDE.md Integration
 This file is auto-generated from 0AGNOSTIC.md. Edit 0AGNOSTIC.md to make changes.
 
@@ -321,13 +337,6 @@ This file is auto-generated from 0AGNOSTIC.md. Edit 0AGNOSTIC.md to make changes
 - Use Bash for git operations and commands
 - Use Write/Edit for file modifications
 - Use Task tool for complex multi-step work
-
-### UUID Runtime Resolution
-Tool paths use stable UUIDs that survive moves/renames. When you see $(resolve-uuid UUID) in this file, resolve it to get the current path:
-```bash
-ROOT=$(git rev-parse --show-toplevel)
-jq -r '."UUID" // empty' "$ROOT/.uuid-index.json"
-```
 
 ### Session Continuity
 - Read .0agnostic/episodic_memory/index.md when resuming work
@@ -350,12 +359,13 @@ agent_config = {
 }
 ```
 
-### UUID Runtime Resolution
-Tool paths use stable UUIDs that survive moves/renames. When you see $(resolve-uuid UUID) in this file, resolve it to get the current path:
+### MANDATORY: UUID Runtime Resolution
+This file contains $(resolve-uuid UUID) references. These are NOT runnable shell functions. You MUST resolve them before use:
 ```bash
 ROOT=$(git rev-parse --show-toplevel)
-jq -r '."UUID" // empty' "$ROOT/.uuid-index.json"
+jq -r '."THE-UUID" // empty' "$ROOT/.uuid-index.json"
 ```
+Do NOT hardcode paths from this file — always resolve the UUID to get the current path.
 
 ### Multi-Agent Coordination
 - Check .locks/ before modifying shared files
@@ -375,12 +385,13 @@ Load detailed resources from .0agnostic/ when needed:
 - knowledge/ - Reference information
 - agents/ - Agent definitions
 
-### UUID Runtime Resolution
-Tool paths use stable UUIDs that survive moves/renames. When you see $(resolve-uuid UUID) in this file, resolve it to get the current path:
+### MANDATORY: UUID Runtime Resolution
+This file contains $(resolve-uuid UUID) references. These are NOT runnable shell functions. You MUST resolve them before use:
 ```bash
 ROOT=$(git rev-parse --show-toplevel)
-jq -r '."UUID" // empty' "$ROOT/.uuid-index.json"
+jq -r '."THE-UUID" // empty' "$ROOT/.uuid-index.json"
 ```
+Do NOT hardcode paths from this file — always resolve the UUID to get the current path.
 
 ### Session Continuity
 Maintain episodic memory in .0agnostic/episodic_memory/:
