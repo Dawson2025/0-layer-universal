@@ -25,6 +25,21 @@ Stock GNOME calls `systemctl --user import-environment DISPLAY` before activatin
 
 Current status: fix implemented and pre-reboot validated; post-reboot validation is the remaining step.
 
+### Session Resume
+
+| Field | Value |
+|-------|-------|
+| Session ID | `02bc5c9c-3f8a-400a-8e52-9a9fab8d5b73` |
+| Date | 2026-03-06 |
+| Status | Pre-reboot verified, post-reboot pending |
+
+Resume command:
+```bash
+cd ~/dawson-workspace/code/0_layer_universal/layer_-1_research/layer_0_group/layer_0_01_systems/layer_0_better_ai_system/layer_1_group/layer_1_01_features/layer_1_feature_multimodal_system/layer_1_group/layer_1_sub_features/layer_1_sub_feature_audio && claude --resume 02bc5c9c-3f8a-400a-8e52-9a9fab8d5b73 --dangerously-skip-permissions
+```
+
+After reboot, tell the agent: "We rebooted. Run the post-reboot verification tests."
+
 **Impact**:
 - ~5 min dead zone after every boot for custom keybindings (Ctrl+Alt+S speak-selection)
 - Brightness keys broken until gsd-power manually restarted
